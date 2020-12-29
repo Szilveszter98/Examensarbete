@@ -10,20 +10,29 @@
 <center>
 <h1> Please register an account!</h1>    
 <form method="POST" action="v1/users/addUser.php">
-firstname:<br />
-<input type="text" name="firstname" required>
+Företagsnamn:<br />
+<input type="text" name="companyName" required>
 <br />
-lastname:<br />
-<input type="text" name="lastname" required>
+Beskrivning:<br />
+<input type="text" name="description" required>
 <br />
-Username:<br />
-<input type="text" name="username" required>
-<br />
-Password: <br />
-<input type="password" name="password"required>
+Telefon nummer:<br />
+<input type="number" name="telefonNummer" required>
 <br />
 E-mail: <br />
 <input type="email" name="email" required>
+<br />
+Organisations nummer:<br />
+<input type="number" name="organisationsNummer" required>
+<br />
+Address:<br />
+<input type="text" name="address" required>
+<br />
+Postnummer:<br />
+<input type="number" name="postnummer" required>
+<br />
+Password: <br />
+<input type="password" name="password"required>
 <br />
 <hr>
 <input  type="submit" value="Register" /></b>
