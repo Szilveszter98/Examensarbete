@@ -22,17 +22,17 @@ public function registerUser( $firstname_IN, $lastname_IN, $username_IN,$passwor
 
             $return = $this->insertUsertoDatabase($firstname_IN, $lastname_IN, $username_IN,$password_IN, $email_IN);
             if($return !== false){
+
                 $return_object->state ="Success";
                 $return_object->user = $return;
             }else{
                 $return_object->state = "ERROR";
                 $return_object->message =" Something went wrong with register";
             }
-        } else {
-            $return_object->state = "ERROR";
-            $return_object->message = "Email is taken";
-
-    }
+            } else {
+                $return_object->state = "ERROR";
+                $return_object->message = "Email is taken";
+            }
 
 
 }else{
@@ -143,6 +143,7 @@ public function loginUser($username_parameter, $password_parameter) {
  
             $return_object->token=$this->getToken($return['id'], $return['username']);
             return json_encode($return_object);
+           
             
 
         }else{

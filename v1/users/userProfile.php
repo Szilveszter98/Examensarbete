@@ -5,12 +5,13 @@
 include("../../objects/users.php");
 
     $user_handler = new User($databaseHandler);
-
+    
 // login
    echo "<center>";
    echo "<h1> Welcome " . $_POST['username'] . "!</h1><br>";
    
     $token = json_decode($user_handler->loginUser($_POST['username'], $_POST['password']))->token;
+    print_r($token);
 
 echo("fetch user data here!!!");
 

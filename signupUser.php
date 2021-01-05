@@ -9,7 +9,7 @@
    <!-- Inputs to registeration -->
 <center>
 <h1> Please register an account!</h1>    
-<form method="POST" action="v1/users/userProfile.php">
+<form method="POST" action="v1/users/registerUser.php">
 firstname:<br />
 <input type="text" name="firstname" required>
 <br />
