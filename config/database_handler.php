@@ -4,7 +4,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "jobbnätverk";
+$db = "jobnetwork";
 
 // MAKE CONNECTION
 try {

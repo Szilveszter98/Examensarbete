@@ -8,9 +8,9 @@
 <body>
 <!-- Main page and log in button and register button -->
 <center><h1> Welcome </h1> </br>
-<button><a href="userIndex.php"> Privatperson </a></button>
+<button><a href="signupCompany.php"> Registrera dig </a></button>
 </br>
-<button><a href="companyIndex.php"> Företag </a></button>
+<button><a href="loginCompany.php"> Log in </a></button>
 
  <center>
 <hr>
