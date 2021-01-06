@@ -95,6 +95,8 @@ private function isUsernameTaken($username_param){
         die;
     }
 }
+
+
 // Watching if email is taken
 private function isEmailTaken($email_param){
 
@@ -125,7 +127,7 @@ public function loginUser($username_parameter, $password_parameter) {
 
     $return_object= new stdClass();
 
-    $query_string= "SELECT id, username, email, role FROM users WHERE username=:username_IN AND password=:password_IN";
+    $query_string= "SELECT id, firstname,  username, email, role FROM users WHERE username=:username_IN AND password=:password_IN";
     $statementHandler = $this->database_handler->prepare($query_string);
     
     if($statementHandler !== false){
@@ -140,7 +142,7 @@ public function loginUser($username_parameter, $password_parameter) {
 
         if(!empty($return)){
             $this->username = $return['username'];
- 
+           
             $return_object->token=$this->getToken($return['id'], $return['username']);
             return json_encode($return_object);
            
@@ -268,7 +270,7 @@ public function validateToken($token){
     return true;
 }
 // get user ID
-private function getUserId($token)
+public function getUserId($token)
 {
     $query_string = "SELECT user_id FROM tokens WHERE token=:token";
     $statementHandler = $this->database_handler->prepare($query_string);
@@ -294,10 +296,10 @@ private function getUserId($token)
 }
  
 // get user DATA
-private function getUserData($userID) {
+public function getUserData($userID) {
     
     
-    $query_string = "SELECT id, username, email, role FROM users WHERE id=:userID";
+    $query_string = "SELECT id, firstname, lastname, username, email, role FROM users WHERE id=:userID";
     $statementHandler = $this->database_handler->prepare($query_string);
 
     if($statementHandler !== false) {
@@ -308,8 +310,10 @@ private function getUserData($userID) {
         $statementHandler->execute();
 
         $return = $statementHandler->fetch();
-
+        $row = $return;
+        
         if(!empty($return)) {
+            
             return $return;
         } else {
             return false;
@@ -320,6 +324,31 @@ private function getUserData($userID) {
     }
 
 }
+
+public function logoutUser($userID) {
+
+    $query_string = "Delete FROM tokens WHERE user_id=:userID";
+    $statementHandler = $this->database_handler->prepare($query_string);
+
+    if($statementHandler !== false) {
+
+        $statementHandler->bindParam(":userID", $userID);
+    
+        $success = $statementHandler->execute();
+
+        if($success === true) {
+            header( 'Location: http://localhost/examensarbete/index.php' );
+            
+        } else {
+            echo "Error!";
+        }
+
+    } else {
+        echo "Could not create database statement!";
+        die();
+    }
+}
+
 // watching if user is an Admin
 public function isAdmin($token)
 {
