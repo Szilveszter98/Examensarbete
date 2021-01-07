@@ -324,7 +324,32 @@ public function getUserData($userID) {
     }
 
 }
+public function updateUserProfile($firstname_param,$lastname_param,$username_param, $password_param, $email_param, $userID){
 
+        $query_string = "UPDATE users SET firstname=:firstname, lastname=:lastname, username=:username, password=:password, email=:email WHERE id=:userID";
+       
+
+        $statementHandler = $this->database_handler->prepare($query_string);
+    
+        if($statementHandler !== false) {
+    
+            $encrypted_password = md5($password_param);
+            $statementHandler->bindParam(':userID', $userID);
+            $statementHandler->bindParam(':firstname', $firstname_param);
+            $statementHandler->bindParam(':lastname', $lastname_param);
+            $statementHandler->bindParam(':username', $username_param);
+            $statementHandler->bindParam(':email', $email_param);
+            $statementHandler->bindParam(':password', $encrypted_password);
+    
+            $statementHandler->execute();
+            return $statementHandler->fetch();
+    
+        }else{
+            return false;
+            echo "sorry we got some problem";
+        }
+    }
+    
 public function logoutUser($userID) {
 
     $query_string = "Delete FROM tokens WHERE user_id=:userID";

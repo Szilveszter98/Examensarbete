@@ -6,12 +6,15 @@
     <title>Jobbnärverk</title>
 </head>
 <body>
-
-
+<?php
+$userID =(isset($_GET['id']) ? $_GET['id'] : '');
+    
+    
+?>
    <!-- Inputs to registeration -->
 <center>
-<h1> Please register an account!</h1>    
-<form method="POST" action="v1/users/User.php">
+<h1> Edit profile details</h1>    
+<form method="POST" action="v1/users/editUserProfile.php?id=<?php echo $_GET['id'];?>">
 firstname:<br />
 <input type="text" name="firstname" required>
 <br />
@@ -28,7 +31,7 @@ E-mail: <br />
 <input type="email" name="email" required>
 <br />
 <hr>
-<input  type="submit" value="Register" /></b>
+<input  type="submit" value="Confirm" /></b>
 </form>
 </center>
 </body>

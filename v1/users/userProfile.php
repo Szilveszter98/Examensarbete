@@ -32,10 +32,11 @@ $userID=$user_handler->getUserId($token);
      echo "<span>" . " " . $row['firstname']. "</br></span><br/>";
      echo "<span>" . " " . $row['lastname']. "</br></span><br/>";
      echo "<span>" . " " . $row['email']. "</br></span><br/>";
+    
      
     echo "<a id='' href='logoutUser.php?id={$row['id']}'>Sign out</center></h1></a>";
-    echo "<a href='../../createPost.php'> Add new product </a>";
-    echo "<a href='../../editUserProfileForm.php'> radigera profilen </a>"
+    echo "<a href='../../createPost.php'> Add new product </a></br>";
+    echo "<a href='../../editUserProfileForm.php?id={$row['id']}'> radigera profilen </a>";
     echo"</center>";
  //watching if user is admin
     
