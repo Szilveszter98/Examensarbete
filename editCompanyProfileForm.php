@@ -7,9 +7,14 @@
 </head>
 <body>
    <!-- Inputs to registeration -->
+   <?php
+$companyID =(isset($_GET['id']) ? $_GET['id'] : '');
+    
+    
+?>
 <center>
 <h1> Please register an account!</h1>    
-<form method="POST" action="v1/company/registerCompany.php">
+<form method="POST" action="v1/company/editCompanyProfile.php?id=<?php echo $_GET['id'];?>">
 Företagsnamn:<br />
 <input type="text" name="companyName" required>
 <br />

@@ -12,9 +12,9 @@
 <h1>Please log in <h1> 
 <h2 >Please enter your username and password</h2>
   
-<form method="POST" action="v1/users/userLogin.php">
-Username:<br>
-<input type="text" name="username" required><br/>
+<form method="POST" action="v1/company/companyProfile.php">
+email:<br>
+<input type="text" name="email" required><br/>
 Password:<br>
 <input type="password" name="password" required><br />
 <hr>
