@@ -148,7 +148,7 @@ public function loginCompany($email_parameter, $password_parameter) {
             
 
         }else{
-            echo "fel login";
+            header( 'Location: http://localhost/examensarbete/loginCompany.php?err=true' );
         }
     }else{
         echo "could not create a statmenthandler";
@@ -378,6 +378,29 @@ public function logoutCompany($companyID) {
         die();
     }
 } 
+public function deleteCompany($companyID){
+    $query_string = "Delete FROM companies WHERE id=:companyID";
+    $statementHandler = $this->database_handler->prepare($query_string);
+
+    if($statementHandler !== false) {
+
+        $statementHandler->bindParam(":companyID", $companyID);
+    
+        $success = $statementHandler->execute();
+
+        if($success === true) {
+            header( 'Location: http://localhost/examensarbete/index.php' );
+            
+        } else {
+            echo "Error!";
+        }
+
+    } else {
+        echo "Could not create database statement!";
+        die();
+    }
+}
+
 
 
 

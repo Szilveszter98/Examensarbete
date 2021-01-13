@@ -7,14 +7,16 @@
 </head>
 <body>
 <?php
-$userID =(isset($_GET['id']) ? $_GET['id'] : '');
-    
-    
+$userID =(isset($_POST['id']) ? $_POST['id'] : '');
+
+
 ?>
    <!-- Inputs to registeration -->
 <center>
 <h1> Edit profile details</h1>    
-<form method="POST" action="v1/users/editUserProfile.php?id=<?php echo $_GET['id'];?>">
+<form method="POST" action="v1/users/editUserProfile.php">
+
+<input type='hidden'  name='id' value='<?php echo $userID?>'>
 firstname:<br />
 <input type="text" name="firstname" required>
 <br />

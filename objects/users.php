@@ -149,7 +149,10 @@ public function loginUser($username_parameter, $password_parameter) {
             
 
         }else{
-            echo "fel login";
+            header( 'Location: http://localhost/examensarbete/loginUser.php?err=true' );
+           
+            
+
         }
     }else{
         echo "could not create a statmenthandler";
@@ -373,6 +376,30 @@ public function logoutUser($userID) {
         die();
     }
 }
+
+public function deleteUser($userID){
+    $query_string = "Delete FROM users WHERE id=:userID";
+    $statementHandler = $this->database_handler->prepare($query_string);
+
+    if($statementHandler !== false) {
+
+        $statementHandler->bindParam(":userID", $userID);
+    
+        $success = $statementHandler->execute();
+
+        if($success === true) {
+            header( 'Location: http://localhost/examensarbete/index.php' );
+            
+        } else {
+            echo "Error!";
+        }
+
+    } else {
+        echo "Could not create database statement!";
+        die();
+    }
+}
+
 
 // watching if user is an Admin
 public function isAdmin($token)

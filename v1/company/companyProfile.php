@@ -29,9 +29,20 @@ $companyID=$company_handler->getCompanyId($token);
      echo"</center>"; 
 
      echo"<center>";
-     echo "<a href='../../editCompanyProfileForm.php?id={$row['id']}'> radigera profilen </a></br>"; 
-     echo "<a id='' href='logoutCompany.php?id={$row['id']}'>Sign out</center></h1></a>";
-  
+     echo '<form method="POST" action="../../editCompanyProfileForm.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo '<input  type="submit" value="Ändra detaljer" /></b>';
+     echo '</form>';
+
+     echo '<form method="POST" action="logoutCompany.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo '<input  type="submit" value="Logga ut" /></b>';
+     echo '</form>';
+
+     echo '<form method="POST" action="deleteCompany.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo '<input  type="submit" value="Delete Profile" /></b>';
+     echo '</form>';
     echo"</center>"; 
 
     

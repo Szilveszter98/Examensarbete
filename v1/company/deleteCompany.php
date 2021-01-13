@@ -13,7 +13,7 @@ $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
  if(!empty($companyID)) {
     
 
-        $company_handler->logoutCompany($companyID);
+        $company_handler->deleteCompany($companyID);
 
     } else {
         echo "Error with companyID";

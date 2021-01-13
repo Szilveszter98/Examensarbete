@@ -6,8 +6,9 @@
     $user_handler = new User($databaseHandler);
 
 
-    $userID =(isset($_GET['id']) ? $_GET['id'] : '');
+    $userID =(isset($_POST['id']) ? $_POST['id'] : '');
     
+    print_r($userID);
     
 // Update user profile
  if(!empty($userID)) {

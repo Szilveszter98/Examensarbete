@@ -8,7 +8,10 @@
 <body>
     <!-- Inputs to login -->
 <center>
- 
+<?php
+echo (isset($_GET['err']) && $_GET['err'] == true ? "Något gick fel! Försök Igen!<hr>" : "");
+?>
+
 <h1>Please log in <h1> 
 <h2 >Please enter your username and password</h2>
   
@@ -26,6 +29,8 @@ Password:<br>
 <a  href="signupCompnay.php">Registrera som företag</a>
 </b>
 </form>
+
 </center>
+
 </body>
 </html>
