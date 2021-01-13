@@ -10,10 +10,10 @@
 <center>
 <h1> Please register an account!</h1>    
 <form method="POST" action="v1/users/registerUser.php">
-firstname:<br />
+Firstname:<br />
 <input type="text" name="firstname" required>
 <br />
-lastname:<br />
+Lastname:<br />
 <input type="text" name="lastname" required>
 <br />
 Username:<br />

@@ -9,11 +9,14 @@
 <center>
 <!-- Form to create new products -->
 <h1> Creating a new Post </h1>
-<form method="GET" action="v1/posts/addPost.php">
+<form method="POST" action="v1/posts/addPost.php">
             
             Title:<input type="text" name="title" placeholder="Product Title" /><br />
-            Information:<textarea name="information" placeholder="Information" rows="1" cols="18"></textarea><br />
-            Date?
+            Beskrivning:<textarea name="description" placeholder="description" rows="1" cols="18"></textarea><br />
+            <label for="start">Start date:</label>
+
+            <input type="date" id="start" name="trip-start">
+
             type of work...
             <hr>
             <input type="submit" name="Add"/>
@@ -27,3 +30,5 @@
 ?>
 </body>
 </html> 
+
+ 
