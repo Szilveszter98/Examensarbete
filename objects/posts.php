@@ -123,10 +123,10 @@ class Post {
     }
     
         
-}
+
 
     
-    /*
+    
 // delete product
     public function deletePost($postID) {
 
@@ -153,6 +153,6 @@ class Post {
     }
 
 }
-*/
+
 
  ?>
