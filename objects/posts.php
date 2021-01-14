@@ -1,6 +1,7 @@
 <?php
 // database connection
 include("../../config/database_handler.php");
+
 // class
 class Post {
     private $database_handler;
@@ -48,16 +49,16 @@ class Post {
             die();
         }
     }
-}
-    //fetch 1 product
-   /*  public function fetchSinglePost() {
 
-        $query_string = "SELECT id, title, content, price, date_posted FROM posts WHERE id=:post_id";
+    //fetch 1 product
+    public function fetchSinglePost($postID) {
+
+        $query_string = "SELECT * FROM posts WHERE id=:post_id";
         $statementHandler = $this->database_handler->prepare($query_string);
 
         if($statementHandler !== false) {
             
-            $statementHandler->bindParam(":post_id", $this->post_id);
+            $statementHandler->bindParam(":post_id", $postID);
             $statementHandler->execute();
 
             return $statementHandler->fetch();
@@ -70,11 +71,11 @@ class Post {
         }
     }
 
-    
+  
 // fetch all products
     public function fetchAllPosts() {
 
-        $query_string = "SELECT id, title, content, price, date_posted FROM posts";
+        $query_string = "SELECT id, title, description, type, ort, date FROM posts";
         $statementHandler = $this->database_handler->prepare($query_string);
 
         if($statementHandler !== false) {
@@ -89,6 +90,10 @@ class Post {
         
     }
 
+ 
+}
+ 
+    /* 
 
 // update product 
     public function updatePost($data) {
