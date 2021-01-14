@@ -91,61 +91,42 @@ class Post {
     }
 
  
-}
+
  
-    /* 
+     
 
-// update product 
-    public function updatePost($data) {
+// update post
+    public function updatePost() {
 
 
-        print_r($data);
+        $query_string = "UPDATE posts SET firstname=:firstname, lastname=:lastname, username=:username, password=:password, email=:email WHERE id=:postID";
+       
 
-        if(!empty($data['title'])) {
-            $query_string = "UPDATE posts SET title=:title WHERE id=:post_id";
-            $statementHandler = $this->database_handler->prepare($query_string);
-
-            $statementHandler->bindParam(":title", $data['title']);
-            $statementHandler->bindParam(":post_id", $data['id']);
-
-            $statementHandler->execute();
-            
-        }
-
-        if(!empty($data['content'])) {
-            $query_string = "UPDATE posts SET content=:content WHERE id=:post_id";
-            $statementHandler = $this->database_handler->prepare($query_string);
-
-            $statementHandler->bindParam(":content", $data['content']);
-            $statementHandler->bindParam(":post_id", $data['id']);
-
-            $statementHandler->execute();
-            
-        }
-
-        if(!empty($data['price'])) {
-        $query_string = "UPDATE posts SET price=:price WHERE id=:post_id";
-            $statementHandler = $this->database_handler->prepare($query_string);
-
-            $statementHandler->bindParam(":price", $data['price']);
-            $statementHandler->bindParam(":post_id", $data['id']);
-
-            $statementHandler->execute();
-            
-        }
-
-        $query_string = "SELECT id, title, content, date_posted, user_id FROM posts WHERE id=:post_id";
         $statementHandler = $this->database_handler->prepare($query_string);
-
-        $statementHandler->bindParam(":post_id", $data['id']);
-        $statementHandler->execute();
-
-        echo json_encode($statementHandler->fetch());
-         
-        
-
-
+    
+        if($statementHandler !== false) {
+            $statementHandler->bindParam(":title", $title_param);
+            $statementHandler->bindParam(":description", $description_param);
+            $statementHandler->bindParam(":startDate", $startDate_param);
+            $statementHandler->bindParam(":type", $type_param);
+            $statementHandler->bindParam(":ort", $ort_param);
+            $statementHandler->bindParam(":email", $email_param);
+            $statementHandler->bindParam(":telefonNummer", $telefonNummer_param);
+            $statementHandler->bindParam(":postID", $postID);
+            $statementHandler->execute();
+            return $statementHandler->fetch();
+    
+        }else{
+            return false;
+            echo "sorry we got some problem";
+        }
     }
+    
+        
+}
+
+    
+    /*
 // delete product
     public function deletePost($postID) {
 

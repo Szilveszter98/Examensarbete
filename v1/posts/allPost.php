@@ -43,19 +43,6 @@ include("../../objects/posts.php");
     }
 
      
- 
- //watching if user is admin
-    
-    // $isAdmin = $user_handler->isAdmin($token);
-    
-    // if($isAdmin === true) {
-       
-    //     echo "</br>";
-    //     
-        
-    //     die;
-    // }
- 
 
     
 ?> 

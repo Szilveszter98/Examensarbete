@@ -38,6 +38,7 @@ include("../../objects/posts.php");
      echo "<span>" . " " . $post['startDate']. "</br></span><br/>";
      echo '</form>';
      echo"</br><hr>";
+     echo "<a href='allPost.php'>Tillbaka till alla inlägg</a>";
      
     
 
