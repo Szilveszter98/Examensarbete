@@ -34,6 +34,12 @@ Postnummer:<br />
 Password: <br />
 <input type="password" name="password"required>
 <br />
+
+            <b>Bifoga bild:</b><br />
+            <input type='file' name='file[]' id='fileToUpload' multiple><br />
+            <br />
+            <hr>
+            <input type="submit" name="Add" value="Publicera"/>
 <hr>
 <input  type="submit" value="Register" /></b>
 </form>

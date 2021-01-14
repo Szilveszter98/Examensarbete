@@ -8,7 +8,7 @@
 
     $userID =(isset($_POST['id']) ? $_POST['id'] : '');
     
-    print_r($userID);
+
     
 // Update user profile
  if(!empty($userID)) {

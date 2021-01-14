@@ -54,11 +54,12 @@ $userID=$user_handler->getUserId($token);
      echo '<input  type="submit" value="Delete Profile" /></b>';
      echo '</form>';
 
-       //echo "<a href='../../createPost.php'> Add new product </a></br>";
-    
-   //echo "<a id='' href='logoutUser.php?id={$row['id']}'>Sign out</center></h1></a>";
-   // echo "<a href='../../editUserProfileForm.php?id={$row['id']}'> radigera profilen </a>";
-    echo"</center>";
+
+     echo '<form method="POST" action="../../createPostForm.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo '<input  type="submit" value="Skapa inlägg" /></b>';
+     echo '</form>';
+ 
  //watching if user is admin
     
     // $isAdmin = $user_handler->isAdmin($token);
