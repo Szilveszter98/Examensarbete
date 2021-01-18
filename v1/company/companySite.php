@@ -16,7 +16,7 @@ include("../../objects/companies.php");
 
 
 
-    
+    echo "<a href='allCompanies.php'>Tillbaka till alla företag</a>";
   
 
 

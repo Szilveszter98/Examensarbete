@@ -16,19 +16,27 @@ $companyID=$company_handler->getCompanyId($token);
 
 // login
    echo "<center>";
-   echo "<h1> Welcome " . $row['companyName'] . "!</h1><br>";
+   echo "<h1>" . $row['companyName'] . "</h1><br>";
    echo "</center>";
     
    
   
 
      echo"<center>";
-     echo "<span>" . " " . $row['companyName']. "</br></span><br/>";
-     echo "<span>" . " " . $row['telefonNummer']. "</br></span><br/>";
-     echo "<span>" . " " . $row['email']. "</br></span><br/>";
+     //echo "<span>" . "<h3>Företags Namn:</h3> </br>" . $row['companyName']. "</br></span><br/>";
+     echo "<span>" . "<h3>Beskrivning: </h3></br>" . $row['description']. "</br></span><br/>";
+     echo "<span>" . "<h3>Org.nr:</h3></br>" . $row['organisationsNummer']. "</br></span><br/>";
+      echo "<span>" . "<h3>Adress:</h3></br>" . $row['address']. "</br></span><br/>";
+     echo "<span>" . "<h3>Postnummer:</h3></br>" . $row['postnummer']. "</br></span><br/>";
+     echo "<span>" . "<h3>Tel.nummer:</h3></br> " . $row['telefonNummer']. "</br></span><br/>";
+     echo "<span>" . "<h3>Email: </h3></br> " . $row['email']. "</br></span><br/>";
      echo"</center>"; 
 
      echo"<center>";
+     echo '<form method="POST" action="../posts/allPost.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo '<input  type="submit" value="Alla arbete" /></b>';
+     echo '</form>';
      echo '<form method="POST" action="../../editCompanyProfileForm.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Ändra detaljer" /></b>';
@@ -43,6 +51,7 @@ $companyID=$company_handler->getCompanyId($token);
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Delete Profile" /></b>';
      echo '</form>';
+     
     echo"</center>"; 
 
     
