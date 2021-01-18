@@ -9,6 +9,7 @@
 <center>
 <?php
 $postID =(isset($_POST['id']) ? $_POST['id'] : '');
+print_r($postID);
 ?>
 <!-- Form to create new products -->
 <h1> Edit your post </h1>
@@ -30,10 +31,10 @@ $postID =(isset($_POST['id']) ? $_POST['id'] : '');
                 <option value="elektriker">Elektriker</option>
             </select>
             <br>
-            <b>Bifoga bild:</b><br />
+            <!-- <b>Bifoga bild:</b><br />
             <input type='file' name='file[]' id='fileToUpload' multiple><br />
-            <br />
-            Address:<br />
+            <br /> -->
+            Ort:<br />
             <input type="text" name="ort" required>
             <br />
             E-mail: <br />

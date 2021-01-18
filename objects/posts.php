@@ -70,6 +70,25 @@ class Post {
             die();
         }
     }
+    public function getPostWithUserID($userID) {
+
+        $query_string = "SELECT * FROM posts WHERE userID=:userID";
+        $statementHandler = $this->database_handler->prepare($query_string);
+
+        if($statementHandler !== false) {
+            
+            $statementHandler->bindParam(":userID", $userID);
+            $statementHandler->execute();
+
+            return $statementHandler->fetchAll();
+
+
+
+        } else {
+            echo "Could not create database statement!";
+            die();
+        }
+    }
 
   
 // fetch all products
@@ -96,14 +115,14 @@ class Post {
      
 
 // update post
-    public function updatePost() {
+    public function updatePost( $title_param, $description_param, $startDate_param, $type_param, $ort_param, $email_param, $telefonNummer_param, $postID){
+      
 
-
-        $query_string = "UPDATE posts SET firstname=:firstname, lastname=:lastname, username=:username, password=:password, email=:email WHERE id=:postID";
-       
+        $query_string = "UPDATE posts SET title=:title, description=:description, startDate=:startDate, type=:type, ort=:ort, email=:email, telefonNummer=:telefonNummer WHERE ID=:postID";
+        
 
         $statementHandler = $this->database_handler->prepare($query_string);
-    
+  
         if($statementHandler !== false) {
             $statementHandler->bindParam(":title", $title_param);
             $statementHandler->bindParam(":description", $description_param);
@@ -113,12 +132,16 @@ class Post {
             $statementHandler->bindParam(":email", $email_param);
             $statementHandler->bindParam(":telefonNummer", $telefonNummer_param);
             $statementHandler->bindParam(":postID", $postID);
+
             $statementHandler->execute();
             return $statementHandler->fetch();
+
     
         }else{
-            return false;
-            echo "sorry we got some problem";
+           
+           return false;
+
+           print_r("error");
         }
     }
     
@@ -140,8 +163,7 @@ class Post {
             $success = $statementHandler->execute();
 
             if($success === true) {
-                echo "$postID has been deleted!";
-                echo "<a href='../../index.php>Back to the index</a>";
+              header('location: http://localhost/examensarbete/v1/users/userProfile.php');
             } else {
                 echo "Error while trying to insert post to database!";
             }

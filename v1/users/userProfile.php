@@ -35,8 +35,7 @@ $userID=$user_handler->getUserId($token);
      echo "<span>" . " " . $row['firstname']. "</br></span><br/>";
      echo "<span>" . " " . $row['lastname']. "</br></span><br/>";
      echo "<span>" . " " . $row['email']. "</br></span><br/>";
-    
-     
+    //echo "<span>" . " " . $row['id']. "</br></span><br/>";
 
 
      echo '<form method="POST" action="../../editUserProfileForm.php">';
@@ -57,39 +56,21 @@ $userID=$user_handler->getUserId($token);
 
      echo '<form method="POST" action="../../createPostForm.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
-     echo '<input  type="submit" value="Skapa inlägg" /></b>';
+     echo '<input  type="submit" value="Skapa inlägg" /></b>';  
      echo '</form>';
  
-
+     echo "</center>";
 
      include("../../objects/posts.php");
 
     $post_handler = new Post($databaseHandler);
     
-
-    
-  
-
-
-  
-    $postID =(isset($_POST['id']) ? $_POST['id'] : '');
-    print_r($postID);
-    echo "</center>";
-    $post=$post_handler->fetchSinglePost($postID);
- 
-
-
-
-
-
-
-
- 
-
-  
-    
+    $userID= $row['id'];
+    $posts= $post_handler->getPostWithUserID($userID);
    
+   foreach($posts as $post){
      echo"<center>";
+     echo"<hr>";
      echo "<span>" . " " . $post['title']. "</br></span><br/>";
      echo "<span>" . " " . $post['description']. "</br></span><br/>";
      echo "<span>" . " " . $post['type']. "</br></span><br/>";
@@ -99,10 +80,18 @@ $userID=$user_handler->getUserId($token);
      echo "<span>" . " " . $post['telefonNummer']. "</br></span><br/>";
      echo "<span>" . " " . $post['startDate']. "</br></span><br/>";
      echo '</form>';
+     echo '<form method="POST" action="../../editPostForm.php">';
+     echo "<input type='hidden'  name='id' value='{$post['ID']}'>";
+     echo '<input  type="submit" value="Radigera inlägg" /></b>';
+     echo '</form>';
+     echo '<form method="POST" action="../posts/deletePost.php">';
+     echo "<input type='hidden'  name='id' value='{$post['ID']}'>";
+     echo '<input  type="submit" value="Ta bort inlägg" /></b>';
+     echo '</form>';
      echo"</br><hr>";
-     echo "<a href='allPost.php'>Tillbaka till alla inlägg</a>";
- 
-    // fetch own post and add edit button
+    
+ }
+    
  
 
     

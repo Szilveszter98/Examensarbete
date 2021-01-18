@@ -13,7 +13,7 @@ $postID =(isset($_POST['id']) ? $_POST['id'] : '');
  if(!empty($postID)) {
     
 
-        $post_handler->deleteCompany($postID);
+        $post_handler->deletePost($postID);
 
     } else {
         echo "Error with companyID";

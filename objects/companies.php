@@ -400,7 +400,42 @@ public function deleteCompany($companyID){
         die();
     }
 }
+public function fetchAllCompanies() {
 
+    $query_string = "SELECT id, companyName, description, telefonNummer, password, email, organisationsNummer, address, postnummer FROM companies";
+    $statementHandler = $this->database_handler->prepare($query_string);
+    
+    if($statementHandler !== false) {
+    
+        $statementHandler->execute();
+        return $statementHandler->fetchAll();
+    
+    } else {
+        echo "Could not create database statement!";
+        die();
+    }
+    
+    }
+
+    public function fetchSingleCompany($companyID) {
+
+        $query_string = "SELECT * FROM companies WHERE id=:company_id";
+        $statementHandler = $this->database_handler->prepare($query_string);
+
+        if($statementHandler !== false) {
+            
+            $statementHandler->bindParam(":company_id", $companyID);
+            $statementHandler->execute();
+
+            return $statementHandler->fetch();
+
+
+
+        } else {
+            echo "Could not create database statement!";
+            die();
+        }
+    }
 
 
 
