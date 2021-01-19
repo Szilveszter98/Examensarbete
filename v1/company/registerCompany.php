@@ -12,4 +12,6 @@
      echo("<button><a href='../../loginCompany.php'>Log in</a></button>");
    
     // header("location:../../loginUser.php");
+  
+
     ?>

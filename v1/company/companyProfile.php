@@ -11,6 +11,7 @@ include("../../objects/companies.php");
 $token = json_decode($company_handler->loginCompany($_POST['email'], $_POST['password']))->token;
 $companyID=$company_handler->getCompanyId($token);
  $row = $company_handler->getCompanyData($companyID);
+ $images=$company_handler->getCompanyImages($companyID);
     
   
 
@@ -20,7 +21,14 @@ $companyID=$company_handler->getCompanyId($token);
    echo "</center>";
     
    
-  
+  foreach($images as $image){
+    echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 500px; height: 300px;'><br />";
+    echo '<form method="POST" action="deleteCompanyImg.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo "<input type='hidden'  name='file_name' value='{$image['file_name']}'>";
+     echo '<input  type="submit" value="Ta bort bilden" /></b>';
+     echo '</form>';
+  }
 
      echo"<center>";
      //echo "<span>" . "<h3>Företags Namn:</h3> </br>" . $row['companyName']. "</br></span><br/>";
@@ -41,16 +49,19 @@ $companyID=$company_handler->getCompanyId($token);
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Ändra detaljer" /></b>';
      echo '</form>';
-
+     echo '<form method="POST" action="../../editCompanyImgForm.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo '<input  type="submit" value="Lägg till bilder" /></b>';
+     echo '</form>';
      echo '<form method="POST" action="logoutCompany.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Logga ut" /></b>';
      echo '</form>';
-
      echo '<form method="POST" action="deleteCompany.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Delete Profile" /></b>';
      echo '</form>';
+     
      
     echo"</center>"; 
 

@@ -12,7 +12,8 @@ include("../../objects/companies.php");
   
     echo "</center>";
     $row=$company_handler->fetchSingleCompany($companyID);
- 
+    
+    $images=$company_handler->fetchCompanyImages($companyID);
 
 
 
@@ -30,7 +31,10 @@ include("../../objects/companies.php");
      echo "<span>" . " " . $row['postnummer']. "</br></span><br/>";
      echo "<span>" . " " . $row['telefonNummer']. "</br></span><br/>";
      echo "<span>" . " " . $row['email']. "</br></span><br/>";
-
+     foreach($images as $image){
+        echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 500px; height: 300px;'><br />";
+        
+      }
      echo"</center>"; 
 
      
