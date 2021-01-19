@@ -12,7 +12,7 @@ $userID =(isset($_POST['id']) ? $_POST['id'] : '');
 ?>
 <!-- Form to create new products -->
 <h1> Creating a new Post </h1>
-<form method="POST" action="v1/posts/createPost.php">
+<form method="POST" action="v1/posts/createPost.php" enctype='multipart/form-data'>
 <input type='hidden'  name='id' value='<?php echo $userID?>'>
             Title:</br><input type="text" name="title" placeholder="Product Title" /><br />
             Beskrivning:</br><textarea name="description" placeholder="description" rows="1" cols="18"></textarea><br />
@@ -30,9 +30,9 @@ $userID =(isset($_POST['id']) ? $_POST['id'] : '');
                 <option value="elektriker">Elektriker</option>
             </select>
             <br>
-            <b>Bifoga bild:</b><br />
-            <input type='file' name='file[]' id='fileToUpload' multiple><br />
-            <br />
+            <!-- <b>Bifoga bild:</b><br />
+            <input type='file' name='file[]' id='fileToUpload' multiple required><br />
+            <br /> -->
             Address:<br />
             <input type="text" name="ort" required>
             <br />
@@ -43,7 +43,7 @@ $userID =(isset($_POST['id']) ? $_POST['id'] : '');
             <input type="tel" name="telefonNummer" required>
             <br />
             <hr>
-            <input type="submit" name="Add" value="Publicera"/>
+            <input type="submit" name="Add" value="Nästa"/>
         </form>
 </center>
 

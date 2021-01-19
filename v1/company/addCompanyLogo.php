@@ -13,8 +13,8 @@
   
 
  if(!empty($companyID)) {
-    $company_handler->uploadCompanyImages( $_FILES['file']['name'], $_POST['id']);
-    print_r($companyID);
+    $company_handler->uploadCompanyLogo( $_FILES['file']['name'], $_POST['id']);
+    
    // header( 'Location: http://localhost/examensarbete/index.php' );
     } else {
         echo "update error";

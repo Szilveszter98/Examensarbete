@@ -15,7 +15,12 @@ include("../../objects/companies.php");
    
     echo "</center>";
     $row=$company_handler->fetchAllCompanies();
- 
+     $companiesID=$company_handler->fetchAllCompanyID();
+     
+    
+   
+  
+    
 
 
 
@@ -29,6 +34,10 @@ include("../../objects/companies.php");
         
   
      echo"<center>";
+     $logo=$company_handler->fetchAllCompaniesLogo($company['id']);
+     if(!empty($logo['file_name'])){
+        echo "<img src='../../uploads/" . $logo['file_name'] . "'style='width: 500px; height: 300px;'>";
+      }
      echo "<span>" . " " . $company['companyName']. "</br></span><br/>";
      echo "<span>" . " " . $company['description']. "</br></span><br/>";
     

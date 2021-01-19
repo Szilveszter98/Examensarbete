@@ -38,7 +38,8 @@ class Post {
             $success = $statementHandler->execute();
 
             if($success === true) {
-                echo "New product has been created!";
+               
+               echo "New product has been created!";
                 echo "<a href='../../index.php'> Back to the login site </a>";
             } else {
                 echo "Error while trying to insert post to database!";

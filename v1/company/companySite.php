@@ -14,16 +14,18 @@ include("../../objects/companies.php");
     $row=$company_handler->fetchSingleCompany($companyID);
     
     $images=$company_handler->fetchCompanyImages($companyID);
+    $logo=$company_handler->fetchCompanyLogo($companyID);
 
 
 
     echo "<a href='allCompanies.php'>Tillbaka till alla företag</a>";
   
+    echo"<center>";
+    if(!empty($logo)){
+      echo "<img src='../../uploads/" . $logo['file_name'] . "'style='width: 500px; height: 300px;'>";
+    }
 
-
-   
-
-     echo"<center>";
+     
      echo "<span><h1>" . " " . $row['companyName']. "</h1></br></span><br/>";
      echo "<span>" . " " . $row['description']. "</br></span><br/>";
      echo "<span>" . " " . $row['organisationsNummer']. "</br></span><br/>";
