@@ -3,6 +3,7 @@
 
 // includes
 include("../../objects/companies.php");
+include("../../header.php");
 
     $company_handler = new Company($databaseHandler);
     
@@ -32,7 +33,7 @@ include("../../objects/companies.php");
 
   
         
-  
+    echo"<div style='padding-top:200px;'>";
      echo"<center>";
      $logo=$company_handler->fetchAllCompaniesLogo($company['id']);
      if(!empty($logo['file_name'])){
@@ -46,10 +47,11 @@ include("../../objects/companies.php");
      echo '<input  type="submit" value="till företagssida" /></b>';
      echo '</form>';
      echo"</br><hr>";
+     echo"</div>";
      
     }
 
      
 
-    
+    include("../../footer.php");
 ?> 
