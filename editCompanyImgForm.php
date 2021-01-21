@@ -9,13 +9,13 @@
    <!-- Inputs to registeration -->
    <?php
 $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
-    
+$token=(isset($_POST['token']) ? $_POST['token'] : '');
 print_r($companyID);
 ?>
 <center>
 <h1> Ladda upp referens bilder</h1>    
 <form method="POST" action="v1/company/editCompanyImg.php" enctype='multipart/form-data'>
-
+<input type='hidden'  name='token' value='<?php echo $token?>'>
 <input type='hidden'  name='id' value='<?php echo $companyID?>'>
              <b>Bifoga bild:</b><br />
             <input type='file' name='file[]' id='fileToUpload' multiple required><br />

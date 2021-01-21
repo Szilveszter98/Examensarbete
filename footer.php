@@ -6,7 +6,7 @@
 <footer class="footer-distributed">
 
 <div class="footer-left">
-    <img src="uploads/logo.png" alt="">
+    <img src="https://www.logo.wine/a/logo/WeWork/WeWork-Logo.wine.svg" alt="" style="width: 100px; height: 50px;">
 
 <ul class="footer-links" style=" list-style-type:none; color: white;">
     <li><a href="http://localhost/examensarbete/index.php" style= "text-decoration: none; color: white;">Startsida</a><br></li>
@@ -72,8 +72,10 @@
 /* The footer  */
    
 footer{
+  
   bottom: 0;
  font-family: 'Sulphur Point', sans-serif;
+ background-color:lightgray;
   
 }
  

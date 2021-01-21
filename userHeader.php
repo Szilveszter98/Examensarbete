@@ -15,9 +15,9 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
                       
                       
                 <ul class="navlinks">
-                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/posts/allPost.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Alla jobb"> </form></a></li> 
-                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/company/companyProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Portfolio"> </form></a></li> 
-                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/company/companyProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Portfolio"> </form></a></li>
+                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/company/allCompanies.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Alla Företag"> </form></a></li> 
+                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/user/userProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Profil"> </form></a></li> 
+                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/users/userProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Portfolio"> </form></a></li>
                    
                  
                 </ul>

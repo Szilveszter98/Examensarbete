@@ -14,6 +14,8 @@ $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
     
 
         $company_handler->deleteCompany($companyID);
+        header( 'Location: http://localhost/examensarbete/index.php' );
+    
 
     } else {
         echo "Error with companyID";
@@ -21,5 +23,6 @@ $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
 
    
    
+    
 
 ?>

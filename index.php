@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-<?php include("header.php");
+<?php include("indexHeader.php");
 ?>
 <div style="padding-top:250px; background-color:gray; ">
 <!-- Main page and log in button and register button -->

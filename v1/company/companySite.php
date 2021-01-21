@@ -6,7 +6,7 @@ include("../../objects/companies.php");
 
     $company_handler = new Company($databaseHandler);
     
- 
+    $token=(isset($_POST['token']) ? $_POST['token'] : '')
     
     $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
   
@@ -16,10 +16,10 @@ include("../../objects/companies.php");
     $images=$company_handler->fetchCompanyImages($companyID);
     $logo=$company_handler->fetchCompanyLogo($companyID);
 
-
-
-    echo "<a href='allCompanies.php'>Tillbaka till alla företag</a>";
-  
+    echo '<form method="POST" action="allcompanies.php">';
+    echo "<input type='hidden'  name='token' value='{$token}'>";
+    echo '<input  type="submit" value="Tillbaka alla företag" /></b>';
+    echo '</form>';
     echo"<center>";
     if(!empty($logo)){
       echo "<img src='../../uploads/" . $logo['file_name'] . "'style='width: 500px; height: 300px;'>";

@@ -2,7 +2,7 @@
 include("../../objects/companies.php");
 
 $company_handler = new Company($databaseHandler);
-
+$token=(isset($_POST['token']) ? $_POST['token'] : '');
 
 $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
 
@@ -17,6 +17,13 @@ if(!unlink($delete_path)){
     
 }
  $company_handler->deleteCompanyImages($companyID, $file_name);
-
+ echo"<center>";
+ echo "<h1>Bilden är bortagen nu!</h1>";
+ echo "<h2>Vill du lägga till ny bild, kan du göra det på Portfolio sidan</h2>";
+ 
+      echo '<form method="POST" action="companyProfile.php">';
+      echo "<input type='hidden'  name='token' value='{$token}'>";
+      echo '<input  type="submit" value="Tillbaka till Portfolion" /></b>';
+      echo '</form>';
 
 ?>

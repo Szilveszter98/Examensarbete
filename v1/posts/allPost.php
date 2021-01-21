@@ -3,7 +3,7 @@
 
 // includes
 include("../../objects/posts.php");
-
+include("../../header.php");
     $post_handler = new Post($databaseHandler);
     
 

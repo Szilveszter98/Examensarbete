@@ -3,7 +3,7 @@
 
 // includes
 include("../../objects/users.php");
-
+include("../../userHeader.php");
     $user_handler = new User($databaseHandler);
     
 
@@ -40,6 +40,7 @@ $userID=$user_handler->getUserId($token);
 
      echo '<form method="POST" action="../../editUserProfileForm.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo "<input type='hidden'  name='token' value='$token'>";
      echo '<input  type="submit" value="Ändra detaljer" /></b>';
      echo '</form>';
 
@@ -55,6 +56,7 @@ $userID=$user_handler->getUserId($token);
 
 
      echo '<form method="POST" action="../../createPostForm.php">';
+     echo "<input type='hidden'  name='token' value='$token'>";
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Skapa inlägg" /></b>';  
      echo '</form>';
@@ -92,7 +94,7 @@ $userID=$user_handler->getUserId($token);
     
  }
     
- 
+ include("../../footer.php");
 
     
 ?> 

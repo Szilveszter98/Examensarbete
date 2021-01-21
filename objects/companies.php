@@ -73,28 +73,7 @@ private function insertCompanyToDatabase($companyName_param, $description_param,
         return false;
     }
 }
-/* // Watching if  username is taken
-private function isUsernameTaken($username_param){
 
-    $query_string = "SELECT COUNT(id) FROM users WHERE username=:username";
-    $statementHandler = $this->database_handler->prepare($query_string);
-
-    if($statementHandler !== false){
-        $statementHandler->bindParam(':username', $username_param);
-        $statementHandler->execute();
-
-        $numberOfUsernames= $statementHandler->fetch()[0];
-        if($numberOfUsernames >0 ){
-            return true;
-        }else{
-            return false;
-        }
-
-    }else{
-        echo "Statmenthandles epic fail";
-        die;
-    }
-} */
 
 // Watching if email is taken
 private function isEmailTaken($email_param){
@@ -509,7 +488,7 @@ $companyID=$_POST['id'];
                 $statementHandler->bindParam(':file_new_name', $file_new_name);
                 $return = $statementHandler->execute();
             
-                $statementHandler->debugDumpParams();
+               
             
         }
     }
@@ -621,7 +600,7 @@ public function uploadCompanyLogo(){
                     $statementHandler->bindParam(':file_new_name', $file_new_name);
                     $return = $statementHandler->execute();
                 
-                    $statementHandler->debugDumpParams();
+                    
                 
             }
         }
@@ -658,7 +637,7 @@ public function uploadCompanyLogo(){
      if (!$return) {
          print_r($this->databasse_handler->errorInfo());
      } else {
-     // header("Refresh:0");
+        
      } 
  }
  public function fetchCompanyLogo($companyID){

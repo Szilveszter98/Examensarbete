@@ -9,12 +9,14 @@
    <!-- Inputs to registeration -->
    <?php
 $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
+$token=(isset($_POST['token']) ? $_POST['token'] : '');
     
 print_r($companyID);
 ?>
 <center>
 <h1> Please register an account!</h1>    
 <form method="POST" action="v1/company/editCompanyProfile.php">
+<input type='hidden'  name='token' value='<?php echo $token?>'>
 <input type='hidden'  name='id' value='<?php echo $companyID?>'>
 Företagsnamn:<br />
 <input type="text" name="companyName" required>
