@@ -15,6 +15,7 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
                       
                       
                 <ul class="navlinks">
+                <li><a href="http://localhost/examensarbete/v1/products/allProducts.php">Tjänster</a></li> 
                     <li><a href="http://localhost/examensarbete/v1/company/allCompanies.php">Alla företag</a></li> 
                     <li><a href="http://localhost/examensarbete/userIndex.php">Privatperson</a></li> 
                     <li><a href="http://localhost/examensarbete/v1/company/allCompanies.php">Företag</a></li> 

@@ -3,7 +3,7 @@
 
 // includes
 include("../../objects/companies.php");
-include("../../header.php");
+include("../../companyheader.php");
 
     $company_handler = new Company($databaseHandler);
     

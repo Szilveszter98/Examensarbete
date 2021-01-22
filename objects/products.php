@@ -16,7 +16,7 @@ class Product {
     
 public function fetchAllProducts() {
 
-$query_string = "SELECT id, name, description, price  FROM products";
+$query_string = "SELECT id, name, description, price, file_name FROM products";
 $statementHandler = $this->database_handler->prepare($query_string);
 
 if($statementHandler !== false) {
@@ -29,6 +29,25 @@ if($statementHandler !== false) {
     die();
 }
 
+}
+public function fetchSingleProduct($productID) {
+
+    $query_string = "SELECT * FROM products WHERE id=:product_id";
+    $statementHandler = $this->database_handler->prepare($query_string);
+
+    if($statementHandler !== false) {
+        
+        $statementHandler->bindParam(":product_id", $productID);
+        $statementHandler->execute();
+
+        return $statementHandler->fetch();
+
+
+
+    } else {
+        echo "Could not create database statement!";
+        die();
+    }
 }
 }
 ?>

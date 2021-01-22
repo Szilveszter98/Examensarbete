@@ -1,3 +1,8 @@
+<?php
+$token =(isset($_POST['token']) ? $_POST['token'] : '');
+
+
+?>
 <nav class="nav">
         <div class="container">
             <div class="logo">
@@ -7,6 +12,8 @@
                 <ul class="navlinks">
                     <li><a href="http://localhost/examensarbete/v1/company/allCompanies.php">Alla företag</a></li>
                     <li><a href="http://localhost/examensarbete/v1/company/companyProfile.php">företagprofilen</a></li>
+                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/checkouts/checkout.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Tjänster"> </form></a></li> 
+
                     <li><a href="#">Services</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
