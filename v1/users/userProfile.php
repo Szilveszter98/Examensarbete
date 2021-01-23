@@ -6,28 +6,26 @@ include("../../objects/users.php");
 include("../../userHeader.php");
     $user_handler = new User($databaseHandler);
     
-
+    $token =(isset($_POST['token']) ? $_POST['token'] : '');
     
+    print_r($token);
   
+if(!empty($token)){
 
-// login
-  
-   
-    echo "</center>";
-    $token = json_decode($user_handler->loginUser($_POST['username'], $_POST['password']))->token;
+    $userID=$user_handler->getUserId($token);
+ $row = $user_handler->getUserData($userID);
+}else{
+
+$token = json_decode($user_handler->loginUser($_POST['username'], $_POST['password']))->token;
+$userID=$user_handler->getUserId($token);
+ $row = $user_handler->getUserData($userID);
+}
+
  
 
 
-
-
-
-$userID=$user_handler->getUserId($token);
- $row = $user_handler->getUserData($userID);
-
-
-
     echo "<center>";
-    echo "<h1> Welcome " . $_POST['username'] . "!</h1><br>";
+    echo "<h1> Welcome " . $row['username'] . "!</h1><br>";
     echo "<center>";
     
    
@@ -84,10 +82,12 @@ $userID=$user_handler->getUserId($token);
      echo '</form>';
      echo '<form method="POST" action="../../editPostForm.php">';
      echo "<input type='hidden'  name='id' value='{$post['ID']}'>";
+     echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="Radigera inlägg" /></b>';
      echo '</form>';
      echo '<form method="POST" action="../posts/deletePost.php">';
      echo "<input type='hidden'  name='id' value='{$post['ID']}'>";
+     echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="Ta bort inlägg" /></b>';
      echo '</form>';
      echo"</br><hr>";

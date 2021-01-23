@@ -3,7 +3,7 @@
 
 // includes
 include("../../objects/companies.php");
-include("../../header.php");
+include("../../indexHeader.php");
 
     $company_handler = new Company($databaseHandler);
     
@@ -44,6 +44,7 @@ include("../../header.php");
     
      echo '<form method="POST" action="companySite.php">';
      echo "<input type='hidden'  name='id' value='{$company['id']}'>";
+     
      echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="till företagssida" /></b>';
      echo '</form>';

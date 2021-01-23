@@ -6,7 +6,7 @@ include("../../objects/companies.php");
 
     $company_handler = new Company($databaseHandler);
     
-    $token=(isset($_POST['token']) ? $_POST['token'] : '')
+    $token=(isset($_POST['token']) ? $_POST['token'] : '');
     
     $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
   

@@ -154,7 +154,7 @@ class Post {
 // delete product
     public function deletePost($postID) {
 
-        $query_string = "Delete FROM posts WHERE id=:postID";
+        $query_string = "Delete FROM posts WHERE id=:postID ";
         $statementHandler = $this->database_handler->prepare($query_string);
 
         if($statementHandler !== false) {
@@ -164,7 +164,8 @@ class Post {
             $success = $statementHandler->execute();
 
             if($success === true) {
-              header('location: http://localhost/examensarbete/v1/users/userProfile.php');
+                return $success;
+              
             } else {
                 echo "Error while trying to insert post to database!";
             }

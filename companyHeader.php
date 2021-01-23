@@ -1,6 +1,6 @@
 <?php
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
-
+print_r($token);
 
 ?>
 <nav class="nav">
@@ -85,6 +85,15 @@ html,body{margin: 0;
     color: #fff;
     line-height: 65px;
     font-size: 2.4rem;
+}
+.nav div.main_list ul li .navButton{
+    border: none;
+    background-color:transparent;
+    text-decoration: none;
+    color: #fff;
+    line-height: 65px;
+    font-size: 2.4rem;
+    
 }
 
 .nav div.main_list ul li a:hover {

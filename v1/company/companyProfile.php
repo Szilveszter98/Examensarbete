@@ -25,15 +25,16 @@ $companyID=$company_handler->getCompanyId($token);
   
 
    
-   echo "<center style='padding-top:150px;'>";
+   echo "<center>";
    if(!empty($logo)){
+   
    echo "<img src='../../uploads/" . $logo['file_name'] . "'style='width: 500px; height: 300px;'>";
    echo '<form method="POST" action="deleteCompanyLogo.php">';
    echo "<input type='hidden'  name='id' value='{$row['id']}'>";
    echo "<input type='hidden'  name='token' value='{$token}'>";
    echo "<input type='hidden'  name='file_name' value='{$logo['file_name']}'>";
    echo '<input  type="submit" value="Ta bort logon" /></b>';
-   echo '</form>';}
+   echo '</form>';
    echo "<h1>" . $row['companyName'] . "</h1><br>";
    echo "</center>";
     
