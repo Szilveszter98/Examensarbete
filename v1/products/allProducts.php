@@ -3,6 +3,7 @@
 
 // includes
 include("../../objects/products.php");
+//include("../../companyHeader.php");
 
     $product_handler = new Product($databaseHandler);
     
@@ -10,7 +11,7 @@ include("../../objects/products.php");
     $token =(isset($_POST['token']) ? $_POST['token'] : '');
   
 
-
+print_r($token);
    
   
     $row=$product_handler->fetchAllProducts();
@@ -53,4 +54,3 @@ include("../../objects/products.php");
      
 
     
-?> 

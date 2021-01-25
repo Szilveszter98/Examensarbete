@@ -3,12 +3,12 @@
 
 // includes
 include("../../objects/users.php");
-include("../../userHeader.php");
+//include("../../userHeader.php");
     $user_handler = new User($databaseHandler);
     
     $token =(isset($_POST['token']) ? $_POST['token'] : '');
     
-    print_r($token);
+    
   
 if(!empty($token)){
 

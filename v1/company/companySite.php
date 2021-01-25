@@ -20,6 +20,7 @@ include("../../objects/companies.php");
     echo "<input type='hidden'  name='token' value='{$token}'>";
     echo '<input  type="submit" value="Tillbaka alla företag" /></b>';
     echo '</form>';
+    echo ' <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>';
     echo"<center>";
     if(!empty($logo)){
       echo "<img src='../../uploads/" . $logo['file_name'] . "'style='width: 500px; height: 300px;'>";

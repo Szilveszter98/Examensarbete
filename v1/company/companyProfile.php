@@ -3,7 +3,7 @@
 
 // includes
 include("../../objects/companies.php");
-include("../../companyheader.php");
+//include("../../companyheader.php");
 
     $company_handler = new Company($databaseHandler);
     
@@ -37,7 +37,7 @@ $companyID=$company_handler->getCompanyId($token);
    echo '</form>';
    echo "<h1>" . $row['companyName'] . "</h1><br>";
    echo "</center>";
-    
+   }
    echo"<center>";
   foreach($images as $image){
     echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 500px; height: 300px;'><br />";
@@ -63,7 +63,7 @@ $companyID=$company_handler->getCompanyId($token);
      echo '<form method="POST" action="../posts/allPost.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo '<input  type="submit" value="Alla arbete" /></b>';
+     echo '<input  type="submit" value="Alla jobb" /></b>';
      echo '</form>';
      echo '<form method="POST" action="../../editCompanyProfileForm.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
@@ -90,9 +90,14 @@ $companyID=$company_handler->getCompanyId($token);
      echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="Change Logo" /></b>';
      echo '</form>';
+     echo '<form method="POST" action="../products/allProducts.php">';
+     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo "<input type='hidden'  name='token' value='{$token}'>";
+     echo '<input  type="submit" value="tjänster" /></b>';
+     echo '</form>';
      
      
     echo"</center>"; 
 include("../../footer.php");
     
-?> 
+?>

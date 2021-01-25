@@ -1,8 +1,9 @@
 <?php
+//include("../../companyHeader.php");
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
 if(!empty($token)){
-    print_r($token);
-    echo '<h1> Please register an account!</h1>    ';
+    echo '<center>';
+    echo '<h1> Fyll i informationen nedan</h1>    ';
     echo '<form method="POST" action="v1/company/registerCompany.php">';
     echo 'Företagsnamn:<br />';
     echo '<input type="text" name="companyName" required>';
@@ -27,9 +28,13 @@ if(!empty($token)){
     echo '<br />';
     echo 'Password: <br />';
     echo '<input type="password" name="password"required>';
-    echo '<br />';
+    echo '<br/>';
+    echo '<hr>';
+    echo '  <input  type="submit" value="Register" /></br>';
+    echo ' </form>';
+    echo '</center>';
     
 }else{
-    header( 'Location: http://localhost/examensarbete/companyIndex.php' );
+    echo "<h1>Du måste logga in för att kunna köpa tjänsten!</br>";
+    echo "<a href='http://localhost/examensarbete/loginCompany.php'> Logga in </a></h1>";
 }
-?>

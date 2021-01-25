@@ -127,7 +127,9 @@ public function loginCompany($email_parameter, $password_parameter) {
             
 
         }else{
-            header( 'Location: http://localhost/examensarbete/loginCompany.php?err=true' );
+            
+           
+            header( "location: http://localhost/examensarbete/loginCompany.php?err=true");
         }
     }else{
         echo "could not create a statmenthandler";
@@ -681,6 +683,32 @@ public function fetchAllCompaniesLogo($companyID){
         }
 
 }
+public function searchCompanies($searchWord){
+    $query = "SELECT id, companyName, organisationsNummer, description  FROM companies WHERE companyName LIKE  :searchWord ";
+    
+
+        $statementHandler = $this->database_handler->prepare($query);
+
+        if($statementHandler !== false) {
+            $queryparam = '%' . $searchWord .'%';
+            $statementHandler->bindParam(':searchWord', $queryparam);
+            $statementHandler->execute();
+
+            return $statementHandler->fetchAll();
+            
+
+            if(!$return){
+                print_r($statementHandler->errorInfo());
+                die;
+            }
+
+        } else {
+            echo "Could not create database statement!";
+            die();
+        }
+
+}
+
 
 
 
@@ -688,4 +716,3 @@ public function fetchAllCompaniesLogo($companyID){
 
 
 }
-?>

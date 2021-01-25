@@ -9,11 +9,13 @@
 <center>
 <?php
 $userID =(isset($_POST['id']) ? $_POST['id'] : '');
+$token =(isset($_POST['token']) ? $_POST['token'] : '');
 ?>
 <!-- Form to create new products -->
 <h1> Creating a new Post </h1>
 <form method="POST" action="v1/posts/createPost.php" enctype='multipart/form-data'>
 <input type='hidden'  name='id' value='<?php echo $userID?>'>
+<input type='hidden'  name='token' value='<?php echo $token?>'>
             Title:</br><input type="text" name="title" placeholder="Product Title" /><br />
             Beskrivning:</br><textarea name="description" placeholder="description" rows="1" cols="18"></textarea><br />
             <label for="start">Start date:</label></br>

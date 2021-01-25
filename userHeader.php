@@ -1,24 +1,23 @@
 <?php
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
-
+print_r($token);
 
 ?>
 <nav class="nav">
         <div class="container">
             <div class="logo">
-                <a href="#">LOGO<img src=""></a>
+                <a href="http://localhost/examensarbete/">LOGO<img src=""></a>
             </div>
             <div id="mainListDiv" class="main_list">
-                    </form> 
+                    
                     
                         
                       
                       
                 <ul class="navlinks">
+
+                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/users/userProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Profil"> </form></a></li> 
                     <li><a> <form method="POST" action="http://localhost/examensarbete/v1/company/allCompanies.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Alla Företag"> </form></a></li> 
-                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/user/userProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Profil"> </form></a></li> 
-                    <li><a> <form method="POST" action="http://localhost/examensarbete/v1/users/userProfile.php"><input type='hidden'  name='token' value='<?php echo $token?>'><input class="navButton" type="submit" value="Portfolio"> </form></a></li>
-                   
                  
                 </ul>
             </div>
