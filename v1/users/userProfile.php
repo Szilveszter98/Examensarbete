@@ -36,7 +36,7 @@ $userID=$user_handler->getUserId($token);
     //echo "<span>" . " " . $row['id']. "</br></span><br/>";
 
 
-     echo '<form method="POST" action="../../editUserProfileForm.php">';
+     echo '<form method="POST" action="editUserProfileForm.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo "<input type='hidden'  name='token' value='$token'>";
      echo '<input  type="submit" value="Ändra detaljer" /></b>';

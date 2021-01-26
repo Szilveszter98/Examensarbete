@@ -11,7 +11,7 @@
   
 // Update user profile
  if(!empty($companyID)) {
-    $company_handler->updateCompanyProfile( $_POST['companyName'], $_POST['description'], $_POST['telefonNummer'], $_POST['password'], $_POST['email'],$_POST['organisationsNummer'], $_POST['address'],$_POST['postnummer'],$companyID);
+    $company_handler->updateCompanyProfile( $_POST['companyName'], $_POST['description'], $_POST['telefonNummer'], $_POST['password'], $_POST['email'],$_POST['organisationsNummer'],$_POST['email'], $_POST['address'],$_POST['postnummer'],$companyID);
     echo"<center>";
     echo "<h1>Portfolio är nu uppdaterad!</h1>";
  

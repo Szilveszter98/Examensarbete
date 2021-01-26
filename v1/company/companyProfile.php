@@ -21,7 +21,7 @@ $companyID=$company_handler->getCompanyId($token);
  $row = $company_handler->getCompanyData($companyID);
  $images=$company_handler->getCompanyImages($companyID);
  $logo=$company_handler->getCompanyLogo($companyID); 
-   
+   $data= $row;
   
 
    
@@ -53,6 +53,8 @@ $companyID=$company_handler->getCompanyId($token);
      //echo "<span>" . "<h3>Företags Namn:</h3> </br>" . $row['companyName']. "</br></span><br/>";
      echo "<span>" . "<h3>Beskrivning: </h3></br>" . $row['description']. "</br></span><br/>";
      echo "<span>" . "<h3>Org.nr:</h3></br>" . $row['organisationsNummer']. "</br></span><br/>";
+     echo "<span>" . "<h3>Företag:</h3></br>" . $row['type']. "</br></span><br/>";
+
       echo "<span>" . "<h3>Adress:</h3></br>" . $row['address']. "</br></span><br/>";
      echo "<span>" . "<h3>Postnummer:</h3></br>" . $row['postnummer']. "</br></span><br/>";
      echo "<span>" . "<h3>Tel.nummer:</h3></br> " . $row['telefonNummer']. "</br></span><br/>";
@@ -65,7 +67,7 @@ $companyID=$company_handler->getCompanyId($token);
      echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="Alla jobb" /></b>';
      echo '</form>';
-     echo '<form method="POST" action="../../editCompanyProfileForm.php">';
+     echo '<form method="POST" action="editCompanyProfileForm.php">';
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="Ändra detaljer" /></b>';

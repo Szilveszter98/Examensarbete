@@ -47,7 +47,7 @@ include("../../objects/companies.php");
       }
      echo "<span>" . " " . $company['companyName']. "</br></span><br/>";
      echo "<span>" . " " . $company['description']. "</br></span><br/>";
-    
+     echo "<span>" . " " . $company['type']. "</br></span><br/>";
      echo '<form method="POST" action="companySite.php">';
      echo "<input type='hidden'  name='id' value='{$company['id']}'>";
      

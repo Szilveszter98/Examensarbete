@@ -29,6 +29,7 @@ include("../../objects/companies.php");
      
      echo "<span><h1>" . " " . $row['companyName']. "</h1></br></span><br/>";
      echo "<span>" . " " . $row['description']. "</br></span><br/>";
+     echo "<span><h1>" . " " . $row['type']. "</h1></br></span><br/>";
      echo "<span>" . " " . $row['organisationsNummer']. "</br></span><br/>";
      echo "<span>" . " " . $row['address']. "</br></span><br/>";
      echo "<span>" . " " . $row['postnummer']. "</br></span><br/>";

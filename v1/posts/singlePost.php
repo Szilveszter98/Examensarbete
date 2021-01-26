@@ -10,15 +10,11 @@ include("../../objects/users.php");
     $company_handler = new Company($databaseHandler);
     $user_handler = new User($databaseHandler);
     $comment_handler = new Comment($databaseHandler);
+
+
     $token =(isset($_POST['token']) ? $_POST['token'] : '');
     $companyID =(isset($_POST['companyID']) ? $_POST['companyID'] : '');
-    
     $userID =(isset($_POST['userID']) ? $_POST['userID'] : '');
-    print_r($userID);
-  
-
-
-  
     $postID =(isset($_POST['postID']) ? $_POST['postID'] : '');
     
     echo "</center>";
@@ -38,7 +34,7 @@ include("../../objects/users.php");
 
   
     
-   
+      echo ' <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>';
      echo"<center>";
      echo "<span>" . " " . $post['title']. "</br></span><br/>";
      echo "<span>" . " " . $post['description']. "</br></span><br/>";
@@ -50,8 +46,8 @@ include("../../objects/users.php");
      echo "<span>" . " " . $post['startDate']. "</br></span><br/>";
      echo '</form>';
      echo"</br><hr>";
-     echo "<a href='allPost.php'>Tillbaka till alla inlägg</a>";
-     echo ' <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>';
+    // echo "<a href='allPost.php'>Tillbaka till alla inlägg</a>";
+  
 
      echo '<form method="POST" action="../comments/createPostComment.php">';
      echo '<label for="fname">Kommentar fält:</label>';
@@ -65,12 +61,17 @@ include("../../objects/users.php");
      echo '<h1> Kommentarer:</h1><br><br>';
      if(!empty($comments)){
     foreach($comments as $comment){
+
         echo"<center>";
+
         if(!empty($comment['companyID'])){
+
             $companyID=$comment['companyID'];
             $companies = $company_handler->getCompanyData($companyID);
             echo "<span>" . " " . $companies['companyName']. "</br></span><br/>";
+            
         }elseif(!empty($comment['userID'])){
+
             $userID=$comment['userID'];
             $users = $user_handler->fetchUserData($userID);
             echo "<span>" . " " . $users['firstname']. "</span>";

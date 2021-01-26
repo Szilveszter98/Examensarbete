@@ -1,6 +1,7 @@
 <?php
 // database connection
 include("../../config/database_handler.php");
+
 //class Company
     class Company{
 
@@ -14,13 +15,13 @@ include("../../config/database_handler.php");
 
         }
 //Register Users
-public function registerCompany( $companyName_IN, $description_IN, $telefonNummer_IN, $password_IN, $email_IN, $organisationsNummer_IN, $address_IN, $postnummer_IN){
+public function registerCompany( $companyName_IN, $description_IN, $telefonNummer_IN, $password_IN, $email_IN, $organisationsNummer_IN, $type_IN, $address_IN, $postnummer_IN ){
     $return_object =new stdClass();
 
     
         if($this->isEmailTaken($companyName_IN)===false){
 
-            $return = $this->insertCompanytoDatabase($companyName_IN, $description_IN, $telefonNummer_IN, $password_IN , $email_IN, $organisationsNummer_IN, $address_IN, $postnummer_IN);
+            $return = $this->insertCompanytoDatabase($companyName_IN, $description_IN, $telefonNummer_IN, $password_IN , $email_IN, $organisationsNummer_IN, $type_IN, $address_IN, $postnummer_IN);
             if($return !== false){
 
                 $return_object->state ="Success";
@@ -40,9 +41,9 @@ return json_encode($return_object);
 }
 //Insert user-data to database
 
-private function insertCompanyToDatabase($companyName_param, $description_param, $telefonNummer_param, $password_param, $email_param, $organisationsNummer_param, $address_param, $postnummer_param){
+private function insertCompanyToDatabase($companyName_param,  $description_param, $telefonNummer_param, $password_param, $email_param, $organisationsNummer_param, $type_param, $address_param, $postnummer_param){
 
-    $query_string = "INSERT INTO companies (companyName, description, telefonNummer, password, email, organisationsNummer, address, postnummer) VALUES (:companyName,:description,:telefonNummer, :password, :email, :organisationsNummer, :address, :postnummer )";
+    $query_string = "INSERT INTO companies (companyName, description, telefonNummer, password, email, organisationsNummer, type, address, postnummer) VALUES (:companyName, :description, :telefonNummer, :password, :email, :organisationsNummer, :type, :address, :postnummer )";
     $statementHandler = $this->database_handler->prepare($query_string);
 
     if($statementHandler !== false) {
@@ -52,9 +53,10 @@ private function insertCompanyToDatabase($companyName_param, $description_param,
         $statementHandler->bindParam(':companyName', $companyName_param);
         $statementHandler->bindParam(':description', $description_param);
         $statementHandler->bindParam(':telefonNummer', $telefonNummer_param);
-        $statementHandler->bindParam(':email', $email_param);
         $statementHandler->bindParam(':password', $encrypted_password);
+        $statementHandler->bindParam(':email', $email_param);
         $statementHandler->bindParam(':organisationsNummer', $organisationsNummer_param);
+        $statementHandler->bindParam(':type', $type_param);
         $statementHandler->bindParam(':address', $address_param);
         $statementHandler->bindParam(':postnummer', $postnummer_param);
 
@@ -62,7 +64,7 @@ private function insertCompanyToDatabase($companyName_param, $description_param,
 
         $last_insert_company_id = $this->database_handler->lastInsertId();
 
-        $query_string ="SELECT id, companyName, description, telefonNummer, password, email, oragnisationsNummer, address, postnummer FROM companies WHERE id=:last_company_id";
+        $query_string ="SELECT id, companyName, description, telefonNummer, password, email, oragnisationsNummer, type, address, postnummer FROM companies WHERE id=:last_company_id";
         $statementHandler= $this->database_handler->prepare($query_string);
         $statementHandler->bindParam(':last_company_id', $last_insert_company_id);
         $statementHandler->execute();
@@ -279,7 +281,7 @@ public function getCompanyId($token)
 public function getCompanyData($companyID) {
     
    
-    $query_string = "SELECT id, companyName, description, telefonNummer, password, email, organisationsNummer, address, postnummer FROM companies WHERE ID=:companyID";
+    $query_string = "SELECT id, companyName, description, telefonNummer, password,  email, organisationsNummer, type, address, postnummer FROM companies WHERE ID=:companyID";
     $statementHandler = $this->database_handler->prepare($query_string);
 
     if($statementHandler !== false) {
@@ -305,9 +307,38 @@ public function getCompanyData($companyID) {
     }
 
 }
- public function updateCompanyProfile($companyName_param, $description_param, $telefonNummer_param, $password_param, $email_param, $organisationsNummer_param, $address_param, $postnummer_param, $companyID){
+public function fetchCompanyData($companyID) {
+    
+   
+    $query_string = "SELECT id, companyName, description, telefonNummer, password,  email, organisationsNummer, type, address, postnummer FROM companies WHERE ID=:companyID";
+    $statementHandler = $this->database_handler->prepare($query_string);
+
+    if($statementHandler !== false) {
+
+        $statementHandler->bindParam(":companyID", $companyID);
+      
+      
+        $statementHandler->execute();
+
+        $return = $statementHandler->fetch();
+        $row = $return;
         
-        $query_string = "UPDATE companies SET companyName=:companyName, description=:description, telefonNummer=:telefonNummer, password=:password, email=:email, organisationsNummer=:organisationsNummer, address=:address, postnummer=:postnummer WHERE id =:companyID";
+        if(!empty($return)) {
+            
+            
+            return $return;
+        } else {
+            return false;
+        }
+
+    } else {
+        echo "Couldn't create statement handler!";
+    }
+
+}
+ public function updateCompanyProfile($companyName_param, $description_param, $telefonNummer_param, $password_param, $email_param, $organisationsNummer_param, $type_param, $address_param, $postnummer_param, $companyID){
+        
+        $query_string = "UPDATE companies SET companyName=:companyName, description=:description, telefonNummer=:telefonNummer, password=:password, email=:email, organisationsNummer=:organisationsNummer, type=:type, address=:address, postnummer=:postnummer WHERE id =:companyID";
        
 
         $statementHandler = $this->database_handler->prepare($query_string);
@@ -323,6 +354,7 @@ public function getCompanyData($companyID) {
         $statementHandler->bindParam(':email', $email_param);
         $statementHandler->bindParam(':password', $encrypted_password);
         $statementHandler->bindParam(':organisationsNummer', $organisationsNummer_param);
+        $statementHandler->bindParam(':type', $type_param);
         $statementHandler->bindParam(':address', $address_param);
         $statementHandler->bindParam(':postnummer', $postnummer_param);
 
@@ -383,7 +415,7 @@ public function deleteCompany($companyID){
 }
 public function fetchAllCompanies() {
 
-    $query_string = "SELECT id, companyName, description, telefonNummer, password, email, organisationsNummer, address, postnummer FROM companies";
+    $query_string = "SELECT id, companyName, description, telefonNummer, password, email, organisationsNummer, type, address, postnummer FROM companies";
     
     $statementHandler = $this->database_handler->prepare($query_string);
     
@@ -684,7 +716,7 @@ public function fetchAllCompaniesLogo($companyID){
 
 }
 public function searchCompanies($searchWord){
-    $query = "SELECT id, companyName, organisationsNummer, description  FROM companies WHERE companyName LIKE  :searchWord ";
+    $query = "SELECT id, companyName, organisationsNummer, description, type  FROM companies WHERE companyName OR type LIKE  :searchWord ";
     
 
         $statementHandler = $this->database_handler->prepare($query);

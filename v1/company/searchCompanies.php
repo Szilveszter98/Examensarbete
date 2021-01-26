@@ -29,6 +29,7 @@ include("../../objects/companies.php");
  
           //  echo '<img src="img/'.$row['Img'].'" alt="product image"/><br />';
           echo "<span>" . " " . $row['companyName']. "</br></span><br/>";
+          echo "<span>" . " " . $row['type']. "</br></span><br/>";
           echo "<span>" . " " . $row['description']. "</br></span><br/>";
           echo '<form method="POST" action="http://localhost/examensarbete/v1/company/companySite.php">';
             echo "<input type='hidden'  name='id' value='{$row['id']}'>";

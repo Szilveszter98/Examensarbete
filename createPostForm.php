@@ -26,10 +26,15 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
             <label for="type">Vilken typ av hjälp behöver du?</label>
             </br>
             <select name="type" id="type">
-                <option value="byggarbete">Byggarbete</option>
-                <option value="rormokare">Rörmokare</option>
-                <option value="malare">Målare</option>
-                <option value="elektriker">Elektriker</option>
+                <option value="Rörmokare">Rörmokare</option>
+                <option value="Målare">Målare</option>
+                <option value="Elektriker">Elektriker</option>
+                <option value="Snickare">Snickare</option>
+                <option value="Svetsare">Svetsare</option>
+                <option value="Ventilation">Ventilation</option>
+                <option value="Golvläggare">Golvläggare</option>
+                
+
             </select>
             <br>
             <!-- <b>Bifoga bild:</b><br />
