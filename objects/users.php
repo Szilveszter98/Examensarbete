@@ -327,6 +327,34 @@ public function getUserData($userID) {
     }
 
 }
+public function fetchUserData($userID) {
+    
+    
+    $query_string = "SELECT id, firstname, lastname, username, email, role FROM users WHERE id=:userID";
+    $statementHandler = $this->database_handler->prepare($query_string);
+
+    if($statementHandler !== false) {
+
+        $statementHandler->bindParam(":userID", $userID);
+      
+      
+        $statementHandler->execute();
+
+        $return = $statementHandler->fetch();
+        $row = $return;
+        
+        if(!empty($return)) {
+            
+            return $return;
+        } else {
+            return false;
+        }
+
+    } else {
+        echo "Couldn't create statement handler!";
+    }
+
+}
 public function updateUserProfile($firstname_param,$lastname_param,$username_param, $password_param, $email_param, $userID){
 
         $query_string = "UPDATE users SET firstname=:firstname, lastname=:lastname, username=:username, password=:password, email=:email WHERE id=:userID";

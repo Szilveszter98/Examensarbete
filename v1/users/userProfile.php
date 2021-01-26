@@ -58,10 +58,17 @@ $userID=$user_handler->getUserId($token);
      echo "<input type='hidden'  name='id' value='{$row['id']}'>";
      echo '<input  type="submit" value="Skapa inlägg" /></b>';  
      echo '</form>';
+     echo '<form method="POST" action="../company/allcompanies.php">';
+     echo "<input type='hidden'  name='token' value='$token'>";
+     echo '<input  type="submit" value="Se alla företag" /></b>';
+     echo '</form>';
+
  
      echo "</center>";
 
      include("../../objects/posts.php");
+     $userID=$row['id'];
+     
 
     $post_handler = new Post($databaseHandler);
     
@@ -79,6 +86,12 @@ $userID=$user_handler->getUserId($token);
      echo "<span>" . " " . $post['email']. "</br></span><br/>";
      echo "<span>" . " " . $post['telefonNummer']. "</br></span><br/>";
      echo "<span>" . " " . $post['startDate']. "</br></span><br/>";
+     echo '</form>';
+     echo '<form method="POST" action="../posts/singlePost.php">';
+     echo "<input type='hidden'  name='postID' value='{$post['ID']}'>";
+     echo "<input type='hidden'  name='userID' value='{$userID}'>";
+     echo "<input type='hidden'  name='token' value='{$token}'>";
+     echo '<input  type="submit" value="Till inlägget" /></b>';
      echo '</form>';
      echo '<form method="POST" action="../../editPostForm.php">';
      echo "<input type='hidden'  name='id' value='{$post['ID']}'>";

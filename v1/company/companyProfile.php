@@ -61,7 +61,7 @@ $companyID=$company_handler->getCompanyId($token);
 
      echo"<center>";
      echo '<form method="POST" action="../posts/allPost.php">';
-     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo "<input type='hidden'  name='companyID' value='{$row['id']}'>";
      echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="Alla jobb" /></b>';
      echo '</form>';
