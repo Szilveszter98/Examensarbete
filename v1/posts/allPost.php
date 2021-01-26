@@ -29,11 +29,11 @@ include("../../objects/posts.php");
     
   
      echo"<center>";
-     echo "<span>" . " " . $post['title']. "</br></span><br/>";
-     echo "<span>" . " " . $post['description']. "</br></span><br/>";
-     echo "<span>" . " " . $post['type']. "</br></span><br/>";
-     echo "<span>" . " " . $post['ort']. "</br></span><br/>";
-     echo "<span>" . " " . $post['date']. "</br></span><br/>";
+     echo "<span>" . " <h2>" . $post['title']. "</h2></br></span><br/>";
+     echo "<span>" . "<h3>Beskrivning:</h3>" . $post['description']. "</br></span><br/>";
+     echo "<span>" . "<h3>Typ av arbete:</h3> " . $post['type']. "</br></span><br/>";
+     echo "<span>" . "<h3>Ort:</h3> " . $post['ort']. "</br></span><br/>";
+     echo "<span>" . " Inlägget skapades:" . $post['date']. "</span><br/>";
      echo '<form method="POST" action="singlePost.php">';
      echo "<input type='hidden'  name='postID' value='{$post['id']}'>";
      echo "<input type='hidden'  name='companyID' value='{$companyID}'>";

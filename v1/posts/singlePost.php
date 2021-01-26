@@ -36,19 +36,20 @@ include("../../objects/users.php");
     
       echo ' <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>';
      echo"<center>";
-     echo "<span>" . " " . $post['title']. "</br></span><br/>";
-     echo "<span>" . " " . $post['description']. "</br></span><br/>";
-     echo "<span>" . " " . $post['type']. "</br></span><br/>";
-     echo "<span>" . " " . $post['ort']. "</br></span><br/>";
-     echo "<span>" . " " . $post['date']. "</br></span><br/>";
-     echo "<span>" . " " . $post['email']. "</br></span><br/>";
-     echo "<span>" . " " . $post['telefonNummer']. "</br></span><br/>";
-     echo "<span>" . " " . $post['startDate']. "</br></span><br/>";
+     echo "<span>" . " <h1>" . $post['title']. "</h1></span><br/>";
+     echo "<span>" . "<h3>Beskrivning:</h3>" . $post['description']. "</span><br/>";
+     echo "<span>" . " <h3>Typ av arbete:</h3>" . $post['type']. "</span><br/>";
+     echo "<span>" . " <h3>Ort:</h3>" . $post['ort']. "</span><br/>";
+     echo "<span>" . "<h3>Önskad tid:</h3> " . $post['startDate']. "</span><br/>";
+     echo "<span>" . " <h3>Email:</h3>" . $post['email']. "</span><br/>";
+     echo "<span>" . " <h3>Tel.nummer</h3>" . $post['telefonNummer']. "</span><br/>";
+     echo '</center>';
+      echo "<span>" . " Inlägget skapades:" . $post['date']. "</span><br/>";
      echo '</form>';
      echo"</br><hr>";
     // echo "<a href='allPost.php'>Tillbaka till alla inlägg</a>";
   
-
+     echo '<center>';
      echo '<form method="POST" action="../comments/createPostComment.php">';
      echo '<label for="fname">Kommentar fält:</label>';
      echo '<input type="text" id="comment" name="comment"><br><br>';
