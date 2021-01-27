@@ -27,8 +27,7 @@ $userID=$user_handler->getUserId($token);
     echo "<center>";
     echo "<h1> Welcome " . $row['username'] . "!</h1><br>";
     echo "<center>";
-    
-   
+  
      echo"<center>";
      echo "<span>" . " " . $row['firstname']. "</br></span><br/>";
      echo "<span>" . " " . $row['lastname']. "</br></span><br/>";
