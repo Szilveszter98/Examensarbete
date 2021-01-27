@@ -45,6 +45,15 @@ include("../../objects/users.php");
      echo "<span>" . " <h3>Tel.nummer</h3>" . $post['telefonNummer']. "</span><br/>";
      echo '</center>';
       echo "<span>" . " Inlägget skapades:" . $post['date']. "</span><br/>";
+      $images=$post_handler->fetchPostImages($postID);
+
+foreach( $images as $image){
+
+
+
+   echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 200px; height: 100 px;'>";
+ 
+}
      echo '</form>';
      echo"</br><hr>";
     // echo "<a href='allPost.php'>Tillbaka till alla inlägg</a>";

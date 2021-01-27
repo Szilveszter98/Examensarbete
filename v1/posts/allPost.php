@@ -37,7 +37,18 @@ include("../../objects/posts.php");
      echo '<form method="POST" action="singlePost.php">';
      echo "<input type='hidden'  name='postID' value='{$post['id']}'>";
      echo "<input type='hidden'  name='companyID' value='{$companyID}'>";
+     $postID=$post['id'];
+     $images=$post_handler->fetchPostImages($postID);
 
+foreach( $images as $image){
+
+
+
+
+   echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 100px; height: 50 px;'>";
+ 
+}   
+     echo "</br>";
      echo '<input  type="submit" value="Läs mer" /></b>';
      echo '</form>';
      echo"</br><hr>";

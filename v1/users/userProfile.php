@@ -74,10 +74,29 @@ $userID=$user_handler->getUserId($token);
     
     $userID= $row['id'];
     $posts= $post_handler->getPostWithUserID($userID);
-   
+    
    foreach($posts as $post){
      echo"<center>";
      echo"<hr>";
+     $postID= $post['ID'];
+$images=$post_handler->fetchPostImages($postID);
+
+
+
+
+
+   foreach($images as $image){
+    echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 500px; height: 300px;'><br />";
+    echo '<form method="POST" action="../posts/deletePostImg.php">';
+     echo "<input type='hidden'  name='postID' value='{$postID}'>";
+     echo "<input type='hidden'  name='token' value='{$token}'>";
+     echo "<input type='hidden'  name='file_name' value='{$image['file_name']}'>";
+     echo '<input  type="submit" value="Ta bort bilden" /></b>';
+     echo '</form>';
+  }
+ 
+
+    echo "</br>";
      echo "<span>" . " " . $post['title']. "</br></span><br/>";
      echo "<span>" . " " . $post['description']. "</br></span><br/>";
      echo "<span>" . " " . $post['type']. "</br></span><br/>";

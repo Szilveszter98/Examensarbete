@@ -70,6 +70,25 @@ class Post {
             die();
         }
     }
+    public function fetchLastPost() {
+        $last_insert_post_id = $this->database_handler->lastInsertId();
+        $query_string = "SELECT * FROM posts WHERE id=:post_id";
+        $statementHandler = $this->database_handler->prepare($query_string);
+
+        if($statementHandler !== false) {
+            
+            $statementHandler->bindParam(":post_id", $last_insert_post_id);
+            $statementHandler->execute();
+
+            return $statementHandler->fetch();
+
+
+
+        } else {
+            echo "Could not create database statement!";
+            die();
+        }
+    }
     public function getPostWithUserID($userID) {
 
         $query_string = "SELECT * FROM posts WHERE userID=:userID";
@@ -175,6 +194,99 @@ class Post {
         }
     }
 
+
+
+    public function uploadPostImages(){
+        $postID=$_POST['postID'];    
+        print_r($postID);
+            if (!empty($_FILES['file']['name'])){
+            
+                $file = count($_FILES['file']['name']);
+        
+                for($i=0;$i<$file;$i++){
+                    $file_name = $_FILES['file']['name'][$i];
+                    
+            // post variabler för writepost
+            $file_tmp_name = $_FILES['file']['tmp_name'][$i];
+            $file_size = $_FILES['file']['size'][$i];
+            $file_error = $_FILES['file']['error'][$i];
+            $file_type = $_FILES['file']['type'][$i];
+        
+            $file_ext = explode('.', $file_name);
+            $file_actual_ext = strtolower(end($file_ext)); 
+        
+            $allowed = array('jpg', 'jpeg', 'png', ' ');
+        
+            // lägger till file för posten samt gör en rad för ny post.
+            if (in_array($file_actual_ext, $allowed)) {
+                if ($file_error === 0) {
+                    if ($file_size < 10000000) {
+                        $file_new_name = uniqid('', true) . "." . $file_actual_ext;
+                        $file_destination = '../../uploads/' . $file_new_name;
+                        move_uploaded_file($file_tmp_name, $file_destination);
+                    
+                        
+                    } else {
+                        echo "Din fil är för stor!";
+                    }
+                } else {
+                    echo "Det blev ett error vid uppladdningen av filen";
+                }
+            } else {
+            echo "Du kan inte ladda upp filer av denna typ";
+                }
+            
+                if (empty($_FILES['file']['name'])){
+                $file_new_name = " ";
+                }
+        
+                        $query_image = "INSERT INTO postimages (postID, file_name) VALUES (:postID, :file_new_name)";
+                        $statementHandler = $this->database_handler->prepare($query_image);
+                        $statementHandler->bindParam(':postID', $postID);
+                        $statementHandler->bindParam(':file_new_name', $file_new_name);
+                        $return = $statementHandler->execute();
+                    
+                       
+                    
+                }
+            }
+        }
+
+        public function fetchPostImages($postID){
+
+            $query_string = "SELECT file_name FROM postimages WHERE postID=:postID";
+                $statementHandler = $this->database_handler->prepare($query_string);
+        
+                if($statementHandler !== false) {
+                    
+                    $statementHandler->bindParam(":postID", $postID);
+                    $statementHandler->execute();
+        
+                    return $statementHandler->fetchAll();
+        
+        
+        
+                } else {
+                    echo "Could not create database statement!";
+                    die();
+                }
+        
+        }
+        // sql för att ta bort images
+ public function deletePostImages($postID, $file_name){
+    $query = "DELETE FROM postimages WHERE postID = :postID AND file_name = :file_name";
+ $statementHandler =$this->database_handler->prepare($query);
+ $statementHandler->bindParam(':postID', $postID);
+ $statementHandler->bindParam(':file_name', $file_name);
+ $return = $statementHandler->execute();
+ 
+ 
+     if (!$return) {
+         print_r($this->databasse_handler->errorInfo());
+     } else {
+     // header("Refresh:0");
+     } 
+ }
 }
 
 

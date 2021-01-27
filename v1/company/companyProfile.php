@@ -15,15 +15,15 @@ if(!empty($token)){
  $row = $company_handler->getCompanyData($companyID);
  $images=$company_handler->getCompanyImages($companyID);
  $logo=$company_handler->getCompanyLogo($companyID);
-}
+}else{
  $token = json_decode($company_handler->loginCompany($_POST['email'], $_POST['password']))->token;
 $companyID=$company_handler->getCompanyId($token);
  $row = $company_handler->getCompanyData($companyID);
  $images=$company_handler->getCompanyImages($companyID);
  $logo=$company_handler->getCompanyLogo($companyID); 
-   $data= $row;
+ 
   
-
+}
    
    echo "<center>";
    if(!empty($logo)){
