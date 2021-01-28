@@ -9,7 +9,8 @@ include("../../objects/companies.php");
     
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
 
-
+$lastPayDate =  date('m/d/Y',strtotime('+30 days'));
+print_r($lastPayDate);
 if(!empty($token)){
     $companyID=$company_handler->getCompanyId($token);
  $row = $company_handler->getCompanyData($companyID);
@@ -93,7 +94,7 @@ $companyID=$company_handler->getCompanyId($token);
      echo '<input  type="submit" value="Change Logo" /></b>';
      echo '</form>';
      echo '<form method="POST" action="../products/allProducts.php">';
-     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
+     echo "<input type='hidden'  name='companyID' value='{$row['id']}'>";
      echo "<input type='hidden'  name='token' value='{$token}'>";
      echo '<input  type="submit" value="tjänster" /></b>';
      echo '</form>';

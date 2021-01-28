@@ -429,20 +429,6 @@ public function deleteUser($userID){
 }
 
 
-// watching if user is an Admin
-public function isAdmin($token)
-{
-    $user_id = $this->getUserId($token);
-    $user_data = $this->getUserData($user_id);
-    if($user_data['role'] == 'Admin') {
-        return true;
-    } else {
-        return false;
-    }
-
-}
-
-
 
 
 }

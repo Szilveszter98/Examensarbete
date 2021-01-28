@@ -6,11 +6,10 @@ include("../../objects/products.php");
 
     $product_handler = new Product($databaseHandler);
     
-
+    $companyID =(isset($_POST['companyID']) ? $_POST['companyID'] : '');
     $token =(isset($_POST['token']) ? $_POST['token'] : '');
-  
+    $productID =(isset($_POST['productID']) ? $_POST['productID'] : '');
 
-    $productID =(isset($_POST['productid']) ? $_POST['productid'] : '');
     $product=$product_handler->fetchSingleProduct($productID);
     echo '<form method="POST" action="allProducts.php">';
     echo "<input type='hidden'  name='token' value='{$token}'>";
@@ -23,7 +22,8 @@ include("../../objects/products.php");
      echo "<span>" . " " . $product['price']. "kr</br></span><br/>";
 
      echo '<form method="POST" action="http://localhost/examensarbete/v1/checkouts/checkout.php">';
-        echo "<input type='hidden'  name='id' value='{$productID}'>";
+        echo "<input type='hidden'  name='productID' value='{$productID}'>";
+        echo "<input type='hidden'  name='companyID' value='{$companyID}'>";
         echo "<input type='hidden'  name='token' value='{$token}'>";
         echo '<input  type="submit" value="Köp" /></b>';
         echo '</form>';

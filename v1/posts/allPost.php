@@ -1,6 +1,18 @@
 <?php
 
+include("../../objects/premiumCompanies.php");
+//include("../../userHeader.php");
+    $premium_handler = new OneMonth($databaseHandler);
 
+$companyID =(isset($_POST['companyID']) ? $_POST['companyID'] : '');
+$companyID=13;
+$valid=$premium_handler->validatePremiumToken($companyID);
+print_r("hello");
+if(!empty($valid)){
+    echo "Welcome you have access";
+}else{
+    echo "köp tjänst för att se alla arbete";
+}
 // includes
 include("../../objects/posts.php");
 //include("../../header.php");
