@@ -5,7 +5,7 @@ include("../../config/database_handler.php");
 // class
 class Comment {
     private $database_handler;
-    private $comment_id;
+    private $commentID;
 
     public function __construct( $database_handler_IN ) {
 
@@ -13,22 +13,18 @@ class Comment {
 
     }
 
-    public function setCommentId($comment_id_IN) {
 
-        $this->comment_id = $comment_id_IN;
 
-    }
+    public function createComment( $companyID, $comment, $name) {
 
-    public function createComment($userID_param, $companyID_param, $comment_param, $postID_param) {
-
-        $query_string = "INSERT INTO postcomments (userID, companiesID, comment, postID) VALUES(:userID, :companiesID, :comment, :postID)";
+        $query_string = "INSERT INTO companycomments ( companyID, comment, name) VALUES( :companyID, :comment, :name)";
         $statementHandler = $this->database_handler->prepare($query_string);
 
         if($statementHandler !== false) {
-            $statementHandler->bindParam(":userID", $userID_param);
-            $statementHandler->bindParam(":companiesID", $companyID_param);
-            $statementHandler->bindParam(":comment", $comment_param);
-            $statementHandler->bindParam(":postID", $postID_param);
+
+            $statementHandler->bindParam(":companyID", $companyID);
+            $statementHandler->bindParam(":comment", $comment);
+            $statementHandler->bindParam(":name", $name);
            
             $success = $statementHandler->execute();
 
@@ -44,13 +40,13 @@ class Comment {
             die();
         }
     }
-    public function fetchAllComments($postID) {
+    public function fetchAllComments($companyID) {
 
-        $query_string = "SELECT * FROM `postcomments` WHERE postID=:postID ORDER BY date ASC";
+        $query_string = "SELECT * FROM `companycomments` WHERE companyID=:companyID ORDER BY date_posted DESC";
         $statementHandler = $this->database_handler->prepare($query_string);
 
         if($statementHandler !== false) {
-            $statementHandler->bindParam(":postID", $postID);
+            $statementHandler->bindParam(":companyID", $companyID);
             $statementHandler->execute();
             return $statementHandler->fetchAll();
 
@@ -60,6 +56,19 @@ class Comment {
         }
         
     }
-
+    public function deleteCompanyComment($companyID, $commentID){
+        $query = "DELETE FROM companycomments WHERE companyID = :companyID AND ID = :commentID";
+     $statementHandler =$this->database_handler->prepare($query);
+     $statementHandler->bindParam(':companyID', $companyID);
+     $statementHandler->bindParam(':commentID', $commentID);
+     $return = $statementHandler->execute();
+     
+     
+         if (!$return) {
+             print_r($this->databasse_handler->errorInfo());
+         } else {
+            
+         } 
+     }
 
 }

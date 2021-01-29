@@ -3,10 +3,11 @@
 
 // includes
 include("../../objects/companies.php");
+include("../../objects/comments.php");
 //include("../../companyheader.php");
 
     $company_handler = new Company($databaseHandler);
-    
+    $comment_handler = new Comment($databaseHandler);
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
 
 $lastPayDate =  date('m/d/Y',strtotime('+30 days'));
@@ -60,7 +61,31 @@ $companyID=$company_handler->getCompanyId($token);
      echo "<span>" . "<h3>Postnummer:</h3></br>" . $row['postnummer']. "</br></span><br/>";
      echo "<span>" . "<h3>Tel.nummer:</h3></br> " . $row['telefonNummer']. "</br></span><br/>";
      echo "<span>" . "<h3>Email: </h3></br> " . $row['email']. "</br></span><br/>";
+     
+$companyID=$row['id'];
+     //OMDÖME
+     echo "<h3>Omdöme:</h3>";
      echo"</center>"; 
+     $comments=$comment_handler->fetchAllComments($companyID);
+    
+     if(!empty($comments)){
+       foreach($comments as $comment){
+   
+           echo"<center>";
+           echo "<span>" . "" . $comment['name']. "</span><br/>";
+           echo "<span>" . "" . $comment['comment']. "</span><br/>";
+           echo "<span>" . " Posted:" . $comment['date_posted']. "</span><br/>";
+           echo '<form method="POST" action="deleteCompanyComment.php">';
+           echo "<input type='hidden'  name='companyID' value='$companyID'>";
+           echo "<input type='hidden'  name='commentID' value='{$comment['ID']}'>";
+           echo "<input type='hidden'  name='token' value='{$token}'>";
+           echo '<input  type="submit" value="Ta bort omdöme" /></b>';
+           echo "<hr>";
+            echo"</center>"; 
+   
+   }     
+   
+ }
 
      echo"<center>";
      echo '<form method="POST" action="../posts/allPost.php">';

@@ -113,7 +113,7 @@ class Post {
 // fetch all products
     public function fetchAllPosts() {
 
-        $query_string = "SELECT id, title, description, type, ort, date FROM posts ORDER BY date ASC";
+        $query_string = "SELECT id, title, description, type, ort, date FROM posts ORDER BY date DESC";
         $statementHandler = $this->database_handler->prepare($query_string);
 
         if($statementHandler !== false) {

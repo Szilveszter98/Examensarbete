@@ -5,36 +5,45 @@ include("../../objects/premiumCompanies.php");
 $premiumOneMonth_handler = new OneMonth($databaseHandler);
 $premiumThreeMonth_handler = new ThreeMonth($databaseHandler);
 $premiumSixMonth_handler = new SixMonth($databaseHandler);
-
 $companyID =(isset($_POST['companyID']) ? $_POST['companyID'] : '');
-print_r($companyID);
+$token =(isset($_POST['token']) ? $_POST['token'] : '');
 $row= $premiumOneMonth_handler->fetchSingleCompany($companyID);
 
 
 if(!empty($row)){
 if($row['productID']== 1){
 $valid=$premiumOneMonth_handler->validatePremiumToken($companyID);
-echo "hello1";
+
 
 }elseif($row['productID']== 2){
 
     $valid=$premiumThreeMonth_handler->validatePremiumToken($companyID);
-    echo "hello2";
+    
 
 }elseif($row['productID']== 3){
     $valid=$premiumSixMonth_handler->validatePremiumToken($companyID);
-    echo "hello3";
+   
 
 }
 }else{
-   echo "Du behöver köpa tjänst för att se alla jobb som vi har";
+    echo '<form method="POST" action="../products/allProducts.php">';
+    echo "<input type='hidden'  name='companyID' value='{$companyID}'>";
+    echo "<input type='hidden'  name='token' value='{$token}'>";
+    echo '<input  type="submit" value="Till Tjänster" /></b>';
+    echo '</form>';
+    echo '<form method="POST" action="../company/companyProfile.php">';
+    echo "<input type='hidden'  name='companyID' value='{$companyID}'>";
+    echo "<input type='hidden'  name='token' value='{$token}'>";
+    echo '<input  type="submit" value="Tillbaka till Portfolion" /></b>';
+    echo '</form>';
+   
    die;
 }
 if(empty($valid)){
    echo "köp tjänst för att se alla arbete";
    die;
 }
-     echo "Welcome you have access";
+     
 // includes
 include("../../objects/posts.php");
 //include("../../header.php");

@@ -3,9 +3,10 @@
 
 // includes
 include("../../objects/companies.php");
-
+include("../../objects/comments.php");
     $company_handler = new Company($databaseHandler);
-    
+    $comment_handler = new Comment($databaseHandler);
+
     $token=(isset($_POST['token']) ? $_POST['token'] : '');
     
     $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
@@ -39,14 +40,33 @@ include("../../objects/companies.php");
         echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 500px; height: 300px;'><br />";
         
       }
-     echo"</center>"; 
-
+      //OMDÖME
+      echo "<h3>Lägg till omdöme</h3>";
+     echo '<form method="POST" action="createCompanyComment.php">';
+     echo '<label for="comment">Namn:</label>';
+     echo '<input type="text" id="name" name="name"><br><br>';
+     echo '<label for="comment">Kommentar fält:</label>';
+     echo '<input type="text" id="comment" name="comment"><br><br>';
+     echo "<input type='hidden'  name='token' value='$token'>";
+     echo "<input type='hidden'  name='companyID' value='$companyID'>";
+     echo '<input  type="submit" value="Publicera" /></b>';  
+     echo '</form>';
+     echo '<h1> Omdöme:</h1><br><br>';
+     $comments=$comment_handler->fetchAllComments($companyID);
+      if(!empty($comments)){
+        foreach($comments as $comment){
+    
+            echo"<center>";
+            echo "<span>" . "" . $comment['name']. "</span><br/>";
+            echo "<span>" . "" . $comment['comment']. "</span><br/>";
+            echo "<span>" . " Posted:" . $comment['date_posted']. "</span><br/>";
+            echo "<hr>";
+             echo"</center>"; 
+    
+    }     
+    
+  }
      
-
-  
-
- 
-    echo"</center>"; 
 
     
 ?> 
