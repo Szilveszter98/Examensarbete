@@ -19,10 +19,11 @@ if(!empty($token)){
     echo "<img src='../../uploads/" . $product['file_name'] . "'style='width: 500px; height: 300px;'>";
     echo "<span><h1>" . " " . $product['name']. "</h1></br></span><br/>";
     echo "<span>" . " " . $product['price']. "kr</br></span><br/>";
-    echo "<span>" . " " . $product['validTime']. "kr</br></span><br/>";
+    echo "<span>" . " " . $product['validTime']. "</br></span><br/>";
 
     echo '<h1> Fyll i informationen nedan</h1> ';
      echo '<form method="POST" action="sendDataToFaktura.php">';
+     
     echo "<input type='hidden'  name='companyID' value='{$companyID}'>";
     echo "<input type='hidden'  name='productID' value='{$productID}'>";
     echo "<input type='hidden'  name='productPrice' value='{$product['price']}'>";
@@ -31,6 +32,9 @@ if(!empty($token)){
     echo "<input type='hidden'  name='token' value='{$token}'>";
     echo 'Företagsnamn:<br />';
     echo "<input type='text' name='companyName' value='{$row['companyName']}' required>";
+    echo '<br />';
+    echo 'Företags email:<br />';
+    echo "<input type='text' name='companyEmail' value='{$row['email']}' required>";
     echo '<br />';
     echo 'Företags referens:<br />';
     echo '<input type="text" name="companyReferens"  required>';

@@ -716,7 +716,7 @@ public function fetchAllCompaniesLogo($companyID){
 
 }
 public function searchCompanies($searchWord){
-    $query = "SELECT id, companyName, organisationsNummer, description, type  FROM companies WHERE companyName OR type LIKE  :searchWord ";
+    $query = "SELECT id, companyName, organisationsNummer, description, type  FROM companies WHERE type LIKE  :searchWord ";
     
 
         $statementHandler = $this->database_handler->prepare($query);

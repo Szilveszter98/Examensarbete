@@ -2,17 +2,39 @@
 
 include("../../objects/premiumCompanies.php");
 //include("../../userHeader.php");
-    $premium_handler = new OneMonth($databaseHandler);
+$premiumOneMonth_handler = new OneMonth($databaseHandler);
+$premiumThreeMonth_handler = new ThreeMonth($databaseHandler);
+$premiumSixMonth_handler = new SixMonth($databaseHandler);
 
 $companyID =(isset($_POST['companyID']) ? $_POST['companyID'] : '');
-$companyID=13;
-$valid=$premium_handler->validatePremiumToken($companyID);
-print_r("hello");
-if(!empty($valid)){
-    echo "Welcome you have access";
-}else{
-    echo "köp tjänst för att se alla arbete";
+print_r($companyID);
+$row= $premiumOneMonth_handler->fetchSingleCompany($companyID);
+
+
+if(!empty($row)){
+if($row['productID']== 1){
+$valid=$premiumOneMonth_handler->validatePremiumToken($companyID);
+echo "hello1";
+
+}elseif($row['productID']== 2){
+
+    $valid=$premiumThreeMonth_handler->validatePremiumToken($companyID);
+    echo "hello2";
+
+}elseif($row['productID']== 3){
+    $valid=$premiumSixMonth_handler->validatePremiumToken($companyID);
+    echo "hello3";
+
 }
+}else{
+   echo "Du behöver köpa tjänst för att se alla jobb som vi har";
+   die;
+}
+if(empty($valid)){
+   echo "köp tjänst för att se alla arbete";
+   die;
+}
+     echo "Welcome you have access";
 // includes
 include("../../objects/posts.php");
 //include("../../header.php");
