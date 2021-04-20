@@ -1,0 +1,107 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.backButton{
+    color:$mainOrange;  
+    width:auto;
+    background-color: $mainColor;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: $robotoFont;
+    font-size: 1.3em;	
+    outline: none;
+    text-align: center;
+}         
+.backButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+
+}
+.companyInformationContainer{
+    text-align: center;
+    height: auto;
+    margin: 20px auto;
+    img{
+        width: 300px;
+        height: 200px;
+    }
+}
+.companyImagesContainer{
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    img{
+        width: 300px; 
+        height: 200px;
+    }
+}
+
+
+
+
+
+.commentsContainer{
+   
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    form{
+        margin: 20px auto;
+        
+        font-family: $robotoFont;
+       
+        label{
+            color: white;
+            font-size: 25px;
+            
+        }
+        .inputField{
+            height: 40px;
+            max-width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 15px;
+            margin-right: 10px;
+
+        }
+        .commentField{
+            height: 40px;
+            max-height: 300px;
+            max-width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 15px;
+            margin-right: 10px;
+
+        }
+        .sendButton{
+                width: auto;
+                background-color: $mainColor;
+                color: $mainOrange;
+                border: none;
+                height: 40px;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 1.3em;	
+                outline: none;
+                margin-top: 20px;
+            }
+        .sendButton:hover{
+            cursor: pointer;
+            background-color: $mainOrange;
+            color: $mainColor;
+        }
+    }
+    h4{
+        font-family: $robotoFont;
+        font-size: 15px;
+
+    }
+}

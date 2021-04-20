@@ -6,9 +6,10 @@
     <title>Create Post</title>
 </head>
 <body>
-<center>
+<div class="createPostContainer">
 <?php
 $userID =(isset($_POST['id']) ? $_POST['id'] : '');
+
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
 ?>
 <!-- Form to create new products -->
@@ -52,7 +53,7 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
             <hr>
             <input type="submit" name="Add" value="Nästa"/>
         </form>
-</center>
+</div>
 
 <?php
 

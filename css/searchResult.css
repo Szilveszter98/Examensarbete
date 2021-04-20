@@ -1,0 +1,27 @@
+.searchField {
+  text-align: center;
+  height: 300px; }
+  .searchField label {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px; }
+  .searchField .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .searchField h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    padding-bottom: 50px; }
+
+.searchResult {
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 100px; }
+  .searchResult h1 {
+    font-family: "Roboto", sans-serif; }
+  .searchResult span {
+    font-family: "Roboto", sans-serif; }

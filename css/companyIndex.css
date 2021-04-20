@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.companyIndex {
+  height: 600px;
+  padding-top: 150px;
+  text-align: center; }
+  .companyIndex .companyIndexText {
+    margin: auto;
+    width: 800px;
+    color: white;
+    padding: 50px; }
+  .companyIndex button {
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+    .companyIndex button a {
+      color: #ff6700;
+      text-decoration: none; }
+  .companyIndex button:hover {
+    cursor: pointer;
+    background-color: #ff6700; }
+    .companyIndex button:hover a {
+      color: #393d3f; }

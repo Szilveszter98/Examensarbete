@@ -1,0 +1,47 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+*{
+    margin: 0;
+    padding: 0;
+}
+.userIndex{
+    height: 600px;
+    padding-top: 150px;
+    text-align: center;
+    .userIndexText{
+        margin: auto;
+        width: 800px;
+        color: white;
+        padding:50px;
+
+    }
+    a{  
+            
+            text-decoration: none;
+    button{
+        color: $mainOrange;        
+        width: 160px;
+        background-color: $mainColor;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        font-family: $robotoFont;
+        font-size: 1.3em;	
+        outline: none;
+        text-align: center;
+        
+       
+        }
+    }
+    a{
+            
+        
+    button:hover{
+        color: $mainColor;
+        cursor: pointer;
+        background-color: $mainOrange;
+        
+    }
+ }
+}

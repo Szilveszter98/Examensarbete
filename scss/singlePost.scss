@@ -1,0 +1,50 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.backButtonContainer{
+    .submitButton{
+        margin: 20px auto;
+        color:$mainOrange;   
+        width: 200px;
+        background-color: $mainColor;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        font-family: $robotoFont;
+        font-size: 1.3em;	
+        outline: none;
+        text-align: center;
+        
+        
+    }         
+    .submitButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+        }
+}
+.singlePostContainer{
+    height: 70vh;
+    text-align: center;
+    padding-bottom: 40px;
+
+    span{
+        font-family: $robotoFont;
+        h2{
+            margin: 20px;
+        }
+        h3{
+            margin: 10px;
+        }
+    }
+    .singlePostIMGContainer{
+        max-height: 250px;
+         img{
+             max-width: 300px;
+             max-height: 200px;
+             object-fit: contain;
+
+        }
+    }
+   
+}

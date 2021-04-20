@@ -1,0 +1,65 @@
+.companyLoginPage {
+  background-color: gray;
+  height: 600px;
+  text-align: center;
+  padding-top: 141px; }
+  .companyLoginPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .companyLoginPage h2 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .companyLoginPage form {
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .companyLoginPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .companyLoginPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .companyLoginPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .companyLoginPage .dontHaveAccount {
+    padding-top: 50px;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .companyLoginPage .signupLinks {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px; }
+    .companyLoginPage .signupLinks button {
+      width: 260px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+      .companyLoginPage .signupLinks button a {
+        color: #ff6700;
+        text-decoration: none; }
+    .companyLoginPage .signupLinks button:hover {
+      cursor: pointer;
+      background-color: #ff6700; }
+      .companyLoginPage .signupLinks button:hover a {
+        color: #393d3f; }

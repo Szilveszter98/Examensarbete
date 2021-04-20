@@ -1,0 +1,52 @@
+
+    $robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.editCompanyProfileForm, .editCompanyImgFinished, .deleteLogoFinished, .addLogoForm, .updatedCompanyImages, .deletedCompanyImage{
+    height: 81vh;
+    text-align: center;
+    h1{
+        font-family: $robotoFont;
+        padding: 20px;
+    }
+    form{
+        h4{
+            font-family: $robotoFont;
+            font-size: 18px;
+        }
+        .inputField{
+            height: 40px;
+            max-width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 15px;
+            margin-right: 10px;
+
+        }
+        .submitButton{
+            margin: 20px auto;
+            color:$mainOrange;   
+            width: 100px;
+            background-color: $mainColor;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            font-family: $robotoFont;
+            font-size: 1.3em;	
+            outline: none;
+            text-align: center;
+            
+            
+        }         
+        .submitButton:hover{
+        cursor: pointer;
+        background-color: $mainOrange;
+        color: $mainColor;
+            }
+    
+       }  
+}
+
+
+

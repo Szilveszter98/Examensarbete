@@ -2,130 +2,142 @@
 
 
 // includes
+
 include("../../objects/users.php");
+
 //include("../../userHeader.php");
-    $user_handler = new User($databaseHandler);
-    
-    $token =(isset($_POST['token']) ? $_POST['token'] : '');
-    
-    
-  
-if(!empty($token)){
+$user_handler = new User($databaseHandler);
 
-    $userID=$user_handler->getUserId($token);
- $row = $user_handler->getUserData($userID);
-}else{
+$token = (isset($_POST['token']) ? $_POST['token'] : '');
 
-$token = json_decode($user_handler->loginUser($_POST['username'], $_POST['password']))->token;
-$userID=$user_handler->getUserId($token);
- $row = $user_handler->getUserData($userID);
+
+
+if (!empty($token)) {
+
+    $userID = $user_handler->getUserId($token);
+    $row = $user_handler->getUserData($userID);
+} else {
+
+    $token = json_decode($user_handler->loginUser($_POST['username'], $_POST['password']))->token;
+    $userID = $user_handler->getUserId($token);
+    $row = $user_handler->getUserData($userID);
 }
 
- 
 
 
-    echo "<center>";
-    echo "<h1> Welcome " . $row['username'] . "!</h1><br>";
-    echo "<center>";
-  
-     echo"<center>";
-     echo "<span>" . " " . $row['firstname']. "</br></span><br/>";
-     echo "<span>" . " " . $row['lastname']. "</br></span><br/>";
-     echo "<span>" . " " . $row['email']. "</br></span><br/>";
-    //echo "<span>" . " " . $row['id']. "</br></span><br/>";
+?>
+
+<link rel="stylesheet" href="../../css/styles.css">
+<div class="mainContainer">
 
 
-     echo '<form method="POST" action="editUserProfileForm.php">';
-     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
-     echo "<input type='hidden'  name='token' value='$token'>";
-     echo '<input  type="submit" value="Ändra detaljer" /></b>';
-     echo '</form>';
+    <?php $USERID = $row['id'] ?>
+    <div class="buttonContainer">
+        <form method="POST" action="../../createPostForm.php">
+            <input type='hidden' name='token' value='<?php echo $token ?>'>
+            <input type='hidden' name='id' value='<?php echo $USERID ?>'>
+            <input class="submitButton" type="submit" value="Skapa inlägg" />
+        </form>
+        <br>
+        <form method="POST" action="editUserProfileForm.php">
+            <input type='hidden' name='id' value="<?php echo $USERID ?>">
+            <input type='hidden' name='token' value='<?php echo $token ?>'>
+            <input class="submitButton" type="submit" value="Ändra detaljer" />
+        </form>
+        <br>
+        <form method="POST" action="../company/allcompanies.php">
+            <input type='hidden' name='token' value="<?php echo $token ?>">
+            <input class="submitButton" type="submit" value="Se alla företag" /></b>
+        </form>
+        <br>
+        <form method="POST" action="logoutUser.php">
+            <input type='hidden' name='id' value="<?php echo $USERID ?>">
+            <input class="submitButton" type="submit" value="Logga ut" />
+        </form>
+        <br>
+        <form method="POST" action="deleteUser.php">
+            <input type='hidden' name='id' value="<?php echo $USERID ?>">
+            <input class="submitButton" type="submit" value="Delete Profile" />
+        </form>
+        <div class='userData'>
+            <span><?= $row['username'] ?></span><br>
+            <span><?= $row['firstname'] . " " . $row['lastname'] ?></span><br>
+            <span><?= $row['email'] ?></span>
+        </div>
+    </div>
 
-     echo '<form method="POST" action="logoutUser.php">';
-     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
-     echo '<input  type="submit" value="Logga ut" /></b>';
-     echo '</form>';
-
-     echo '<form method="POST" action="deleteUser.php">';
-     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
-     echo '<input  type="submit" value="Delete Profile" /></b>';
-     echo '</form>';
+    <?php
 
 
-     echo '<form method="POST" action="../../createPostForm.php">';
-     echo "<input type='hidden'  name='token' value='$token'>";
-     echo "<input type='hidden'  name='id' value='{$row['id']}'>";
-     echo '<input  type="submit" value="Skapa inlägg" /></b>';  
-     echo '</form>';
-     echo '<form method="POST" action="../company/allcompanies.php">';
-     echo "<input type='hidden'  name='token' value='$token'>";
-     echo '<input  type="submit" value="Se alla företag" /></b>';
-     echo '</form>';
+    include("../../objects/posts.php");
+    $userID = $row['id'];
 
- 
-     echo "</center>";
-
-     include("../../objects/posts.php");
-     $userID=$row['id'];
-     
 
     $post_handler = new Post($databaseHandler);
-    
-    $userID= $row['id'];
-    $posts= $post_handler->getPostWithUserID($userID);
-    
-   foreach($posts as $post){
-     echo"<center>";
-     echo"<hr>";
-     $postID= $post['ID'];
-$images=$post_handler->fetchPostImages($postID);
+
+    $userID = $row['id'];
+    $posts = $post_handler->getPostWithUserID($userID);
+
+    foreach ($posts as $post) {
+
+
+        $postID = $post['ID'];
+        $images = $post_handler->fetchPostImages($postID);
 
 
 
 
 
-   foreach($images as $image){
-    echo "<img src='../../uploads/" . $image['file_name'] . "'style='width: 500px; height: 300px;'><br />";
-    echo '<form method="POST" action="../posts/deletePostImg.php">';
-     echo "<input type='hidden'  name='postID' value='{$postID}'>";
-     echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo "<input type='hidden'  name='file_name' value='{$image['file_name']}'>";
-     echo '<input  type="submit" value="Ta bort bilden" /></b>';
-     echo '</form>';
-  }
- 
+    ?>
 
-    echo "</br>";
-     echo "<span>" . " " . $post['title']. "</br></span><br/>";
-     echo "<span>" . " " . $post['description']. "</br></span><br/>";
-     echo "<span>" . " " . $post['type']. "</br></span><br/>";
-     echo "<span>" . " " . $post['ort']. "</br></span><br/>";
-     echo "<span>" . " " . $post['date']. "</br></span><br/>";
-     echo "<span>" . " " . $post['email']. "</br></span><br/>";
-     echo "<span>" . " " . $post['telefonNummer']. "</br></span><br/>";
-     echo "<span>" . " " . $post['startDate']. "</br></span><br/>";
-     echo '</form>';
-     echo '<form method="POST" action="../posts/singlePost.php">';
-     echo "<input type='hidden'  name='postID' value='{$post['ID']}'>";
-     echo "<input type='hidden'  name='userID' value='{$userID}'>";
-     echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo '<input  type="submit" value="Till inlägget" /></b>';
-     echo '</form>';
-     echo '<form method="POST" action="../../editPostForm.php">';
-     echo "<input type='hidden'  name='id' value='{$post['ID']}'>";
-     echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo '<input  type="submit" value="Radigera inlägg" /></b>';
-     echo '</form>';
-     echo '<form method="POST" action="../posts/deletePost.php">';
-     echo "<input type='hidden'  name='id' value='{$post['ID']}'>";
-     echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo '<input  type="submit" value="Ta bort inlägg" /></b>';
-     echo '</form>';
-     echo"</br><hr>";
-    
- }
-    
- include("../../footer.php");
+        <div class="posts">
+            <div>
+                <h1>Mina arbete</h1>
+                <br>
+                <div class="postData">
+                    <h2><?= $post['title'] ?></h2><br />
+                    <span>Beskrivning: <?= $post['description'] ?></span><br />
+                    <span>Arbetstyp: <?= $post['type'] ?></span><br />
+                    <span>Ort: <?= $post['ort'] ?></span><br />
+                    <span>Publiceringsdatum: <?= $post['date'] ?></span><br />
+                    <span>Email adress: <?= $post['email'] ?></span><br />
+                    <span>Tel.nr: <?= $post['telefonNummer'] ?></span><br />
+                    <span>Önskade startdatum <?= $post['startDate'] ?></span><br />
+                </div>
+                <br>
+            </div>
+            <?php
+            foreach ($images as $image) { ?>
+                <img src='../../uploads/<?php echo $image['file_name'] ?>'><br />
+                <br>
+                <form method="POST" action="../posts/deletePostImg.php">
+                    <input type='hidden' name='postID' value='<?= $postID ?>'>
+                    <input type='hidden' name='token' value='<?= $token ?>'>
+                    <input type='hidden' name='file_name' value='<?= $image['file_name'] ?>'>
+                    <input class="submitButton" type="submit" value="Ta bort bilden" />
+                </form>
+                <br>
 
-    
-?> 
+            <?php } ?>
+
+
+
+
+            <form method="POST" action="../posts/editPostForm.php">
+                <input type='hidden' name='id' value='<?= $postID ?>'>
+                <input type='hidden' name='token' value='<?= $token ?>'>
+                <input class="submitButton" type="submit" value="Radigera inlägg" /></b>
+            </form>
+            <br>
+            <form method="POST" action="../posts/deletePost.php">
+                <input type='hidden' name='id' value='<?= $postID ?>'>
+                <input type='hidden' name='token' value='<?= $token ?>'>
+                <input class="submitButton" type="submit" value="Ta bort inlägg" />
+            </form>
+            <br>
+        </div>
+        <hr>
+</div>
+<?php
+    }
+    include("../../footer.php"); ?>

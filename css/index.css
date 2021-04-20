@@ -1,0 +1,69 @@
+.indexContainer {
+  padding-top: 160px;
+  height: 600px;
+  background-color: gray; }
+  .indexContainer h1 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 55px; }
+  .indexContainer form {
+    text-align: center;
+    font-family: "Roboto", sans-serif; }
+    .indexContainer form label {
+      color: white;
+      font-size: 25px; }
+    .indexContainer form .searchField {
+      height: 40px;
+      width: 590px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .indexContainer form .searchButton {
+      width: 80px;
+      background-color: #393d3f;
+      color: #ff6700;
+      border: none;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none; }
+    .indexContainer form .searchButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .indexContainer .loginButtons {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px; }
+    .indexContainer .loginButtons button {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+      .indexContainer .loginButtons button a {
+        color: #ff6700;
+        text-decoration: none; }
+    .indexContainer .loginButtons button:hover {
+      cursor: pointer;
+      background-color: #ff6700; }
+      .indexContainer .loginButtons button:hover a {
+        color: #393d3f; }
+  .indexContainer .text {
+    margin: auto;
+    width: auto;
+    text-align: center;
+    padding-bottom: 10px; }
+    .indexContainer .text span {
+      color: white;
+      font-size: 25px;
+      text-align: center; }

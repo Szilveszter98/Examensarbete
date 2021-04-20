@@ -1,0 +1,66 @@
+.editProfileFinished {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+  .editProfileFinished h1 {
+    font-family: "Roboto", sans-serif; }
+  .editProfileFinished form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .editProfileFinished form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .editProfileFinished form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.registerFinished {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+
+.logoUpdateFinished {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+  .logoUpdateFinished h1 {
+    font-family: "Roboto", sans-serif; }
+  .logoUpdateFinished form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .logoUpdateFinished form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .logoUpdateFinished form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }

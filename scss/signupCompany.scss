@@ -1,0 +1,56 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.signupCompanyPage{
+    background-color: gray;
+    padding-top: 150px;
+    text-align: center;
+    height: auto;
+    h1{
+        font-size: 25px;
+        font-family: $robotoFont;
+    }
+    form{
+        font-size: 18px;
+        font-family: $robotoFont;
+        padding-top: 50px;
+        font-family: $robotoFont;
+        font-size: 18px;
+        input{
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 25px;
+            margin-right: 10px;
+        }
+        select{
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 25px;
+            margin-right: 10px;
+        }
+        .submit{
+            
+            width: 160px;
+            background-color: $mainColor;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            font-family: $robotoFont;
+            font-size: 1.3em;	
+            outline: none;
+            text-align: center;
+            color: $mainOrange;
+        }
+        .submit:hover{
+            cursor: pointer;
+            background-color: $mainOrange;
+            color: $mainColor;
+        }
+    }
+}

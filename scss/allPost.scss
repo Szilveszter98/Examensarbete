@@ -1,0 +1,90 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.needToBuy{
+    text-align: center;
+    height: 80vh;
+    .submitButton{
+        margin: 20px auto;
+        color:$mainOrange;   
+        width: 200px;
+        background-color: $mainColor;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        font-family: $robotoFont;
+        font-size: 1.3em;	
+        outline: none;
+        text-align: center;
+        
+        
+    }         
+    .submitButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+    }
+}
+.submitButton{
+    margin: 20px auto;
+    color:$mainOrange;   
+    width: 200px;
+    background-color: $mainColor;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: $robotoFont;
+    font-size: 1.3em;	
+    outline: none;
+    text-align: center;
+    
+    
+}         
+.submitButton:hover{
+cursor: pointer;
+background-color: $mainOrange;
+color: $mainColor;
+    }
+
+.allpost{
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+   padding-top: 50px;
+   height: 75vh;
+
+    h2{
+        font-family: $robotoFont;
+
+    }
+    span{
+        font-family: $robotoFont;
+        font-size: 18px;
+    }
+    img{
+        margin: 30px;
+        max-width: 300px;
+        max-height: 200px;
+        object-fit: contain;
+    }
+    .submitButton{
+        margin: 20px auto;
+        color:$mainOrange;   
+        width: 200px;
+        background-color: $mainColor;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        font-family: $robotoFont;
+        font-size: 1.3em;	
+        outline: none;
+        text-align: center;
+        
+        
+    }         
+    .submitButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+        }
+}

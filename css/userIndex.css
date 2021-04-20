@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+.userIndex {
+  height: 600px;
+  padding-top: 150px;
+  text-align: center; }
+  .userIndex .userIndexText {
+    margin: auto;
+    width: 800px;
+    color: white;
+    padding: 50px; }
+  .userIndex a {
+    text-decoration: none; }
+    .userIndex a button {
+      color: #ff6700;
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+  .userIndex a button:hover {
+    color: #393d3f;
+    cursor: pointer;
+    background-color: #ff6700; }

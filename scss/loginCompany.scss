@@ -1,0 +1,86 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.companyLoginPage{
+    background-color: gray;
+    height: 600px;
+    text-align: center;
+    padding-top: 141px;
+    h1{
+        font-size: 25px;
+        font-family: $robotoFont;
+    }
+    h2{
+        font-size: 25px;
+        font-family: $robotoFont;
+    }
+    form{
+        padding-top: 50px;
+        font-family: $robotoFont;
+        font-size: 18px;
+        input{
+            height: 40px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 25px;
+            margin-right: 10px;
+        }
+        .submit{
+            
+            width: 160px;
+            background-color: $mainColor;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            font-family: $robotoFont;
+            font-size: 1.3em;	
+            outline: none;
+            text-align: center;
+            color: $mainOrange;
+        }
+        .submit:hover{
+            cursor: pointer;
+            background-color: $mainOrange;
+            color: $mainColor;
+        }
+    }
+    .dontHaveAccount{
+        padding-top: 50px;
+        font-size: 25px;
+        font-family: $robotoFont;
+        
+    }
+    .signupLinks{
+        height: auto;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+            button{
+                
+                width: 260px;
+                background-color: $mainColor;
+                border: none;
+                height: 40px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 1.3em;	
+                outline: none;
+                text-align: center;
+                
+                a{  
+                    color: $mainOrange;
+                    text-decoration: none;
+                }
+            }
+            button:hover{
+                cursor: pointer;
+                background-color: $mainOrange;
+                a{
+                    color: $mainColor;
+                }
+            }
+
+    }
+}

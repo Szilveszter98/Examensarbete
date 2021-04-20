@@ -1,0 +1,36 @@
+.checkoutContainer {
+  text-align: center; }
+  .checkoutContainer h1 {
+    font-family: "Roboto", sans-serif; }
+  .checkoutContainer span {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600; }
+  .checkoutContainer form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .checkoutContainer form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 120px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .checkoutContainer form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.paymentSuccess {
+  text-align: center;
+  padding-top: 30px;
+  height: 76vh; }

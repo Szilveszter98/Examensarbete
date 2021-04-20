@@ -1,0 +1,95 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.indexContainer{
+     padding-top:160px;
+     height: 600px;
+     background-color:gray; 
+
+    h1{
+        font-family: $robotoFont;
+        text-align: center;
+        font-size: 55px;
+    }
+    form{
+        text-align: center;
+        font-family: $robotoFont;
+       
+        label{
+            color: white;
+            font-size: 25px;
+            
+        }
+        .searchField{
+            height: 40px;
+            width: 590px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 25px;
+            margin-right: 10px;
+
+        }
+        .searchButton{
+                width: 80px;
+                background-color: $mainColor;
+                color: $mainOrange;
+                border: none;
+                height: 40px;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 1.3em;	
+                outline: none;
+            }
+        .searchButton:hover{
+            cursor: pointer;
+            background-color: $mainOrange;
+            color: $mainColor;
+        }
+    
+        }
+        .loginButtons{
+            height: auto;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+            button{
+                
+                width: 160px;
+                background-color: $mainColor;
+                border: none;
+                height: 40px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 1.3em;	
+                outline: none;
+                text-align: center;
+                
+                a{  
+                    color: $mainOrange;
+                    text-decoration: none;
+                }
+            }
+            button:hover{
+                cursor: pointer;
+                background-color: $mainOrange;
+                a{
+                    color: $mainColor;
+                }
+            }
+        }
+        .text{
+            margin: auto;
+            width: auto;
+            text-align: center;
+            padding-bottom: 10px;
+            span{
+            color: white;
+            font-size: 25px;
+            text-align: center;
+            }
+            
+        }
+    }
+

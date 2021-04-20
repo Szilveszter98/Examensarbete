@@ -3,61 +3,53 @@
 
 // includes
 include("../../objects/companies.php");
-//include("../../indexHeader.php");
-
-    $company_handler = new Company($databaseHandler);
-    
-
-    
-  
-
-// login
-  
-   
-    echo "</center>";
-    $row=$company_handler->fetchAllCompanies();
-     $companiesID=$company_handler->fetchAllCompanyID();
-     
-    
-   
-  
-    
-
-     $token =(isset($_POST['token']) ? $_POST['token'] : '');
 
 
-    	
-     echo '  <form method="POST" action="searchCompanies.php">';
-     echo '  <label for="gsearch">Sök bland registrerade företag:</label>';
-     echo ' <input type="search"  name="searchWord">';
-     echo ' <input type="submit">';
-     echo '  </form>';
-     echo ' <a href="javascript:history.go(-1)" title="Return to the previous page">&laquo; Go back</a>';
+$company_handler = new Company($databaseHandler);
+$row = $company_handler->fetchAllCompanies();
+$companiesID = $company_handler->fetchAllCompanyID();
+$token = (isset($_POST['token']) ? $_POST['token'] : '');
 
-    foreach($row as $company){
+?>
+<link rel="stylesheet" href="../../css/styles.css">
+<div class="searchContainer">
+    <form method="POST" action="../users/userProfile.php">
+        <input type='hidden' name='id' value='<?= $company['id'] ?>'>
+        <input type='hidden' name='token' value='<?= $token ?>'>
+        <input class="backButton" type="submit" value="Till profilsida" /></b>
+    </form>
+    <form method="POST" action="../../index.php">
+        <input type='hidden' name='id' value='<?= $company['id'] ?>'>
+        <input type='hidden' name='token' value='<?= $token ?>'>
+        <input class="backButton" type="submit" value="Startsida" /></b>
+    </form>
+    <form method="POST" action="searchCompanies.php">
+        <label for="gsearch">Sök bland registrerade företag:</label>
+        <input type="search" name="searchWord" class="searchField">
+        <input type="submit" class="searchButton">
+    </form>
+</div>
+<hr>
+<?php foreach ($row as $company) {?>
+    <div class="companyInformation">
+        <span>
+            <h2><?= $company['companyName'] ?></h2></br>
+        </span><br />
+        <?php $logo = $company_handler->fetchAllCompaniesLogo($company['id']);
+        if (!empty($logo['file_name'])) { ?>
+            <img src='../../uploads/<?php echo $logo['file_name'] ?>'><br>
+        <?php } ?>
+        <span><?= $company['description'] ?></br></span><br />
+        <span><?= $company['type'] ?></br></span><br />
+        <form method="POST" action="companySite.php">
+            <input type='hidden' name='id' value='<?= $company['id'] ?>'>
+            <input type='hidden' name='token' value='<?= $token ?>'>
+            <input class="submitButton" type="submit" value="Till företagssida" /></b>
+        </form>
+        </br>
+        <hr>
+    </div>
+<?php
+}
 
-  
-        
-    echo"<div style='padding-top:200px;'>";
-     echo"<center>";
-     
-     $logo=$company_handler->fetchAllCompaniesLogo($company['id']);
-     if(!empty($logo['file_name'])){
-        echo "<img src='../../uploads/" . $logo['file_name'] . "'style='width: 100px; height: 50 px;'>";
-      }
-     echo "<span>" . " " . $company['companyName']. "</br></span><br/>";
-     echo "<span>" . " " . $company['description']. "</br></span><br/>";
-     echo "<span>" . " " . $company['type']. "</br></span><br/>";
-     echo '<form method="POST" action="companySite.php">';
-     echo "<input type='hidden'  name='id' value='{$company['id']}'>";
-     
-     echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo '<input  type="submit" value="till företagssida" /></b>';
-     echo '</form>';
-     echo"</br><hr>";
-     echo"</div>";
-     
-    }
-
-    include("../../footer.php");
-?> 
+include("../../footer.php");

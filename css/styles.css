@@ -1,0 +1,1452 @@
+/* The footer  */
+footer {
+  background-color: #393d3f;
+  width: 100%;
+  bottom: 18px;
+  position: inherit;
+  text-align: center; }
+  footer .footerContent {
+    color: white;
+    display: inline-flex;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    align-content: space-between;
+    padding: 20px 50px 0px 50px;
+    width: 1500px; }
+    footer .footerContent .footerLogo {
+      text-align: left;
+      width: 25%; }
+      footer .footerContent .footerLogo img {
+        width: 200px;
+        height: 100px; }
+    footer .footerContent .footer-left {
+      width: 25%;
+      text-align: left; }
+      footer .footerContent .footer-left .footer-links {
+        padding: 0px; }
+        footer .footerContent .footer-left .footer-links li {
+          list-style-type: none;
+          padding: 10px; }
+          footer .footerContent .footer-left .footer-links li a {
+            text-decoration: none;
+            color: white; }
+        footer .footerContent .footer-left .footer-links li:hover {
+          text-decoration: underline; }
+    footer .footerContent .footer-center {
+      width: 25%;
+      text-align: center; }
+      footer .footerContent .footer-center .footerContacts .tel {
+        padding: 10px; }
+        footer .footerContent .footer-center .footerContacts .tel a {
+          padding: 10px;
+          color: white;
+          text-decoration: none; }
+      footer .footerContent .footer-center .footerContacts .mail {
+        padding: 10px; }
+        footer .footerContent .footer-center .footerContacts .mail a {
+          padding: 10px;
+          color: white;
+          text-decoration: none; }
+      footer .footerContent .footer-center .footerContacts .footer-icons {
+        padding: 10px; }
+        footer .footerContent .footer-center .footerContacts .footer-icons i {
+          padding-left: 5px;
+          color: white; }
+        footer .footerContent .footer-center .footerContacts .footer-icons i:hover {
+          color: #ff6700;
+          transform: scale(1.2); }
+    footer .footerContent .footer-right {
+      width: 25%;
+      text-align: right;
+      padding-top: 10px; }
+
+.copyRight {
+  color: white;
+  background-color: #ff6700;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  position: inherit; }
+
+/* Navbar section */
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+.nav {
+  width: 100%;
+  height: 65px;
+  font-family: 'Quicksand', sans-serif;
+  position: fixed;
+  line-height: 65px;
+  text-align: center;
+  background-color: #393d3f; }
+
+.nav div.logo {
+  float: left;
+  width: auto;
+  height: auto;
+  padding-left: 3rem; }
+
+.nav div.logo a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.5rem; }
+
+.nav div.logo a:hover {
+  color: #ff6700; }
+
+.nav div.main_list {
+  height: 65px;
+  float: right; }
+
+.nav div.main_list ul {
+  width: 100%;
+  height: 65px;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.nav div.main_list ul li {
+  width: auto;
+  height: 65px;
+  padding: 0;
+  padding-right: 3rem; }
+
+.nav div.main_list ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 65px;
+  font-size: 2.4rem; }
+
+.nav div.main_list ul li .navButton {
+  border: none;
+  background-color: transparent;
+  text-decoration: none;
+  color: #fff;
+  line-height: 65px;
+  font-size: 2.4rem; }
+
+.nav div.main_list ul li .navButton:hover {
+  color: #ff6700; }
+
+.nav div.main_list ul li a:hover {
+  color: #ff6700; }
+
+/* Home section */
+.navTrigger {
+  display: none; }
+
+.nav {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+
+/* Media qurey section */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    margin: 0; } }
+
+@media screen and (max-width: 1100px) {
+  .navTrigger {
+    display: block; }
+  .nav div.logo {
+    margin-left: 15px; }
+  .nav div.main_list {
+    width: 100%;
+    height: 0;
+    overflow: hidden; }
+  .nav div.show_list {
+    height: auto;
+    display: none; }
+  .nav div.main_list ul {
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #111;
+    /*same background color of navbar*/
+    background-position: center top; }
+  .nav div.main_list ul li {
+    width: 100%;
+    text-align: right; }
+  .nav div.main_list ul li a {
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 20px; }
+  .nav div.media_button {
+    display: block; } }
+
+/* */
+.navTrigger {
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  margin: auto;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  bottom: 0; }
+
+.navTrigger i {
+  background-color: #fff;
+  border-radius: 2px;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px; }
+
+.navTrigger i:nth-child(1) {
+  -webkit-animation: outT 0.8s backwards;
+  animation: outT 0.8s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse; }
+
+.navTrigger i:nth-child(2) {
+  margin: 5px 0;
+  -webkit-animation: outM 0.8s backwards;
+  animation: outM 0.8s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse; }
+
+.navTrigger i:nth-child(3) {
+  -webkit-animation: outBtm 0.8s backwards;
+  animation: outBtm 0.8s backwards;
+  -webkit-animation-direction: reverse;
+  animation-direction: reverse; }
+
+.navTrigger.active i:nth-child(1) {
+  -webkit-animation: inT 0.8s forwards;
+  animation: inT 0.8s forwards; }
+
+.navTrigger.active i:nth-child(2) {
+  -webkit-animation: inM 0.8s forwards;
+  animation: inM 0.8s forwards; }
+
+.navTrigger.active i:nth-child(3) {
+  -webkit-animation: inBtm 0.8s forwards;
+  animation: inBtm 0.8s forwards; }
+
+@-webkit-keyframes inM {
+  50% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(45deg); } }
+
+@keyframes inM {
+  50% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(45deg); } }
+
+@-webkit-keyframes outM {
+  50% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(45deg); } }
+
+@keyframes outM {
+  50% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(45deg); } }
+
+@-webkit-keyframes inT {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg); }
+  50% {
+    -webkit-transform: translateY(9px) rotate(0deg); }
+  100% {
+    -webkit-transform: translateY(9px) rotate(135deg); } }
+
+@keyframes inT {
+  0% {
+    transform: translateY(0px) rotate(0deg); }
+  50% {
+    transform: translateY(9px) rotate(0deg); }
+  100% {
+    transform: translateY(9px) rotate(135deg); } }
+
+@-webkit-keyframes outT {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg); }
+  50% {
+    -webkit-transform: translateY(9px) rotate(0deg); }
+  100% {
+    -webkit-transform: translateY(9px) rotate(135deg); } }
+
+@keyframes outT {
+  0% {
+    transform: translateY(0px) rotate(0deg); }
+  50% {
+    transform: translateY(9px) rotate(0deg); }
+  100% {
+    transform: translateY(9px) rotate(135deg); } }
+
+@-webkit-keyframes inBtm {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg); }
+  50% {
+    -webkit-transform: translateY(-9px) rotate(0deg); }
+  100% {
+    -webkit-transform: translateY(-9px) rotate(135deg); } }
+
+@keyframes inBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg); }
+  50% {
+    transform: translateY(-9px) rotate(0deg); }
+  100% {
+    transform: translateY(-9px) rotate(135deg); } }
+
+@-webkit-keyframes outBtm {
+  0% {
+    -webkit-transform: translateY(0px) rotate(0deg); }
+  50% {
+    -webkit-transform: translateY(-9px) rotate(0deg); }
+  100% {
+    -webkit-transform: translateY(-9px) rotate(135deg); } }
+
+@keyframes outBtm {
+  0% {
+    transform: translateY(0px) rotate(0deg); }
+  50% {
+    transform: translateY(-9px) rotate(0deg); }
+  100% {
+    transform: translateY(-9px) rotate(135deg); } }
+
+.affix {
+  padding: 0;
+  background-color: black; }
+
+.indexContainer {
+  padding-top: 160px;
+  height: 600px;
+  background-color: gray; }
+  .indexContainer h1 {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 55px; }
+  .indexContainer form {
+    text-align: center;
+    font-family: "Roboto", sans-serif; }
+    .indexContainer form label {
+      color: white;
+      font-size: 25px; }
+    .indexContainer form .searchField {
+      height: 40px;
+      width: 590px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .indexContainer form .searchButton {
+      width: 80px;
+      background-color: #393d3f;
+      color: #ff6700;
+      border: none;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none; }
+    .indexContainer form .searchButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .indexContainer .loginButtons {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px; }
+    .indexContainer .loginButtons button {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+      .indexContainer .loginButtons button a {
+        color: #ff6700;
+        text-decoration: none; }
+    .indexContainer .loginButtons button:hover {
+      cursor: pointer;
+      background-color: #ff6700; }
+      .indexContainer .loginButtons button:hover a {
+        color: #393d3f; }
+  .indexContainer .text {
+    margin: auto;
+    width: auto;
+    text-align: center;
+    padding-bottom: 10px; }
+    .indexContainer .text span {
+      color: white;
+      font-size: 25px;
+      text-align: center; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.userIndex {
+  height: 600px;
+  padding-top: 150px;
+  text-align: center; }
+  .userIndex .userIndexText {
+    margin: auto;
+    width: 800px;
+    color: white;
+    padding: 50px; }
+  .userIndex a {
+    text-decoration: none; }
+    .userIndex a button {
+      color: #ff6700;
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+  .userIndex a button:hover {
+    color: #393d3f;
+    cursor: pointer;
+    background-color: #ff6700; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+.companyIndex {
+  height: 600px;
+  padding-top: 150px;
+  text-align: center; }
+  .companyIndex .companyIndexText {
+    margin: auto;
+    width: 800px;
+    color: white;
+    padding: 50px; }
+  .companyIndex button {
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+    .companyIndex button a {
+      color: #ff6700;
+      text-decoration: none; }
+  .companyIndex button:hover {
+    cursor: pointer;
+    background-color: #ff6700; }
+    .companyIndex button:hover a {
+      color: #393d3f; }
+
+.userLoginPage {
+  background-color: gray;
+  height: 600px;
+  text-align: center;
+  padding-top: 141px; }
+  .userLoginPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .userLoginPage h2 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .userLoginPage form {
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .userLoginPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .userLoginPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .userLoginPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .userLoginPage .dontHaveAccount {
+    padding-top: 50px;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .userLoginPage .signupLinks {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px; }
+    .userLoginPage .signupLinks button {
+      width: 260px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+      .userLoginPage .signupLinks button a {
+        color: #ff6700;
+        text-decoration: none; }
+    .userLoginPage .signupLinks button:hover {
+      cursor: pointer;
+      background-color: #ff6700; }
+      .userLoginPage .signupLinks button:hover a {
+        color: #393d3f; }
+
+.companyLoginPage {
+  background-color: gray;
+  height: 600px;
+  text-align: center;
+  padding-top: 141px; }
+  .companyLoginPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .companyLoginPage h2 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .companyLoginPage form {
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .companyLoginPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .companyLoginPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .companyLoginPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .companyLoginPage .dontHaveAccount {
+    padding-top: 50px;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .companyLoginPage .signupLinks {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px; }
+    .companyLoginPage .signupLinks button {
+      width: 260px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+      .companyLoginPage .signupLinks button a {
+        color: #ff6700;
+        text-decoration: none; }
+    .companyLoginPage .signupLinks button:hover {
+      cursor: pointer;
+      background-color: #ff6700; }
+      .companyLoginPage .signupLinks button:hover a {
+        color: #393d3f; }
+
+.signupUserPage {
+  background-color: gray;
+  padding-top: 150px;
+  text-align: center;
+  height: 600px; }
+  .signupUserPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .signupUserPage form {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .signupUserPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .signupUserPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .signupUserPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+
+.signupCompanyPage {
+  background-color: gray;
+  padding-top: 150px;
+  text-align: center;
+  height: auto; }
+  .signupCompanyPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .signupCompanyPage form {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .signupCompanyPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .signupCompanyPage form select {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .signupCompanyPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .signupCompanyPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+
+.mainContainer {
+  background-color: gray; }
+
+.buttonContainer {
+  display: flex;
+  height: 100px;
+  background-color: #393d3f; }
+  .buttonContainer form {
+    margin: auto; }
+  .buttonContainer .userData {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    padding-top: 15px; }
+  .buttonContainer .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .buttonContainer .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.posts {
+  text-align: center;
+  width: 100%; }
+  .posts h1 {
+    text-decoration: underline;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 50px; }
+  .posts .postData {
+    width: 500px;
+    margin: auto;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: left; }
+  .posts img {
+    width: 500px;
+    height: 300px; }
+  .posts .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .posts .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.companyContainer {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  height: auto; }
+  .companyContainer .companyData {
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 20px;
+    padding: 40px; }
+    .companyContainer .companyData form {
+      margin: 10px; }
+      .companyContainer .companyData form .submitButton {
+        font-size: 15px; }
+  .companyContainer .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .companyContainer .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+  .companyContainer .companyButtonContainer {
+    background-color: #393d3f;
+    display: flex;
+    height: 100px; }
+    .companyContainer .companyButtonContainer form {
+      margin: auto; }
+
+body {
+  background-color: darkgray; }
+
+.productsPage {
+  height: 81vh;
+  width: 1800px;
+  margin: auto;
+  text-align: center; }
+  .productsPage a {
+    padding: 20px;
+    display: block; }
+    .productsPage a .backButton {
+      color: #ff6700;
+      width: 200px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .productsPage a .backButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .productsPage .productsContainer {
+    padding: 50px;
+    display: inline-flex;
+    margin: auto; }
+    .productsPage .productsContainer .singleProductContainer {
+      box-shadow: 5px -3px 5px 0px black;
+      font-size: 15px;
+      text-align: center;
+      background-color: gray;
+      margin: 50px;
+      width: 300px;
+      color: white; }
+      .productsPage .productsContainer .singleProductContainer img {
+        width: 300px;
+        height: 200px;
+        object-fit: contain;
+        background-color: black; }
+      .productsPage .productsContainer .singleProductContainer .productSubmitButton {
+        margin: 10px;
+        color: #ff6700;
+        width: 100px;
+        background-color: #393d3f;
+        border: none;
+        height: 30px;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        outline: none;
+        text-align: center; }
+      .productsPage .productsContainer .singleProductContainer .productSubmitButton:hover {
+        cursor: pointer;
+        background-color: #ff6700;
+        color: #393d3f; }
+
+.singleProduct {
+  height: 82vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  background-color: gray;
+  text-align: center; }
+  .singleProduct img {
+    object-fit: contain;
+    width: 500px;
+    height: 300px; }
+  .singleProduct h1 {
+    font-family: "Roboto", sans-serif;
+    padding-top: 20px; }
+  .singleProduct .backButtonContainer {
+    padding: 35px; }
+    .singleProduct .backButtonContainer form .submitButton {
+      color: #ff6700;
+      width: 200px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .singleProduct .backButtonContainer form .submitButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .singleProduct form .submitButton {
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .singleProduct form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.searchContainer {
+  text-align: center;
+  display: flex; }
+  .searchContainer form {
+    margin: auto;
+    font-family: "Roboto", sans-serif; }
+    .searchContainer form label {
+      color: white;
+      font-size: 25px; }
+    .searchContainer form .searchField {
+      height: 40px;
+      max-width: 590px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .searchContainer form .searchButton {
+      max-width: 80px;
+      background-color: #393d3f;
+      color: #ff6700;
+      border: none;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none; }
+    .searchContainer form .searchButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+
+.companyInformation {
+  max-height: 500px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Roboto", sans-serif; }
+  .companyInformation img {
+    margin: 20px;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain; }
+  .companyInformation h2 {
+    text-decoration: underline;
+    color: black;
+    font-family: "Roboto", sans-serif; }
+  .companyInformation .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .companyInformation .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.backButton {
+  color: #ff6700;
+  min-width: 100px;
+  max-width: 160px;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.backButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }
+
+.backButton {
+  color: #ff6700;
+  width: auto;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.backButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }
+
+.companyInformationContainer {
+  text-align: center;
+  height: auto;
+  margin: 20px auto; }
+  .companyInformationContainer img {
+    width: 300px;
+    height: 200px; }
+
+.companyImagesContainer {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .companyImagesContainer img {
+    width: 300px;
+    height: 200px; }
+
+.commentsContainer {
+  max-width: 500px;
+  margin: auto;
+  text-align: center; }
+  .commentsContainer form {
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif; }
+    .commentsContainer form label {
+      color: white;
+      font-size: 25px; }
+    .commentsContainer form .inputField {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .commentsContainer form .commentField {
+      height: 40px;
+      max-height: 300px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .commentsContainer form .sendButton {
+      width: auto;
+      background-color: #393d3f;
+      color: #ff6700;
+      border: none;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      margin-top: 20px; }
+    .commentsContainer form .sendButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .commentsContainer h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px; }
+
+.editProfileForm {
+  height: 81vh;
+  text-align: center; }
+  .editProfileForm h1 {
+    font-family: "Roboto", sans-serif;
+    padding: 20px; }
+  .editProfileForm form h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+  .editProfileForm form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .editProfileForm form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 100px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .editProfileForm form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.editProfileFinished {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+  .editProfileFinished h1 {
+    font-family: "Roboto", sans-serif; }
+  .editProfileFinished form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .editProfileFinished form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .editProfileFinished form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.registerFinished {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+
+.logoUpdateFinished {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+  .logoUpdateFinished h1 {
+    font-family: "Roboto", sans-serif; }
+  .logoUpdateFinished form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .logoUpdateFinished form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .logoUpdateFinished form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.editCompanyProfileForm, .editCompanyImgFinished, .deleteLogoFinished, .addLogoForm, .updatedCompanyImages, .deletedCompanyImage {
+  height: 81vh;
+  text-align: center; }
+  .editCompanyProfileForm h1, .editCompanyImgFinished h1, .deleteLogoFinished h1, .addLogoForm h1, .updatedCompanyImages h1, .deletedCompanyImage h1 {
+    font-family: "Roboto", sans-serif;
+    padding: 20px; }
+  .editCompanyProfileForm form h4, .editCompanyImgFinished form h4, .deleteLogoFinished form h4, .addLogoForm form h4, .updatedCompanyImages form h4, .deletedCompanyImage form h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+  .editCompanyProfileForm form .inputField, .editCompanyImgFinished form .inputField, .deleteLogoFinished form .inputField, .addLogoForm form .inputField, .updatedCompanyImages form .inputField, .deletedCompanyImage form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .editCompanyProfileForm form .submitButton, .editCompanyImgFinished form .submitButton, .deleteLogoFinished form .submitButton, .addLogoForm form .submitButton, .updatedCompanyImages form .submitButton, .deletedCompanyImage form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 100px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .editCompanyProfileForm form .submitButton:hover, .editCompanyImgFinished form .submitButton:hover, .deleteLogoFinished form .submitButton:hover, .addLogoForm form .submitButton:hover, .updatedCompanyImages form .submitButton:hover, .deletedCompanyImage form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.profileUpdated {
+  height: 81vh;
+  text-align: center;
+  padding-top: 30px; }
+  .profileUpdated h1 {
+    font-family: "Roboto", sans-serif; }
+  .profileUpdated form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .profileUpdated form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .profileUpdated form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.needToBuy {
+  text-align: center;
+  height: 80vh; }
+  .needToBuy .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .needToBuy .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.submitButton {
+  margin: 20px auto;
+  color: #ff6700;
+  width: 200px;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.submitButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }
+
+.allpost {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding-top: 50px;
+  height: 75vh; }
+  .allpost h2 {
+    font-family: "Roboto", sans-serif; }
+  .allpost span {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+  .allpost img {
+    margin: 30px;
+    max-width: 300px;
+    max-height: 200px;
+    object-fit: contain; }
+  .allpost .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .allpost .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.backButtonContainer .submitButton {
+  margin: 20px auto;
+  color: #ff6700;
+  width: 200px;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.backButtonContainer .submitButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }
+
+.singlePostContainer {
+  height: 70vh;
+  text-align: center;
+  padding-bottom: 40px; }
+  .singlePostContainer span {
+    font-family: "Roboto", sans-serif; }
+    .singlePostContainer span h2 {
+      margin: 20px; }
+    .singlePostContainer span h3 {
+      margin: 10px; }
+  .singlePostContainer .singlePostIMGContainer {
+    max-height: 250px; }
+    .singlePostContainer .singlePostIMGContainer img {
+      max-width: 300px;
+      max-height: 200px;
+      object-fit: contain; }
+
+.checkoutContainer {
+  text-align: center; }
+  .checkoutContainer h1 {
+    font-family: "Roboto", sans-serif; }
+  .checkoutContainer span {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600; }
+  .checkoutContainer form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .checkoutContainer form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 120px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .checkoutContainer form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.paymentSuccess {
+  text-align: center;
+  padding-top: 30px;
+  height: 76vh; }
+
+.postSuccessContainer {
+  text-align: center; }
+
+.searchField {
+  text-align: center;
+  height: 300px; }
+  .searchField label {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px; }
+  .searchField .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .searchField h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 25px;
+    padding-bottom: 50px; }
+
+.searchResult {
+  padding-top: 50px;
+  text-align: center;
+  padding-bottom: 100px; }
+  .searchResult h1 {
+    font-family: "Roboto", sans-serif; }
+  .searchResult span {
+    font-family: "Roboto", sans-serif; }
+
+.editPostForm {
+  padding-top: 50px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  height: 76vh; }
+  .editPostForm form {
+    font-size: 18px; }
+    .editPostForm form .inputField {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .editPostForm form .submitButton {
+      margin: 20px auto;
+      color: #ff6700;
+      width: 100px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .editPostForm form .submitButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+
+.finishedPostUpdate {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  height: 80vh; }
+
+.deletPostImgFinished, .postDeleted {
+  padding-top: 50px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  height: 76vh; }
+  .deletPostImgFinished form, .postDeleted form {
+    font-size: 18px; }
+    .deletPostImgFinished form .inputField, .postDeleted form .inputField {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .deletPostImgFinished form .submitButton, .postDeleted form .submitButton {
+      margin: 20px auto;
+      color: #ff6700;
+      width: 300px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .deletPostImgFinished form .submitButton:hover, .postDeleted form .submitButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }

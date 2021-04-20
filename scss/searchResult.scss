@@ -1,0 +1,38 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+
+.searchField{
+    text-align: center;
+    height: 300px;
+    label{
+        font-family: $robotoFont;
+        font-size: 25px;
+    }
+    .inputField{
+        height: 40px;
+        max-width: 300px;
+        border-radius: 5px;
+        border: none;
+        font-family: $robotoFont;
+        font-size: 15px;
+        margin-right: 10px;
+
+    }
+    h2{
+        font-family: $robotoFont;
+        font-size: 25px;
+        padding-bottom: 50px;
+    }
+}
+.searchResult{
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 100px;
+    h1{
+        font-family: $robotoFont;
+    }
+    span{
+        font-family: $robotoFont;
+    }
+}

@@ -1,0 +1,70 @@
+.needToBuy {
+  text-align: center;
+  height: 80vh; }
+  .needToBuy .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .needToBuy .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.submitButton {
+  margin: 20px auto;
+  color: #ff6700;
+  width: 200px;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.submitButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }
+
+.allpost {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  padding-top: 50px;
+  height: 75vh; }
+  .allpost h2 {
+    font-family: "Roboto", sans-serif; }
+  .allpost span {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+  .allpost img {
+    margin: 30px;
+    max-width: 300px;
+    max-height: 200px;
+    object-fit: contain; }
+  .allpost .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .allpost .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }

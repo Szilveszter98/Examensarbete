@@ -1,0 +1,52 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.companyContainer{
+    font-family: $robotoFont;
+    
+    
+    text-align: center;
+    height: auto;
+    .companyData{
+        font-family: $robotoFont;
+        text-align: center;
+        font-size: 20px;
+        padding: 40px;
+        form{
+            .submitButton{
+                font-size: 15px;
+            }
+            margin: 10px;
+        }
+    }
+
+    .submitButton{
+        color:$mainOrange;   
+        width: 160px;
+        background-color: $mainColor;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        font-family: $robotoFont;
+        font-size: 1.3em;	
+        outline: none;
+        text-align: center;
+    }         
+    .submitButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+
+
+    }
+    .companyButtonContainer{
+        background-color: $mainColor;
+        display: flex;
+        height: 100px;
+        form{ 
+            margin: auto;
+
+        }
+
+    }   
+}

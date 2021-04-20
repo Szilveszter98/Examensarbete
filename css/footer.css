@@ -1,0 +1,69 @@
+/* The footer  */
+footer {
+  background-color: #393d3f;
+  width: 100%;
+  bottom: 18px;
+  position: inherit;
+  text-align: center; }
+  footer .footerContent {
+    color: white;
+    display: inline-flex;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    align-content: space-between;
+    padding: 20px 50px 0px 50px;
+    width: 1500px; }
+    footer .footerContent .footerLogo {
+      text-align: left;
+      width: 25%; }
+      footer .footerContent .footerLogo img {
+        width: 200px;
+        height: 100px; }
+    footer .footerContent .footer-left {
+      width: 25%;
+      text-align: left; }
+      footer .footerContent .footer-left .footer-links {
+        padding: 0px; }
+        footer .footerContent .footer-left .footer-links li {
+          list-style-type: none;
+          padding: 10px; }
+          footer .footerContent .footer-left .footer-links li a {
+            text-decoration: none;
+            color: white; }
+        footer .footerContent .footer-left .footer-links li:hover {
+          text-decoration: underline; }
+    footer .footerContent .footer-center {
+      width: 25%;
+      text-align: center; }
+      footer .footerContent .footer-center .footerContacts .tel {
+        padding: 10px; }
+        footer .footerContent .footer-center .footerContacts .tel a {
+          padding: 10px;
+          color: white;
+          text-decoration: none; }
+      footer .footerContent .footer-center .footerContacts .mail {
+        padding: 10px; }
+        footer .footerContent .footer-center .footerContacts .mail a {
+          padding: 10px;
+          color: white;
+          text-decoration: none; }
+      footer .footerContent .footer-center .footerContacts .footer-icons {
+        padding: 10px; }
+        footer .footerContent .footer-center .footerContacts .footer-icons i {
+          padding-left: 5px;
+          color: white; }
+        footer .footerContent .footer-center .footerContacts .footer-icons i:hover {
+          color: #ff6700;
+          transform: scale(1.2); }
+    footer .footerContent .footer-right {
+      width: 25%;
+      text-align: right;
+      padding-top: 10px; }
+
+.copyRight {
+  color: white;
+  background-color: #ff6700;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+  position: inherit; }

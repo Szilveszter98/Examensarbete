@@ -21,9 +21,7 @@ include("../../config/database_handler.php");
         // Check if token is not empty(if empty, no access)
         
 public function createToken($companyID, $productID, $companyEmail){
-    print_r($productID);
-    print_r($companyID);
-    print_r($companyEmail);
+   
    
     $uniqToken = md5(uniqid($companyEmail, true).time());
     $endDate =  date('Y/m/d',strtotime('+30 days'));
@@ -121,9 +119,7 @@ public function validatePremiumToken($companyID){
         // Check if token is not empty(if empty, no access)
         
 public function createToken($companyID, $productID, $companyEmail){
-    print_r($productID);
-    print_r($companyID);
-    print_r($companyEmail);
+ 
    
     $uniqToken = md5(uniqid($companyEmail, true).time());
     $endDate =  date('Y/m/d',strtotime('+90 days'));
@@ -201,9 +197,7 @@ public function validatePremiumToken($companyID){
         // Check if token is not empty(if empty, no access)
         
 public function createToken($companyID, $productID, $companyEmail){
-    print_r($productID);
-    print_r($companyID);
-    print_r($companyEmail);
+ 
    
     $uniqToken = md5(uniqid($companyEmail, true).time());
     $endDate =  date('Y/m/d',strtotime('+180 days'));

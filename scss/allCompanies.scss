@@ -1,0 +1,102 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+
+.searchContainer{
+    text-align: center;
+    display: flex;
+   
+    form{
+        margin: auto;
+        font-family: $robotoFont;
+       
+        label{
+            color: white;
+            font-size: 25px;
+            
+        }
+        .searchField{
+            height: 40px;
+            max-width: 590px;
+            border-radius: 5px;
+            border: none;
+            font-family: $robotoFont;
+            font-size: 25px;
+            margin-right: 10px;
+
+        }
+        .searchButton{
+                max-width: 80px;
+                background-color: $mainColor;
+                color: $mainOrange;
+                border: none;
+                height: 40px;
+                padding: 10px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 1.3em;	
+                outline: none;
+            }
+        .searchButton:hover{
+            cursor: pointer;
+            background-color: $mainOrange;
+            color: $mainColor;
+        }
+    }
+}
+.companyInformation{
+    max-height: 500px;
+    margin-top: 30px;
+    text-align: center;
+    font-family: $robotoFont;
+        img{
+            margin: 20px;
+            max-width: 150px; 
+            max-height: 150px;
+            object-fit: contain;
+        }
+        h2{
+            text-decoration: underline;
+            color: black;
+            font-family: $robotoFont;
+            
+        }
+        .submitButton{
+            color:$mainOrange;  
+            width: 160px;
+            background-color: $mainColor;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            font-family: $robotoFont;
+            font-size: 1.3em;	
+            outline: none;
+            text-align: center;
+        }         
+        .submitButton:hover{
+        cursor: pointer;
+        background-color: $mainOrange;
+        color: $mainColor;
+
+        }
+
+}
+.backButton{
+    color:$mainOrange;  
+    min-width: 100px; 
+    max-width: 160px;
+    background-color: $mainColor;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: $robotoFont;
+    font-size: 1.3em;	
+    outline: none;
+    text-align: center;
+}         
+.backButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+
+}

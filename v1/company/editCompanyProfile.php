@@ -1,33 +1,51 @@
 <?php
 // includes
 
-    include("../../objects/companies.php");
+include("../../objects/companies.php");
 
-    $company_handler = new Company($databaseHandler);
+$company_handler = new Company($databaseHandler);
 
-   $token=(isset($_POST['token']) ? $_POST['token'] : '');
-    $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
-    
-  
+$token = (isset($_POST['token']) ? $_POST['token'] : '');
+$companyID = (isset($_POST['id']) ? $_POST['id'] : '');
+
+$companyName =(isset($_POST['companyName']) ? $_POST['companyName'] : '');
+$companyName = htmlspecialchars($companyName); 
+
+$description=(isset($_POST['description']) ? $_POST['description'] : '');
+$telefonNummer=(isset($_POST['telefonNummer']) ? $_POST['telefonNummer'] : '');
+$password=(isset($_POST['password']) ? $_POST['password'] : '');
+$email=(isset($_POST['email']) ? $_POST['email'] : '');
+$orgNummer=(isset($_POST['organisationsNummer']) ? $_POST['organisationsNummer'] : '');
+$address=(isset($_POST['address']) ? $_POST['address'] : '');
+$postnummer=(isset($_POST['postnummer']) ? $_POST['postnummer'] : '');
+$type=(isset($_POST['type']) ? $_POST['type'] : '');
+
+$description= htmlspecialchars($description); 
+$telefonNummer= htmlspecialchars($telefonNummer); 
+$password= htmlspecialchars($password); 
+$email= htmlspecialchars($email); 
+$orgNummer= htmlspecialchars($orgNummer); 
+$address= htmlspecialchars($address); 
+$postnummer= htmlspecialchars($postnummer); 
+$type= htmlspecialchars($type); 
+
 // Update user profile
- if(!empty($companyID)) {
-    $company_handler->updateCompanyProfile( $_POST['companyName'], $_POST['description'], $_POST['telefonNummer'], $_POST['password'], $_POST['email'],$_POST['organisationsNummer'],$_POST['email'], $_POST['address'],$_POST['postnummer'],$companyID);
-    echo"<center>";
-    echo "<h1>Portfolio är nu uppdaterad!</h1>";
- 
-     echo '<form method="POST" action="companyProfile.php">';
-     echo "<input type='hidden'  name='token' value='{$token}'>";
-     echo '<input  type="submit" value="Tillbaka till Portfolion" /></b>';
-     echo '</form>';
-     echo "</center>";
-    } else {
-        echo "update error";
+if (!empty($companyID)) {
+    $company_handler->updateCompanyProfile($companyName, $description, $telefonNummer, $password, $email,  $orgNummer, $type, $address, $postnummer, $companyID);
+?>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <div class="profileUpdated">
+        <h1>Portfolio är nu uppdaterad!</h1>
 
-    }
+        <form method="POST" action="companyProfile.php">
+            <input type='hidden' name='token' value='<?= $token ?>'>
+            <input class="submitButton" type="submit" value="Tillbaka till Portfolion" />
+        </form>
+    </div>
+<?php
+} else {
+    echo "update error";
+}
 
-   
-
-     
-     echo("<center>");
-
-    ?>
+include("../../footer.php");
+?>

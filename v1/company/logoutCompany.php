@@ -4,22 +4,15 @@
 include("../../objects/companies.php");
 
 $company_handler = new Company($databaseHandler);
-
-
-$companyID =(isset($_POST['id']) ? $_POST['id'] : '');
+$companyID = (isset($_POST['id']) ? $_POST['id'] : '');
 
 // callnig on deletePost if we have post id
 
- if(!empty($companyID)) {
-    
+if (!empty($companyID)) {
 
-        $company_handler->logoutCompany($companyID);
-
-    } else {
-        echo "Error with companyID";
-    }
-
-   
-   
+    $company_handler->logoutCompany($companyID);
+} else {
+    echo "Error with companyID";
+}
 
 ?>

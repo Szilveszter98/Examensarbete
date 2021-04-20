@@ -1,0 +1,43 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+*{
+    margin: 0;
+    padding: 0;
+}
+.companyIndex{
+    height: 600px;
+    padding-top: 150px;
+    text-align: center;
+    .companyIndexText{
+        margin: auto;
+        width: 800px;
+        color: white;
+        padding:50px;
+
+    }
+    button{
+                
+        width: 160px;
+        background-color: $mainColor;
+        border: none;
+        height: 40px;
+        border-radius: 5px;
+        font-family: $robotoFont;
+        font-size: 1.3em;	
+        outline: none;
+        text-align: center;
+        
+        a{  
+            color: $mainOrange;
+            text-decoration: none;
+        }
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: $mainOrange;
+        a{
+            color: $mainColor;
+        }
+    }
+}

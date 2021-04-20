@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>User Login</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
     <!-- Inputs to login -->
-<center>
-<?php
-echo (isset($_GET['err']) && $_GET['err'] == true ? "Något gick fel! Försök Igen!<hr>" : "");
-?>
-
-<h1>Please log in <h1> 
-<h2 >Please enter your username and password</h2>
+    <?php include("indexHeader.php"); ?> 
   
-<form method="POST" action="v1/users/userProfile.php">
-Username:<br>
-<input type="text" name="username" required><br/>
-Password:<br>
-<input type="password" name="password" required><br />
-<hr>
-<input class="submit" type="submit" value="Log in" />
-<p>Dont have an account?</p>
-<b>
-<a  href="signupUser.php">Registrera</a>
-</br>
-<a  href="signupCompnay.php">Registrera som företag</a>
-</b>
-</form>
+<div class="userLoginPage">
+    <h1>Please log in <h1>
+            <h2>Please enter your username and password</h2>
+            <?php echo (isset($_GET['err']) && $_GET['err'] == true ? "<h1>Något gick fel! Försök Igen!</h1><hr>" : "");?>
+            <form method="POST" action="v1/users/userProfile.php">
+                Username:<br>
+                <input type="text" name="username" required><br />
+                Password:<br>
+                <input type="password" name="password" required><br />
+                <br>
+                <hr>
+                <br>
+                <input class="submit" type="submit" value="Log in" />
+                <br>
+                <p class="dontHaveAccount">Dont have an account?</p>
+                
+            </form>
+            <div class="signupLinks">
+                    <button><a href="signupUser.php">Registrera</a></button>
+                    <button><a href="signupCompnay.php">Registrera som företag</a></button>
+            </div>
+</div>
 
-</center>
-
+<?php include("footer.php");?>
 </body>
+
 </html>

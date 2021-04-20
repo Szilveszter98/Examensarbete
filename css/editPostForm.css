@@ -1,0 +1,69 @@
+.editPostForm {
+  padding-top: 50px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  height: 76vh; }
+  .editPostForm form {
+    font-size: 18px; }
+    .editPostForm form .inputField {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .editPostForm form .submitButton {
+      margin: 20px auto;
+      color: #ff6700;
+      width: 100px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .editPostForm form .submitButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+
+.finishedPostUpdate {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  height: 80vh; }
+
+.deletPostImgFinished, .postDeleted {
+  padding-top: 50px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  height: 76vh; }
+  .deletPostImgFinished form, .postDeleted form {
+    font-size: 18px; }
+    .deletPostImgFinished form .inputField, .postDeleted form .inputField {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .deletPostImgFinished form .submitButton, .postDeleted form .submitButton {
+      margin: 20px auto;
+      color: #ff6700;
+      width: 300px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .deletPostImgFinished form .submitButton:hover, .postDeleted form .submitButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }

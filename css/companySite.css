@@ -1,0 +1,81 @@
+.backButton {
+  color: #ff6700;
+  width: auto;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.backButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }
+
+.companyInformationContainer {
+  text-align: center;
+  height: auto;
+  margin: 20px auto; }
+  .companyInformationContainer img {
+    width: 300px;
+    height: 200px; }
+
+.companyImagesContainer {
+  max-width: 1200px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .companyImagesContainer img {
+    width: 300px;
+    height: 200px; }
+
+.commentsContainer {
+  max-width: 500px;
+  margin: auto;
+  text-align: center; }
+  .commentsContainer form {
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif; }
+    .commentsContainer form label {
+      color: white;
+      font-size: 25px; }
+    .commentsContainer form .inputField {
+      height: 40px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .commentsContainer form .commentField {
+      height: 40px;
+      max-height: 300px;
+      max-width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 15px;
+      margin-right: 10px; }
+    .commentsContainer form .sendButton {
+      width: auto;
+      background-color: #393d3f;
+      color: #ff6700;
+      border: none;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      margin-top: 20px; }
+    .commentsContainer form .sendButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .commentsContainer h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 15px; }

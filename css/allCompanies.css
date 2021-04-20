@@ -1,0 +1,80 @@
+.searchContainer {
+  text-align: center;
+  display: flex; }
+  .searchContainer form {
+    margin: auto;
+    font-family: "Roboto", sans-serif; }
+    .searchContainer form label {
+      color: white;
+      font-size: 25px; }
+    .searchContainer form .searchField {
+      height: 40px;
+      max-width: 590px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .searchContainer form .searchButton {
+      max-width: 80px;
+      background-color: #393d3f;
+      color: #ff6700;
+      border: none;
+      height: 40px;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none; }
+    .searchContainer form .searchButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+
+.companyInformation {
+  max-height: 500px;
+  margin-top: 30px;
+  text-align: center;
+  font-family: "Roboto", sans-serif; }
+  .companyInformation img {
+    margin: 20px;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain; }
+  .companyInformation h2 {
+    text-decoration: underline;
+    color: black;
+    font-family: "Roboto", sans-serif; }
+  .companyInformation .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .companyInformation .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.backButton {
+  color: #ff6700;
+  min-width: 100px;
+  max-width: 160px;
+  background-color: #393d3f;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3em;
+  outline: none;
+  text-align: center; }
+
+.backButton:hover {
+  cursor: pointer;
+  background-color: #ff6700;
+  color: #393d3f; }

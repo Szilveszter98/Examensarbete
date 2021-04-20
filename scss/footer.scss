@@ -1,0 +1,113 @@
+/* The footer  */
+
+$mainColor : #393d3f;
+$robotoFont:  'Roboto', sans-serif;
+$hoverColor:  #ff6700;
+
+  footer{ 
+    background-color: $mainColor;
+    width: 100%;
+    bottom: 18px;
+    position: inherit;
+    text-align: center;
+    
+    
+    .footerContent{ 
+      color: white;
+      display: inline-flex;
+      font-size: 18px;
+      font-family: $robotoFont;
+      align-content: space-between;
+      padding: 20px 50px 0px 50px;
+      width: 1500px;
+          .footerLogo{
+            text-align: left;
+            width: 25%;
+            img{
+              width: 200px;
+              height: 100px;
+            }
+          }
+           .footer-left{
+            width: 25%;
+            text-align: left;
+              .footer-links{
+                padding: 0px;
+                li{
+                  list-style-type:none;
+                  padding: 10px;
+                  a{
+                    text-decoration: none;
+                    color: white;
+                    
+                    
+                  }
+                }
+                li:hover{
+                  text-decoration: underline;
+                }
+              }
+
+            }
+            .footer-center{
+              width: 25%;
+              text-align: center;
+              .footerContacts{
+                
+                .tel{
+                  padding: 10px;
+                    a{
+                      padding: 10px;
+                      color: white;
+                      text-decoration: none;
+                    }
+                }
+                .mail{
+                  padding: 10px;
+                      
+                    a{
+                    padding: 10px;
+                    color: white;
+                    text-decoration: none;
+                    }
+                }
+                .footer-icons{
+                  padding: 10px;
+                  i{
+                    padding-left: 5px ;
+                    color: white;
+                  }
+                  i:hover{
+                    color: $hoverColor;
+                    transform: scale(1.2);
+
+                  }
+
+
+                }
+              }
+              
+            }
+            .footer-right{
+              width: 25%;
+              text-align: right;
+              padding-top: 10px;
+            
+            }
+    }
+   
+    
+  }
+  .copyRight{
+    color: white;
+    background-color:  #ff6700;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    position: inherit;
+  }
+     
+   
+     
+     
+    

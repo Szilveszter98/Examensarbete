@@ -1,0 +1,45 @@
+.singleProduct {
+  height: 82vh;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  background-color: gray;
+  text-align: center; }
+  .singleProduct img {
+    object-fit: contain;
+    width: 500px;
+    height: 300px; }
+  .singleProduct h1 {
+    font-family: "Roboto", sans-serif;
+    padding-top: 20px; }
+  .singleProduct .backButtonContainer {
+    padding: 35px; }
+    .singleProduct .backButtonContainer form .submitButton {
+      color: #ff6700;
+      width: 200px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .singleProduct .backButtonContainer form .submitButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .singleProduct form .submitButton {
+    color: #ff6700;
+    width: 200px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .singleProduct form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }

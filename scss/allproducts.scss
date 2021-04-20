@@ -1,0 +1,75 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+body{
+    background-color: darkgray;
+}
+.productsPage{
+    height: 81vh;
+    width: 1800px;
+    margin: auto;
+    text-align: center;
+    a{  padding: 20px;
+        display: block;
+            .backButton{
+            color:$mainOrange;   
+            width: 200px;
+            background-color: $mainColor;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            font-family: $robotoFont;
+            font-size: 1.3em;	
+            outline: none;
+            text-align: center; 
+            }
+            .backButton:hover{
+                cursor: pointer;
+                background-color: $mainOrange;
+                color: $mainColor; 
+        }         
+    }
+    
+    
+        .productsContainer{
+        padding: 50px;
+        display: inline-flex;
+        margin: auto;
+    
+        .singleProductContainer{
+            box-shadow: 5px -3px 5px 0px black;
+            font-size: 15px;
+            text-align: center;
+            background-color: gray;
+            margin: 50px;
+            width: 300px;
+            color: white;
+            img{
+                width: 300px; 
+                height: 200px;
+                object-fit: contain;
+                background-color: black;
+            }
+            .productSubmitButton{
+                margin: 10px;
+                color:$mainOrange;   
+                width: 100px;
+                background-color: $mainColor;
+                border: none;
+                height: 30px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 15px;	
+                outline: none;
+                text-align: center;
+            }         
+            .productSubmitButton:hover{
+            cursor: pointer;
+            background-color: $mainOrange;
+            color: $mainColor;
+        
+        
+            }
+        }
+    }
+}

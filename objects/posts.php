@@ -2,6 +2,7 @@
 // database connection
 include("../../config/database_handler.php");
 
+
 // class
 class Post {
     private $database_handler;
@@ -169,7 +170,7 @@ class Post {
 
     
     
-// delete product
+
     public function deletePost($postID) {
 
         $query_string = "Delete FROM posts WHERE id=:postID ";

@@ -716,7 +716,7 @@ public function fetchAllCompaniesLogo($companyID){
 
 }
 public function searchCompanies($searchWord){
-    $query = "SELECT id, companyName, organisationsNummer, description, type  FROM companies WHERE type LIKE  :searchWord ";
+    $query = "SELECT id, companyName, organisationsNummer, description, type  FROM companies WHERE companyName LIKE  :searchWord ";
     
 
         $statementHandler = $this->database_handler->prepare($query);
@@ -729,10 +729,7 @@ public function searchCompanies($searchWord){
             return $statementHandler->fetchAll();
             
 
-            if(!$return){
-                print_r($statementHandler->errorInfo());
-                die;
-            }
+            
 
         } else {
             echo "Could not create database statement!";

@@ -1,0 +1,83 @@
+$robotoFont:  'Roboto', sans-serif;
+$mainOrange:  #ff6700;
+$mainColor : #393d3f;
+.mainContainer{
+    background-color: gray;
+}
+
+.buttonContainer{
+    display: flex;
+    height: 100px;
+    background-color: $mainColor;
+    form{
+        margin: auto;
+    }
+    .userData{
+        font-family: $robotoFont;
+        font-size: 18px;
+        padding-top: 15px;
+        
+    }
+    
+    .submitButton{
+            color:$mainOrange;   
+            width: 160px;
+            background-color: $mainColor;
+            border: none;
+            height: 40px;
+            border-radius: 5px;
+            font-family: $robotoFont;
+            font-size: 1.3em;	
+            outline: none;
+            text-align: center;
+     }         
+    .submitButton:hover{
+        cursor: pointer;
+        background-color: $mainOrange;
+        color: $mainColor;
+
+    }
+    
+}
+.posts{
+    text-align: center;
+    width: 100%;
+    h1{
+        text-decoration: underline;
+        color: white;
+        font-family: $robotoFont;
+        font-size: 50px;
+    }
+    .postData{
+        width: 500px;
+        margin: auto;
+        color: white;
+        font-family: $robotoFont;
+        font-size: 20px;
+        text-align: left;
+       
+    }
+    img{
+        width: 500px;
+         height: 300px;
+    }
+    .submitButton{
+    
+    color:$mainOrange;   
+    width: 160px;
+    background-color: $mainColor;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: $robotoFont;
+    font-size: 1.3em;	
+    outline: none;
+    text-align: center;
+    }         
+    .submitButton:hover{
+    cursor: pointer;
+    background-color: $mainOrange;
+    color: $mainColor;
+
+    }
+}

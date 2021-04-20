@@ -1,0 +1,59 @@
+body {
+  background-color: darkgray; }
+
+.productsPage {
+  height: 81vh;
+  width: 1800px;
+  margin: auto;
+  text-align: center; }
+  .productsPage a {
+    padding: 20px;
+    display: block; }
+    .productsPage a .backButton {
+      color: #ff6700;
+      width: 200px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center; }
+    .productsPage a .backButton:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
+  .productsPage .productsContainer {
+    padding: 50px;
+    display: inline-flex;
+    margin: auto; }
+    .productsPage .productsContainer .singleProductContainer {
+      box-shadow: 5px -3px 5px 0px black;
+      font-size: 15px;
+      text-align: center;
+      background-color: gray;
+      margin: 50px;
+      width: 300px;
+      color: white; }
+      .productsPage .productsContainer .singleProductContainer img {
+        width: 300px;
+        height: 200px;
+        object-fit: contain;
+        background-color: black; }
+      .productsPage .productsContainer .singleProductContainer .productSubmitButton {
+        margin: 10px;
+        color: #ff6700;
+        width: 100px;
+        background-color: #393d3f;
+        border: none;
+        height: 30px;
+        border-radius: 5px;
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        outline: none;
+        text-align: center; }
+      .productsPage .productsContainer .singleProductContainer .productSubmitButton:hover {
+        cursor: pointer;
+        background-color: #ff6700;
+        color: #393d3f; }

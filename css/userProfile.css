@@ -1,0 +1,62 @@
+.mainContainer {
+  background-color: gray; }
+
+.buttonContainer {
+  display: flex;
+  height: 100px;
+  background-color: #393d3f; }
+  .buttonContainer form {
+    margin: auto; }
+  .buttonContainer .userData {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    padding-top: 15px; }
+  .buttonContainer .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .buttonContainer .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
+
+.posts {
+  text-align: center;
+  width: 100%; }
+  .posts h1 {
+    text-decoration: underline;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 50px; }
+  .posts .postData {
+    width: 500px;
+    margin: auto;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    text-align: left; }
+  .posts img {
+    width: 500px;
+    height: 300px; }
+  .posts .submitButton {
+    color: #ff6700;
+    width: 160px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .posts .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }

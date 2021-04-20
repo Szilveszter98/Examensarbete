@@ -1,12 +1,12 @@
 <?php
-    include("../../objects/faktura.php");
-    $faktura_handler = new FakturaData($databaseHandler);
-    $companyID =(isset($_POST['companyID']) ? $_POST['companyID'] : '');
-    $token =(isset($_POST['token']) ? $_POST['token'] : '');
-    $fakturaData=$faktura_handler->fetchFaktura($companyID);
-    
-    ?>
-    <!DOCTYPE html>
+include("../../objects/faktura.php");
+$faktura_handler = new FakturaData($databaseHandler);
+$companyID = (isset($_POST['companyID']) ? $_POST['companyID'] : '');
+$token = (isset($_POST['token']) ? $_POST['token'] : '');
+$fakturaData = $faktura_handler->fetchFaktura($companyID);
+
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,17 +15,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
- 
-    <script src="faktura.js"><script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="faktura.js">
+        </script>
+            <script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js" >
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-    
+
     <style>
         html {
             scroll-behavior: smooth;
@@ -38,7 +38,7 @@
 </head>
 
 <body>
-<header>
+    <header>
         <div class="toolbar hidden-print" data-html2canvas-ignore="true">
             <div class="text-right">
                 <button class="btn-pdf" id="pdfbttn" onclick="getpdf()"><i class="fa fa-file-pdf"></i> Ladda ner som PDF</button>
@@ -65,32 +65,32 @@
                 <div class="kundInfo">
                     <div>
                         <h6>Faktura till</h6>
-                        <h3 class="kunderNamn"><?php echo $fakturaData['companyName']?> </h3>
+                        <h3 class="kunderNamn"><?php echo $fakturaData['companyName'] ?> </h3>
                         <h6>kunders referens:</h6>
-                        <p class="kunder-referens"><?php echo $fakturaData['companyReferens']?> </p>
+                        <p class="kunder-referens"><?php echo $fakturaData['companyReferens'] ?> </p>
                         <h6>kunders address:</h6>
-                        <address class="kunderAddress"><?php echo $fakturaData['companyAddress']?></address>
+                        <address class="kunderAddress"><?php echo $fakturaData['companyAddress'] ?></address>
                     </div>
                     <div>
                         <h6>Kundnummer:</h6>
                         <p class="kundnummer">12134455</p>
                         <h6>Fakturadatum:</h6>
-                        <p class="fakturaDatum"><?php echo $fakturaData['fakturaDate']?></p>
+                        <p class="fakturaDatum"><?php echo $fakturaData['fakturaDate'] ?></p>
                         <h6>Förfallodatum:</h6>
-                        <p class="forfalloDatum"><?php echo $fakturaData['lastPayDate']?></p>
+                        <p class="forfalloDatum"><?php echo $fakturaData['lastPayDate'] ?></p>
                     </div>
                     <div>
                         <h6>Plusgironr.</h6>
-                        <p><?php echo $fakturaData['bankgiro']?></p>
+                        <p><?php echo $fakturaData['bankgiro'] ?></p>
                         <h6>Bankgironr.</h6>
-                        <p><?php echo $fakturaData['plusgiro']?></p>
+                        <p><?php echo $fakturaData['plusgiro'] ?></p>
                     </div>
                     <div class="alignR">
                         <h6>Totalt summan</h6>
-                        <p class="summan summan-top"><?php echo $fakturaData['amount']?></p>
+                        <p class="summan summan-top"><?php echo $fakturaData['amount'] ?></p>
                         <br><br><br>
                         <h6>Fakturanummer</h6>
-                        <p class="fakturaNummer"><?php echo $fakturaData['fakturaNumber']?></p>
+                        <p class="fakturaNummer"><?php echo $fakturaData['fakturaNumber'] ?></p>
                     </div>
                 </div>
             </div>
@@ -103,24 +103,24 @@
                             <th scope="col">Beskrivning</th>
                             <th scope="col">Tid</th>
                             <th scope="col">Moms</th>
-                            
-                            
+
+
                             <th scope="col">Belopp</th>
                         </tr>
                     </thead>
                     <tbody class="prolist">
                         <tr>
-                            <td><?php echo $fakturaData['ProductName']?></td>
-                            
-                           
-                            <td><?php echo $fakturaData['productValidTime']?></td>
+                            <td><?php echo $fakturaData['ProductName'] ?></td>
+
+
+                            <td><?php echo $fakturaData['productValidTime'] ?></td>
                             <td>25%</td>
-                            
-                            <td><?php echo $fakturaData['amount']?>  kr</td>
+
+                            <td><?php echo $fakturaData['amount'] ?> kr</td>
                         </tr>
                     </tbody>
                     <!-- summan av faktura -->
-                   
+
                 </table>
             </div>
             <!-- faktura footer, firma info -->
@@ -137,12 +137,12 @@
                         <tr>
                             <td>Strålsjövägen 11</td>
                             <td>Szilveszter Mag</td>
-                            <td>Plusgironr: <?php echo $fakturaData['plusgiro']?></td>
+                            <td>Plusgironr: <?php echo $fakturaData['plusgiro'] ?></td>
                         </tr>
                         <tr>
                             <td>Stockholm, Sweden</td>
                             <td>Epost:szilveszter.mag98</td>
-                            <td>Bankgironr: <?php echo $fakturaData['bankgiro']?></td>
+                            <td>Bankgironr: <?php echo $fakturaData['bankgiro'] ?></td>
                         </tr>
                         <tr>
                             <td>org.nr 69696969696</td>
@@ -159,7 +159,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
+
 </body>
 
 </html>

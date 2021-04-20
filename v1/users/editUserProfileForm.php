@@ -8,7 +8,6 @@
 <body>
 <?php
 include("../../objects/users.php");
-//include("../../userHeader.php");
     $user_handler = new User($databaseHandler);
 $userID =(isset($_POST['id']) ? $_POST['id'] : '');
 $token=(isset($_POST['token']) ? $_POST['token'] : '');
@@ -16,30 +15,33 @@ $row = $user_handler->fetchUserData($userID);
 
 ?>
    <!-- Inputs to registeration -->
-<center>
+   <link rel="stylesheet" href="../../css/styles.css">
+<div class=editProfileForm>
 <h1> Edit profile details</h1>    
 <form method="POST" action="editUserProfile.php">
 
 <input type='hidden'  name='id' value='<?php echo $userID?>'>
 <input type='hidden'  name='token' value='<?php echo $token?>'>
-firstname:<br />
-<input type="text" name="firstname" value='<?php echo $row['firstname']?>' required>
+<h4>Firstname:</h4>
+<input type="text" class="inputField" name="firstname" value='<?php echo $row['firstname']?>' required>
 <br />
-lastname:<br />
-<input type="text" name="lastname" value='<?php echo $row['lastname']?>' required>
+<h4>lastname:</h4>
+<input type="text" class="inputField" name="lastname" value='<?php echo $row['lastname']?>' required>
 <br />
-Username:<br />
-<input type="text" name="username" value='<?php echo $row['username']?>' required>
+<h4>Username:</h4>
+<input type="text" class="inputField" name="username" value='<?php echo $row['username']?>' required>
 <br />
-Password: <br />
-<input type="password" name="password"required>
+<h4>Password: </h4>
+<input type="password" class="inputField" name="password"required>
 <br />
-E-mail: <br />
-<input type="email" name="email" value='<?php echo $row['email']?>' required>
+<h4>E-mail:</h4>
+<input type="email" class="inputField" name="email" value='<?php echo $row['email']?>' required>
+<br />
 <br />
 <hr>
-<input  type="submit" value="Confirm" /></b>
+<input class="submitButton" type="submit" value="Confirm" /></b>
 </form>
-</center>
+</div>
+<?php include("../../footer.php"); ?>
 </body>
 </html>

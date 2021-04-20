@@ -1,0 +1,45 @@
+.signupCompanyPage {
+  background-color: gray;
+  padding-top: 150px;
+  text-align: center;
+  height: auto; }
+  .signupCompanyPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .signupCompanyPage form {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .signupCompanyPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .signupCompanyPage form select {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .signupCompanyPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .signupCompanyPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }

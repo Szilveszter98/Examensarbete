@@ -1,0 +1,33 @@
+.editProfileForm {
+  height: 81vh;
+  text-align: center; }
+  .editProfileForm h1 {
+    font-family: "Roboto", sans-serif;
+    padding: 20px; }
+  .editProfileForm form h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+  .editProfileForm form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .editProfileForm form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 100px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .editProfileForm form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }

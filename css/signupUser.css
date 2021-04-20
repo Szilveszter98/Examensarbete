@@ -1,0 +1,37 @@
+.signupUserPage {
+  background-color: gray;
+  padding-top: 150px;
+  text-align: center;
+  height: 600px; }
+  .signupUserPage h1 {
+    font-size: 25px;
+    font-family: "Roboto", sans-serif; }
+  .signupUserPage form {
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    padding-top: 50px;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+    .signupUserPage form input {
+      height: 40px;
+      width: 300px;
+      border-radius: 5px;
+      border: none;
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-right: 10px; }
+    .signupUserPage form .submit {
+      width: 160px;
+      background-color: #393d3f;
+      border: none;
+      height: 40px;
+      border-radius: 5px;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.3em;
+      outline: none;
+      text-align: center;
+      color: #ff6700; }
+    .signupUserPage form .submit:hover {
+      cursor: pointer;
+      background-color: #ff6700;
+      color: #393d3f; }
