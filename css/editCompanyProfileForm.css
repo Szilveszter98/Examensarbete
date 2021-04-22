@@ -1,13 +1,13 @@
-.editCompanyProfileForm, .editCompanyImgFinished, .deleteLogoFinished, .addLogoForm, .updatedCompanyImages, .deletedCompanyImage {
+.editCompanyProfileForm, .editCompanyImgFinished, .deleteLogoFinished, .addLogoForm, .updatedCompanyImages, .deletedCompanyImage, .postImageAdded, .addImageToPost {
   height: 81vh;
   text-align: center; }
-  .editCompanyProfileForm h1, .editCompanyImgFinished h1, .deleteLogoFinished h1, .addLogoForm h1, .updatedCompanyImages h1, .deletedCompanyImage h1 {
+  .editCompanyProfileForm h1, .editCompanyImgFinished h1, .deleteLogoFinished h1, .addLogoForm h1, .updatedCompanyImages h1, .deletedCompanyImage h1, .postImageAdded h1, .addImageToPost h1 {
     font-family: "Roboto", sans-serif;
     padding: 20px; }
-  .editCompanyProfileForm form h4, .editCompanyImgFinished form h4, .deleteLogoFinished form h4, .addLogoForm form h4, .updatedCompanyImages form h4, .deletedCompanyImage form h4 {
+  .editCompanyProfileForm form h4, .editCompanyImgFinished form h4, .deleteLogoFinished form h4, .addLogoForm form h4, .updatedCompanyImages form h4, .deletedCompanyImage form h4, .postImageAdded form h4, .addImageToPost form h4 {
     font-family: "Roboto", sans-serif;
     font-size: 18px; }
-  .editCompanyProfileForm form .inputField, .editCompanyImgFinished form .inputField, .deleteLogoFinished form .inputField, .addLogoForm form .inputField, .updatedCompanyImages form .inputField, .deletedCompanyImage form .inputField {
+  .editCompanyProfileForm form .inputField, .editCompanyImgFinished form .inputField, .deleteLogoFinished form .inputField, .addLogoForm form .inputField, .updatedCompanyImages form .inputField, .deletedCompanyImage form .inputField, .postImageAdded form .inputField, .addImageToPost form .inputField {
     height: 40px;
     max-width: 300px;
     border-radius: 5px;
@@ -15,7 +15,7 @@
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     margin-right: 10px; }
-  .editCompanyProfileForm form .submitButton, .editCompanyImgFinished form .submitButton, .deleteLogoFinished form .submitButton, .addLogoForm form .submitButton, .updatedCompanyImages form .submitButton, .deletedCompanyImage form .submitButton {
+  .editCompanyProfileForm form .submitButton, .editCompanyImgFinished form .submitButton, .deleteLogoFinished form .submitButton, .addLogoForm form .submitButton, .updatedCompanyImages form .submitButton, .deletedCompanyImage form .submitButton, .postImageAdded form .submitButton, .addImageToPost form .submitButton {
     margin: 20px auto;
     color: #ff6700;
     width: 100px;
@@ -27,7 +27,7 @@
     font-size: 1.3em;
     outline: none;
     text-align: center; }
-  .editCompanyProfileForm form .submitButton:hover, .editCompanyImgFinished form .submitButton:hover, .deleteLogoFinished form .submitButton:hover, .addLogoForm form .submitButton:hover, .updatedCompanyImages form .submitButton:hover, .deletedCompanyImage form .submitButton:hover {
+  .editCompanyProfileForm form .submitButton:hover, .editCompanyImgFinished form .submitButton:hover, .deleteLogoFinished form .submitButton:hover, .addLogoForm form .submitButton:hover, .updatedCompanyImages form .submitButton:hover, .deletedCompanyImage form .submitButton:hover, .postImageAdded form .submitButton:hover, .addImageToPost form .submitButton:hover {
     cursor: pointer;
     background-color: #ff6700;
     color: #393d3f; }

@@ -29,6 +29,31 @@
   .companyContainer .companyButtonContainer {
     background-color: #393d3f;
     display: flex;
-    height: 100px; }
+    height: 100px;
+    flex-wrap: wrap; }
     .companyContainer .companyButtonContainer form {
       margin: auto; }
+
+@media only screen and (max-width: 1150px) {
+  .companyButtonContainer {
+    background-color: #393d3f;
+    display: contents;
+    height: auto;
+    width: 100%; }
+    .companyButtonContainer form {
+      width: 100%;
+      background-color: #3e4142;
+      text-align: center; }
+    .companyButtonContainer .submitButton {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+      width: 200px; }
+  .companyContainer .companyData {
+    margin-top: 150px;
+    text-align: center; }
+    .companyContainer .companyData img {
+      object-fit: contain;
+      max-width: 150px;
+      max-height: 150px; } }

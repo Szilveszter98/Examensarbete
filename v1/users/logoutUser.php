@@ -1,4 +1,3 @@
-
 <?php
 // includes
 include("../../objects/users.php");
@@ -6,19 +5,18 @@ include("../../objects/users.php");
 $user_handler = new User($databaseHandler);
 
 
-$userID =(isset($_POST['id']) ? $_POST['id'] : '');
+$userID = (isset($_POST['id']) ? $_POST['id'] : '');
 // callnig on deletePost if we have post id
 
- if(!empty($userID)) {
-    
+if (!empty($userID)) {
 
-        $user_handler->logoutUser($userID);
 
-    } else {
-        echo "Error with postID";
-    }
+    $user_handler->logoutUser($userID);
+} else {
+    echo "Error with postID";
+}
 
-   
-   
+
+
 
 ?>

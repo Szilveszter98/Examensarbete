@@ -1,11 +1,11 @@
-.editPostForm {
+.editPostForm, .createPostForm {
   padding-top: 50px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   height: 76vh; }
-  .editPostForm form {
+  .editPostForm form, .createPostForm form {
     font-size: 18px; }
-    .editPostForm form .inputField {
+    .editPostForm form .inputField, .createPostForm form .inputField {
       height: 40px;
       max-width: 300px;
       border-radius: 5px;
@@ -13,7 +13,7 @@
       font-family: "Roboto", sans-serif;
       font-size: 15px;
       margin-right: 10px; }
-    .editPostForm form .submitButton {
+    .editPostForm form .submitButton, .createPostForm form .submitButton {
       margin: 20px auto;
       color: #ff6700;
       width: 100px;
@@ -25,7 +25,7 @@
       font-size: 1.3em;
       outline: none;
       text-align: center; }
-    .editPostForm form .submitButton:hover {
+    .editPostForm form .submitButton:hover, .createPostForm form .submitButton:hover {
       cursor: pointer;
       background-color: #ff6700;
       color: #393d3f; }
@@ -36,14 +36,14 @@
   font-size: 18px;
   height: 80vh; }
 
-.deletPostImgFinished, .postDeleted {
+.deletPostImgFinished, .postDeleted, .postImageAdded {
   padding-top: 50px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   height: 76vh; }
-  .deletPostImgFinished form, .postDeleted form {
+  .deletPostImgFinished form, .postDeleted form, .postImageAdded form {
     font-size: 18px; }
-    .deletPostImgFinished form .inputField, .postDeleted form .inputField {
+    .deletPostImgFinished form .inputField, .postDeleted form .inputField, .postImageAdded form .inputField {
       height: 40px;
       max-width: 300px;
       border-radius: 5px;
@@ -51,7 +51,7 @@
       font-family: "Roboto", sans-serif;
       font-size: 15px;
       margin-right: 10px; }
-    .deletPostImgFinished form .submitButton, .postDeleted form .submitButton {
+    .deletPostImgFinished form .submitButton, .postDeleted form .submitButton, .postImageAdded form .submitButton {
       margin: 20px auto;
       color: #ff6700;
       width: 300px;
@@ -63,7 +63,7 @@
       font-size: 1.3em;
       outline: none;
       text-align: center; }
-    .deletPostImgFinished form .submitButton:hover, .postDeleted form .submitButton:hover {
+    .deletPostImgFinished form .submitButton:hover, .postDeleted form .submitButton:hover, .postImageAdded form .submitButton:hover {
       cursor: pointer;
       background-color: #ff6700;
       color: #393d3f; }

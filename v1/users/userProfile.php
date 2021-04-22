@@ -38,34 +38,35 @@ if (!empty($token)) {
             <input type='hidden' name='id' value='<?php echo $USERID ?>'>
             <input class="submitButton" type="submit" value="Skapa inlägg" />
         </form>
-        <br>
+        
         <form method="POST" action="editUserProfileForm.php">
             <input type='hidden' name='id' value="<?php echo $USERID ?>">
             <input type='hidden' name='token' value='<?php echo $token ?>'>
             <input class="submitButton" type="submit" value="Ändra detaljer" />
         </form>
-        <br>
+        
         <form method="POST" action="../company/allcompanies.php">
             <input type='hidden' name='token' value="<?php echo $token ?>">
             <input class="submitButton" type="submit" value="Se alla företag" /></b>
         </form>
-        <br>
+        
         <form method="POST" action="logoutUser.php">
             <input type='hidden' name='id' value="<?php echo $USERID ?>">
             <input class="submitButton" type="submit" value="Logga ut" />
         </form>
-        <br>
+        
         <form method="POST" action="deleteUser.php">
             <input type='hidden' name='id' value="<?php echo $USERID ?>">
             <input class="submitButton" type="submit" value="Delete Profile" />
         </form>
-        <div class='userData'>
+        
+        
+    </div>
+    <div class='userData'>
             <span><?= $row['username'] ?></span><br>
             <span><?= $row['firstname'] . " " . $row['lastname'] ?></span><br>
             <span><?= $row['email'] ?></span>
         </div>
-    </div>
-
     <?php
 
 
@@ -138,6 +139,7 @@ if (!empty($token)) {
         </div>
         <hr>
 </div>
+
 <?php
     }
     include("../../footer.php"); ?>

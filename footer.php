@@ -5,15 +5,13 @@
 
 <footer>
     <div class="footerContent">
-        <div class="footerLogo">
-            <img src="https://www.logo.wine/a/logo/WeWork/WeWork-Logo.wine.svg" alt="logo">
-        </div>
+       
         <!-- Left -->
         <div class="footer-left">
-            <ul class="footer-links">
-                <li><a href="http://localhost/examensarbete/index.php" >Startsida</a><br></li>
-            </ul>
+        <div class="footerLogo">
+            <a href="http://localhost/examensarbete/index.php" ><img src="https://www.logo.wine/a/logo/WeWork/WeWork-Logo.wine.svg" alt="logo"></a>
         </div>
+</div>
         <!-- Center -->
         <div class="footer-center">
             <div class="footerContacts">

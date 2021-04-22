@@ -12,7 +12,8 @@ $postID =(isset($_POST['postID']) ? $_POST['postID'] : '');
 $token=(isset($_POST['token']) ? $_POST['token'] : '');
 
 ?>
-<center>
+<link rel="stylesheet" href="./css/styles.css">
+<div class="addImageToPost">
 <h1> Ladda upp  bilder</h1>    
 <form method="POST" action="v1/posts/addPostImages.php" enctype='multipart/form-data'>
 <input type='hidden'  name='token' value='<?php echo $token?>'>
@@ -21,10 +22,10 @@ $token=(isset($_POST['token']) ? $_POST['token'] : '');
             <input type='file' name='file[]' id='fileToUpload' multiple required><br />
             <br />
             <hr>
-            <input type="submit" name="Add" value="Ladda upp"/> 
+            <input class="submitButton" type="submit" name="Add" value="Ladda upp"/> 
 
-
+<?php include('footer.php')?>
 </form>
-</center>
+</div>
 </body>
 </html>

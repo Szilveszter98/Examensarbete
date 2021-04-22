@@ -9,16 +9,20 @@ $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
 if (!empty($postID)) {
     $post_handler->uploadPostImages($_FILES['file']['name'], $_POST['postID']);
-    echo "<center>";
+    ?>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <?php
+    echo "<div class='postImageAdded' >";
     echo "<h1>Bilden uppdaterad nu!</h1>";
     echo '<form method="POST" action="../users/userProfile.php">';
     echo "<input type='hidden'  name='token' value='{$token}'>";
-    echo '<input  type="submit" value="Tillbaka till Portfolion" /></b>';
+    echo '<input class="submitButton" type="submit" value="Tillbaka till Portfolion" /></b>';
     echo '</form>';
-    echo "</center>";
-    // header( 'Location: http://localhost/examensarbete/index.php' );
+    echo "</div>";
+    include("../../footer.php");
+    
 } else {
     echo "update error";
 }
 
-echo ("<center>");
+

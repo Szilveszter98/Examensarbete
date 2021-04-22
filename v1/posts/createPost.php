@@ -5,7 +5,7 @@ include("../../objects/posts.php");
 
 $post_handler = new Post($databaseHandler);
 $userID = (isset($_POST['id']) ? $_POST['id'] : '');
-print_r($userID);
+
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
 
@@ -51,16 +51,17 @@ if (!empty($userID)) {
         <form method="POST" action="../../addImagesToPost.php">
             <input type='hidden' name='token' value='<?= $token ?>'>
             <input type='hidden' name='postID' value='<?= $row['ID'] ?>'>
-            <input type="submit" value="Lägg till bild" /></b>
+            <input class="submitButton" type="submit" value="Lägg till bild" /></b>
         </form>
 
         <form method="POST" action="../users/userProfile.php">
             <input type='hidden' name='token' value='<?= $token ?>'>
-            <input type="submit" value="Tillbaka till profilen" /></b>
+            <input class="submitButton" type="submit" value="Tillbaka till profilen" /></b>
         </form>
     </div>
-<?php
 
+<?php
+include("../../footer.php");
 } else {
     echo "Error with companyID";
 }

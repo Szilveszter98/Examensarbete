@@ -1,4 +1,3 @@
-
 <?php
 // includes
 include("../../objects/users.php");
@@ -11,14 +10,8 @@ $userID =(isset($_POST['id']) ? $_POST['id'] : '');
 
  if(!empty($userID)) {
     
-
         $user_handler->deleteUser($userID);
 
     } else {
         echo "Error with postID";
     }
-
-   
-   
-
-?>

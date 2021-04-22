@@ -19,7 +19,7 @@ $product = $product_handler->fetchSingleProduct($productID);
 <div class="singleProduct">
    <div class="backButtonContainer">
       <form method="POST" action="allProducts.php">
-         <input type='hidden' name='token' value='<?=$token?>'>
+         <input type='hidden' name='token' value='<?= $token ?>'>
          <input class="submitButton" type="submit" value="Tillbaka till produkter" />
       </form>
    </div>
@@ -31,9 +31,9 @@ $product = $product_handler->fetchSingleProduct($productID);
    <span><?php echo $product['price'] ?>kr</br></span><br />
 
    <form method="POST" action="http://localhost/examensarbete/v1/checkouts/checkout.php">
-      <input type='hidden' name='productID' value='<?=$productID?>'>
-      <input type='hidden' name='companyID' value='<?=$companyID?>'>
-      <input type='hidden' name='token' value='<?=$token?>'>
+      <input type='hidden' name='productID' value='<?= $productID ?>'>
+      <input type='hidden' name='companyID' value='<?= $companyID ?>'>
+      <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Köp" />
    </form>
 </div>

@@ -2,7 +2,7 @@ $robotoFont:  'Roboto', sans-serif;
 $mainOrange:  #ff6700;
 $mainColor : #393d3f;
 
-.editPostForm{
+.editPostForm, .createPostForm{
     padding-top: 50px;
     text-align: center;
     font-family: $robotoFont;
@@ -49,7 +49,7 @@ $mainColor : #393d3f;
     font-size: 18px;
     height: 80vh;
 }
-.deletPostImgFinished, .postDeleted{
+.deletPostImgFinished, .postDeleted, .postImageAdded{
     padding-top: 50px;
     text-align: center;
     font-family: $robotoFont;

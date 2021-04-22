@@ -7,33 +7,19 @@ footer {
   text-align: center; }
   footer .footerContent {
     color: white;
-    display: inline-flex;
+    display: flex;
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     align-content: space-between;
-    padding: 20px 50px 0px 50px;
-    width: 1500px; }
-    footer .footerContent .footerLogo {
-      text-align: left;
-      width: 25%; }
-      footer .footerContent .footerLogo img {
-        width: 200px;
-        height: 100px; }
+    padding: 20px 50px 0px 50px; }
     footer .footerContent .footer-left {
-      width: 25%;
+      width: 33%;
       text-align: left; }
-      footer .footerContent .footer-left .footer-links {
-        padding: 0px; }
-        footer .footerContent .footer-left .footer-links li {
-          list-style-type: none;
-          padding: 10px; }
-          footer .footerContent .footer-left .footer-links li a {
-            text-decoration: none;
-            color: white; }
-        footer .footerContent .footer-left .footer-links li:hover {
-          text-decoration: underline; }
+      footer .footerContent .footer-left .footerLogo img {
+        max-width: 200px;
+        max-height: 100px; }
     footer .footerContent .footer-center {
-      width: 25%;
+      width: 33%;
       text-align: center; }
       footer .footerContent .footer-center .footerContacts .tel {
         padding: 10px; }
@@ -56,7 +42,7 @@ footer {
           color: #ff6700;
           transform: scale(1.2); }
     footer .footerContent .footer-right {
-      width: 25%;
+      width: 33%;
       text-align: right;
       padding-top: 10px; }
 
@@ -67,6 +53,25 @@ footer {
   text-align: center;
   bottom: 0;
   position: inherit; }
+
+@media only screen and (max-width: 700px) {
+  footer .footerContent {
+    display: block; }
+  footer .footerContent .footerLogo img {
+    text-align: center;
+    margin: auto;
+    width: auto; }
+  footer .footerContent .footer-left {
+    text-align: center;
+    margin: auto;
+    width: auto; }
+  footer .footerContent .footer-center {
+    text-align: center;
+    width: auto; }
+  footer .footerContent .footer-right {
+    text-align: center;
+    margin: auto;
+    width: auto; } }
 
 /* Navbar section */
 html,
@@ -680,13 +685,10 @@ body {
 .buttonContainer {
   display: flex;
   height: 100px;
-  background-color: #393d3f; }
+  background-color: #393d3f;
+  flex-wrap: wrap; }
   .buttonContainer form {
     margin: auto; }
-  .buttonContainer .userData {
-    font-family: "Roboto", sans-serif;
-    font-size: 18px;
-    padding-top: 15px; }
   .buttonContainer .submitButton {
     color: #ff6700;
     width: 160px;
@@ -702,6 +704,12 @@ body {
     cursor: pointer;
     background-color: #ff6700;
     color: #393d3f; }
+
+.userData {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  padding-top: 15px;
+  text-align: center; }
 
 .posts {
   text-align: center;
@@ -737,6 +745,23 @@ body {
     background-color: #ff6700;
     color: #393d3f; }
 
+@media only screen and (max-width: 650px) {
+  .buttonContainer {
+    background-color: #393d3f;
+    display: contents;
+    height: auto;
+    width: 100%; }
+    .buttonContainer form {
+      width: 100%;
+      background-color: #3e4142;
+      text-align: center; }
+    .buttonContainer .submitButton {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+      width: 200px; } }
+
 .companyContainer {
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -768,12 +793,34 @@ body {
   .companyContainer .companyButtonContainer {
     background-color: #393d3f;
     display: flex;
-    height: 100px; }
+    height: 100px;
+    flex-wrap: wrap; }
     .companyContainer .companyButtonContainer form {
       margin: auto; }
 
-body {
-  background-color: darkgray; }
+@media only screen and (max-width: 1150px) {
+  .companyButtonContainer {
+    background-color: #393d3f;
+    display: contents;
+    height: auto;
+    width: 100%; }
+    .companyButtonContainer form {
+      width: 100%;
+      background-color: #3e4142;
+      text-align: center; }
+    .companyButtonContainer .submitButton {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+      width: 200px; }
+  .companyContainer .companyData {
+    margin-top: 150px;
+    text-align: center; }
+    .companyContainer .companyData img {
+      object-fit: contain;
+      max-width: 150px;
+      max-height: 150px; } }
 
 .productsPage {
   height: 81vh;
@@ -1142,16 +1189,16 @@ body {
     background-color: #ff6700;
     color: #393d3f; }
 
-.editCompanyProfileForm, .editCompanyImgFinished, .deleteLogoFinished, .addLogoForm, .updatedCompanyImages, .deletedCompanyImage {
+.editCompanyProfileForm, .editCompanyImgFinished, .deleteLogoFinished, .addLogoForm, .updatedCompanyImages, .deletedCompanyImage, .postImageAdded, .addImageToPost {
   height: 81vh;
   text-align: center; }
-  .editCompanyProfileForm h1, .editCompanyImgFinished h1, .deleteLogoFinished h1, .addLogoForm h1, .updatedCompanyImages h1, .deletedCompanyImage h1 {
+  .editCompanyProfileForm h1, .editCompanyImgFinished h1, .deleteLogoFinished h1, .addLogoForm h1, .updatedCompanyImages h1, .deletedCompanyImage h1, .postImageAdded h1, .addImageToPost h1 {
     font-family: "Roboto", sans-serif;
     padding: 20px; }
-  .editCompanyProfileForm form h4, .editCompanyImgFinished form h4, .deleteLogoFinished form h4, .addLogoForm form h4, .updatedCompanyImages form h4, .deletedCompanyImage form h4 {
+  .editCompanyProfileForm form h4, .editCompanyImgFinished form h4, .deleteLogoFinished form h4, .addLogoForm form h4, .updatedCompanyImages form h4, .deletedCompanyImage form h4, .postImageAdded form h4, .addImageToPost form h4 {
     font-family: "Roboto", sans-serif;
     font-size: 18px; }
-  .editCompanyProfileForm form .inputField, .editCompanyImgFinished form .inputField, .deleteLogoFinished form .inputField, .addLogoForm form .inputField, .updatedCompanyImages form .inputField, .deletedCompanyImage form .inputField {
+  .editCompanyProfileForm form .inputField, .editCompanyImgFinished form .inputField, .deleteLogoFinished form .inputField, .addLogoForm form .inputField, .updatedCompanyImages form .inputField, .deletedCompanyImage form .inputField, .postImageAdded form .inputField, .addImageToPost form .inputField {
     height: 40px;
     max-width: 300px;
     border-radius: 5px;
@@ -1159,7 +1206,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 15px;
     margin-right: 10px; }
-  .editCompanyProfileForm form .submitButton, .editCompanyImgFinished form .submitButton, .deleteLogoFinished form .submitButton, .addLogoForm form .submitButton, .updatedCompanyImages form .submitButton, .deletedCompanyImage form .submitButton {
+  .editCompanyProfileForm form .submitButton, .editCompanyImgFinished form .submitButton, .deleteLogoFinished form .submitButton, .addLogoForm form .submitButton, .updatedCompanyImages form .submitButton, .deletedCompanyImage form .submitButton, .postImageAdded form .submitButton, .addImageToPost form .submitButton {
     margin: 20px auto;
     color: #ff6700;
     width: 100px;
@@ -1171,7 +1218,7 @@ body {
     font-size: 1.3em;
     outline: none;
     text-align: center; }
-  .editCompanyProfileForm form .submitButton:hover, .editCompanyImgFinished form .submitButton:hover, .deleteLogoFinished form .submitButton:hover, .addLogoForm form .submitButton:hover, .updatedCompanyImages form .submitButton:hover, .deletedCompanyImage form .submitButton:hover {
+  .editCompanyProfileForm form .submitButton:hover, .editCompanyImgFinished form .submitButton:hover, .deleteLogoFinished form .submitButton:hover, .addLogoForm form .submitButton:hover, .updatedCompanyImages form .submitButton:hover, .deletedCompanyImage form .submitButton:hover, .postImageAdded form .submitButton:hover, .addImageToPost form .submitButton:hover {
     cursor: pointer;
     background-color: #ff6700;
     color: #393d3f; }
@@ -1351,7 +1398,42 @@ body {
   height: 76vh; }
 
 .postSuccessContainer {
+  text-align: center;
+  height: 81vh;
   text-align: center; }
+  .postSuccessContainer h1 {
+    font-family: "Roboto", sans-serif;
+    padding: 20px; }
+  .postSuccessContainer span {
+    font-family: "Roboto", sans-serif;
+    padding: 20px; }
+  .postSuccessContainer form h4 {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px; }
+  .postSuccessContainer form .inputField {
+    height: 40px;
+    max-width: 300px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    margin-right: 10px; }
+  .postSuccessContainer form .submitButton {
+    margin: 20px auto;
+    color: #ff6700;
+    width: 180px;
+    background-color: #393d3f;
+    border: none;
+    height: 40px;
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3em;
+    outline: none;
+    text-align: center; }
+  .postSuccessContainer form .submitButton:hover {
+    cursor: pointer;
+    background-color: #ff6700;
+    color: #393d3f; }
 
 .searchField {
   text-align: center;
@@ -1381,14 +1463,14 @@ body {
   .searchResult span {
     font-family: "Roboto", sans-serif; }
 
-.editPostForm {
+.editPostForm, .createPostForm {
   padding-top: 50px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   height: 76vh; }
-  .editPostForm form {
+  .editPostForm form, .createPostForm form {
     font-size: 18px; }
-    .editPostForm form .inputField {
+    .editPostForm form .inputField, .createPostForm form .inputField {
       height: 40px;
       max-width: 300px;
       border-radius: 5px;
@@ -1396,7 +1478,7 @@ body {
       font-family: "Roboto", sans-serif;
       font-size: 15px;
       margin-right: 10px; }
-    .editPostForm form .submitButton {
+    .editPostForm form .submitButton, .createPostForm form .submitButton {
       margin: 20px auto;
       color: #ff6700;
       width: 100px;
@@ -1408,7 +1490,7 @@ body {
       font-size: 1.3em;
       outline: none;
       text-align: center; }
-    .editPostForm form .submitButton:hover {
+    .editPostForm form .submitButton:hover, .createPostForm form .submitButton:hover {
       cursor: pointer;
       background-color: #ff6700;
       color: #393d3f; }
@@ -1419,14 +1501,14 @@ body {
   font-size: 18px;
   height: 80vh; }
 
-.deletPostImgFinished, .postDeleted {
+.deletPostImgFinished, .postDeleted, .postImageAdded {
   padding-top: 50px;
   text-align: center;
   font-family: "Roboto", sans-serif;
   height: 76vh; }
-  .deletPostImgFinished form, .postDeleted form {
+  .deletPostImgFinished form, .postDeleted form, .postImageAdded form {
     font-size: 18px; }
-    .deletPostImgFinished form .inputField, .postDeleted form .inputField {
+    .deletPostImgFinished form .inputField, .postDeleted form .inputField, .postImageAdded form .inputField {
       height: 40px;
       max-width: 300px;
       border-radius: 5px;
@@ -1434,7 +1516,7 @@ body {
       font-family: "Roboto", sans-serif;
       font-size: 15px;
       margin-right: 10px; }
-    .deletPostImgFinished form .submitButton, .postDeleted form .submitButton {
+    .deletPostImgFinished form .submitButton, .postDeleted form .submitButton, .postImageAdded form .submitButton {
       margin: 20px auto;
       color: #ff6700;
       width: 300px;
@@ -1446,7 +1528,10 @@ body {
       font-size: 1.3em;
       outline: none;
       text-align: center; }
-    .deletPostImgFinished form .submitButton:hover, .postDeleted form .submitButton:hover {
+    .deletPostImgFinished form .submitButton:hover, .postDeleted form .submitButton:hover, .postImageAdded form .submitButton:hover {
       cursor: pointer;
       background-color: #ff6700;
       color: #393d3f; }
+
+body {
+  background-color: darkgray; }

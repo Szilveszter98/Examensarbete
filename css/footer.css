@@ -7,33 +7,19 @@ footer {
   text-align: center; }
   footer .footerContent {
     color: white;
-    display: inline-flex;
+    display: flex;
     font-size: 18px;
     font-family: "Roboto", sans-serif;
     align-content: space-between;
-    padding: 20px 50px 0px 50px;
-    width: 1500px; }
-    footer .footerContent .footerLogo {
-      text-align: left;
-      width: 25%; }
-      footer .footerContent .footerLogo img {
-        width: 200px;
-        height: 100px; }
+    padding: 20px 50px 0px 50px; }
     footer .footerContent .footer-left {
-      width: 25%;
+      width: 33%;
       text-align: left; }
-      footer .footerContent .footer-left .footer-links {
-        padding: 0px; }
-        footer .footerContent .footer-left .footer-links li {
-          list-style-type: none;
-          padding: 10px; }
-          footer .footerContent .footer-left .footer-links li a {
-            text-decoration: none;
-            color: white; }
-        footer .footerContent .footer-left .footer-links li:hover {
-          text-decoration: underline; }
+      footer .footerContent .footer-left .footerLogo img {
+        max-width: 200px;
+        max-height: 100px; }
     footer .footerContent .footer-center {
-      width: 25%;
+      width: 33%;
       text-align: center; }
       footer .footerContent .footer-center .footerContacts .tel {
         padding: 10px; }
@@ -56,7 +42,7 @@ footer {
           color: #ff6700;
           transform: scale(1.2); }
     footer .footerContent .footer-right {
-      width: 25%;
+      width: 33%;
       text-align: right;
       padding-top: 10px; }
 
@@ -67,3 +53,22 @@ footer {
   text-align: center;
   bottom: 0;
   position: inherit; }
+
+@media only screen and (max-width: 700px) {
+  footer .footerContent {
+    display: block; }
+  footer .footerContent .footerLogo img {
+    text-align: center;
+    margin: auto;
+    width: auto; }
+  footer .footerContent .footer-left {
+    text-align: center;
+    margin: auto;
+    width: auto; }
+  footer .footerContent .footer-center {
+    text-align: center;
+    width: auto; }
+  footer .footerContent .footer-right {
+    text-align: center;
+    margin: auto;
+    width: auto; } }

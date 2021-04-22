@@ -31,37 +31,37 @@ if (!empty($token)) {
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Alla jobb" />
     </form>
-    <br>
+    
     <form method="POST" action="editCompanyProfileForm.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Ändra detaljer" />
     </form>
-    <br>
+    
     <form method="POST" action="../../editCompanyImgForm.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Lägg till bilder" />
     </form>
-    <br>
+    
     <form method="POST" action="logoutCompany.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Logga ut" />
     </form>
-    <br>
+    
     <form method="POST" action="deleteCompany.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Ta bort konto" />
     </form>
-    <br>
+    
     <form method="POST" action="../../addCompanyLogoForm.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Byta Logo" />
     </form>
-    <br>
+    
     <form method="POST" action="../products/allProducts.php">
       <input type='hidden' name='companyID' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>

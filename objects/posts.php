@@ -199,7 +199,7 @@ class Post {
 
     public function uploadPostImages(){
         $postID=$_POST['postID'];    
-        print_r($postID);
+  
             if (!empty($_FILES['file']['name'])){
             
                 $file = count($_FILES['file']['name']);
