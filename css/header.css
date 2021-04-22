@@ -17,12 +17,17 @@ body {
   float: left;
   width: auto;
   height: auto;
-  padding-left: 3rem; }
+  padding-left: 3rem;
+  text-align: center; }
 
 .nav div.logo a {
   text-decoration: none;
   color: #fff;
   font-size: 2.5rem; }
+  .nav div.logo a img {
+    object-fit: contain;
+    max-width: 200px;
+    max-height: 100px; }
 
 .nav div.logo a:hover {
   color: #ff6700; }

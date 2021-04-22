@@ -8,7 +8,7 @@
   text-align: center; }
   .userIndex .userIndexText {
     margin: auto;
-    width: 800px;
+    max-width: 800px;
     color: white;
     padding: 50px; }
   .userIndex a {

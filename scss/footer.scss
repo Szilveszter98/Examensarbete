@@ -26,8 +26,8 @@ $hoverColor:  #ff6700;
         
            .footer-left{
             width: 33%;
-            text-align: left;
-            
+    text-align: left;
+    margin: auto;
             .footerLogo{
               
               img{
@@ -108,6 +108,7 @@ $hoverColor:  #ff6700;
       text-align: center;
       margin: auto;
       width: auto;
+      
     }
     footer .footerContent .footer-center{
       text-align: center;

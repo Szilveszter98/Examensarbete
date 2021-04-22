@@ -14,7 +14,8 @@ footer {
     padding: 20px 50px 0px 50px; }
     footer .footerContent .footer-left {
       width: 33%;
-      text-align: left; }
+      text-align: left;
+      margin: auto; }
       footer .footerContent .footer-left .footerLogo img {
         max-width: 200px;
         max-height: 100px; }
@@ -92,12 +93,17 @@ body {
   float: left;
   width: auto;
   height: auto;
-  padding-left: 3rem; }
+  padding-left: 3rem;
+  text-align: center; }
 
 .nav div.logo a {
   text-decoration: none;
   color: #fff;
   font-size: 2.5rem; }
+  .nav div.logo a img {
+    object-fit: contain;
+    max-width: 200px;
+    max-height: 100px; }
 
 .nav div.logo a:hover {
   color: #ff6700; }
@@ -332,7 +338,7 @@ body {
 
 .indexContainer {
   padding-top: 160px;
-  height: 600px;
+  min-height: 705px;
   background-color: gray; }
   .indexContainer h1 {
     font-family: "Roboto", sans-serif;
@@ -346,7 +352,7 @@ body {
       font-size: 25px; }
     .indexContainer form .searchField {
       height: 40px;
-      width: 590px;
+      max-width: 590px;
       border-radius: 5px;
       border: none;
       font-family: "Roboto", sans-serif;
@@ -410,7 +416,7 @@ body {
   text-align: center; }
   .userIndex .userIndexText {
     margin: auto;
-    width: 800px;
+    max-width: 800px;
     color: white;
     padding: 50px; }
   .userIndex a {
@@ -531,7 +537,7 @@ body {
 
 .companyLoginPage {
   background-color: gray;
-  height: 600px;
+  height: 705px;
   text-align: center;
   padding-top: 141px; }
   .companyLoginPage h1 {
@@ -720,7 +726,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-size: 50px; }
   .posts .postData {
-    width: 500px;
+    max-width: 500px;
     margin: auto;
     color: white;
     font-family: "Roboto", sans-serif;
@@ -745,7 +751,7 @@ body {
     background-color: #ff6700;
     color: #393d3f; }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 850px) {
   .buttonContainer {
     background-color: #393d3f;
     display: contents;
@@ -760,7 +766,11 @@ body {
       margin: 0;
       padding: 0;
       font-size: 15px;
-      width: 200px; } }
+      max-width: 130px; }
+  .posts img {
+    object-fit: contain;
+    max-width: 200px;
+    max-height: 200px; } }
 
 .companyContainer {
   font-family: "Roboto", sans-serif;
@@ -823,13 +833,12 @@ body {
       max-height: 150px; } }
 
 .productsPage {
-  height: 81vh;
-  width: 1800px;
+  min-height: 83vh;
+  height: auto;
   margin: auto;
   text-align: center; }
   .productsPage a {
-    padding: 20px;
-    display: block; }
+    padding: 20px; }
     .productsPage a .backButton {
       color: #ff6700;
       width: 200px;
@@ -845,39 +854,43 @@ body {
       cursor: pointer;
       background-color: #ff6700;
       color: #393d3f; }
-  .productsPage .productsContainer {
-    padding: 50px;
-    display: inline-flex;
+  .productsPage .products {
+    width: auto;
     margin: auto; }
-    .productsPage .productsContainer .singleProductContainer {
-      box-shadow: 5px -3px 5px 0px black;
-      font-size: 15px;
-      text-align: center;
-      background-color: gray;
-      margin: 50px;
-      width: 300px;
-      color: white; }
-      .productsPage .productsContainer .singleProductContainer img {
-        width: 300px;
-        height: 200px;
-        object-fit: contain;
-        background-color: black; }
-      .productsPage .productsContainer .singleProductContainer .productSubmitButton {
-        margin: 10px;
-        color: #ff6700;
-        width: 100px;
-        background-color: #393d3f;
-        border: none;
-        height: 30px;
-        border-radius: 5px;
-        font-family: "Roboto", sans-serif;
+    .productsPage .products .productsContainer {
+      padding: 50px;
+      display: flex;
+      margin: auto;
+      flex-wrap: wrap; }
+      .productsPage .products .productsContainer .singleProductContainer {
+        box-shadow: 5px -3px 5px 0px black;
         font-size: 15px;
-        outline: none;
-        text-align: center; }
-      .productsPage .productsContainer .singleProductContainer .productSubmitButton:hover {
-        cursor: pointer;
-        background-color: #ff6700;
-        color: #393d3f; }
+        text-align: center;
+        background-color: gray;
+        margin: 50px auto;
+        max-width: 300px;
+        color: white; }
+        .productsPage .products .productsContainer .singleProductContainer img {
+          width: 300px;
+          height: 200px;
+          object-fit: contain;
+          background-color: black; }
+        .productsPage .products .productsContainer .singleProductContainer .productSubmitButton {
+          margin: 10px;
+          color: #ff6700;
+          width: 100px;
+          background-color: #393d3f;
+          border: none;
+          height: 30px;
+          border-radius: 5px;
+          font-family: "Roboto", sans-serif;
+          font-size: 15px;
+          outline: none;
+          text-align: center; }
+        .productsPage .products .productsContainer .singleProductContainer .productSubmitButton:hover {
+          cursor: pointer;
+          background-color: #ff6700;
+          color: #393d3f; }
 
 .singleProduct {
   height: 82vh;
@@ -924,6 +937,12 @@ body {
     cursor: pointer;
     background-color: #ff6700;
     color: #393d3f; }
+
+@media only screen and (max-width: 600px) {
+  .singleProduct img {
+    object-fit: contain;
+    max-height: 350px;
+    max-width: 350px; } }
 
 .searchContainer {
   text-align: center;

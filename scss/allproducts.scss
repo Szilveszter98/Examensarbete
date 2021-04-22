@@ -3,12 +3,12 @@ $mainOrange:  #ff6700;
 $mainColor : #393d3f;
 
 .productsPage{
-    height: 81vh;
-    width: 1800px;
+    min-height: 83vh;
+    height: auto;
     margin: auto;
     text-align: center;
     a{  padding: 20px;
-        display: block;
+       
             .backButton{
             color:$mainOrange;   
             width: 200px;
@@ -28,46 +28,52 @@ $mainColor : #393d3f;
         }         
     }
     
-    
-        .productsContainer{
-        padding: 50px;
-        display: inline-flex;
+    .products{
+        width: auto;
         margin: auto;
-    
-        .singleProductContainer{
-            box-shadow: 5px -3px 5px 0px black;
-            font-size: 15px;
-            text-align: center;
-            background-color: gray;
-            margin: 50px;
-            width: 300px;
-            color: white;
-            img{
-                width: 300px; 
-                height: 200px;
-                object-fit: contain;
-                background-color: black;
-            }
-            .productSubmitButton{
-                margin: 10px;
-                color:$mainOrange;   
-                width: 100px;
-                background-color: $mainColor;
-                border: none;
-                height: 30px;
-                border-radius: 5px;
-                font-family: $robotoFont;
-                font-size: 15px;	
-                outline: none;
+        
+            .productsContainer{
+            padding: 50px;
+            display: flex;
+            margin: auto;
+            flex-wrap: wrap;
+            
+        
+            .singleProductContainer{
+                box-shadow: 5px -3px 5px 0px black;
+                font-size: 15px;
                 text-align: center;
-            }         
-            .productSubmitButton:hover{
-            cursor: pointer;
-            background-color: $mainOrange;
-            color: $mainColor;
-        
-        
+                background-color: gray;
+                margin: 50px auto;
+                max-width: 300px;
+                color: white;
+                img{
+                    width: 300px; 
+                    height: 200px;
+                    object-fit: contain;
+                    background-color: black;
+                }
+                .productSubmitButton{
+                    margin: 10px;
+                    color:$mainOrange;   
+                    width: 100px;
+                    background-color: $mainColor;
+                    border: none;
+                    height: 30px;
+                    border-radius: 5px;
+                    font-family: $robotoFont;
+                    font-size: 15px;	
+                    outline: none;
+                    text-align: center;
+                }         
+                .productSubmitButton:hover{
+                cursor: pointer;
+                background-color: $mainOrange;
+                color: $mainColor;
+            
+            
+                }
             }
         }
-    }
+    }  
 }

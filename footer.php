@@ -9,7 +9,7 @@
         <!-- Left -->
         <div class="footer-left">
         <div class="footerLogo">
-            <a href="http://localhost/examensarbete/index.php" ><img src="https://www.logo.wine/a/logo/WeWork/WeWork-Logo.wine.svg" alt="logo"></a>
+            <a href="http://localhost/examensarbete/index.php" ><img src="https://i.ibb.co/3kJG2F1/Worknetworkwhite.png" alt="logo"></a>
         </div>
 </div>
         <!-- Center -->

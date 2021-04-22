@@ -3,7 +3,7 @@ $mainOrange:  #ff6700;
 $mainColor : #393d3f;
 .indexContainer{
      padding-top:160px;
-     height: 600px;
+     min-height: 705px;
      background-color:gray; 
 
     h1{
@@ -22,7 +22,7 @@ $mainColor : #393d3f;
         }
         .searchField{
             height: 40px;
-            width: 590px;
+            max-width: 590px;
             border-radius: 5px;
             border: none;
             font-family: $robotoFont;

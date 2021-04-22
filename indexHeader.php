@@ -1,10 +1,9 @@
 <?php
-$token = (isset($_POST['token']) ? $_POST['token'] : '');
-print_r($token);?>
+$token = (isset($_POST['token']) ? $_POST['token'] : '');?>
 <nav class="nav">
     <div class="container">
         <div class="logo">
-            <a href="http://localhost/examensarbete/">LOGOt<img src=""></a>
+            <a href="http://localhost/examensarbete/"><img src="./uploads/Worknetworkwhite.png"></a>
         </div>
         <div id="mainListDiv" class="main_list">
             </form>

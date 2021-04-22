@@ -39,7 +39,7 @@
     font-family: "Roboto", sans-serif;
     font-size: 50px; }
   .posts .postData {
-    width: 500px;
+    max-width: 500px;
     margin: auto;
     color: white;
     font-family: "Roboto", sans-serif;
@@ -64,7 +64,7 @@
     background-color: #ff6700;
     color: #393d3f; }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 850px) {
   .buttonContainer {
     background-color: #393d3f;
     display: contents;
@@ -79,4 +79,8 @@
       margin: 0;
       padding: 0;
       font-size: 15px;
-      width: 200px; } }
+      max-width: 130px; }
+  .posts img {
+    object-fit: contain;
+    max-width: 200px;
+    max-height: 200px; } }
