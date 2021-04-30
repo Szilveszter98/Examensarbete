@@ -16,7 +16,7 @@
         <h1>Please log in <h1>
                 <h2>Please enter your username and password</h2>
                 
-                <?php echo (isset($_GET['err']) && $_GET['err'] == true ? "<h1>Något gick fel! Försök Igen!</h1><hr>" : ""); ?>
+                <?php echo (isset($_GET['err']) && $_GET['err'] == true ? "<h1 style='color: red;'>Något gick fel! Försök Igen!</h1><hr>" : ""); ?>
 
                 <form method="POST" action="companyProfile.php">
                     Email:<br>

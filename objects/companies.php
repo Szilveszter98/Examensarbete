@@ -131,7 +131,7 @@ public function loginCompany($email_parameter, $password_parameter) {
         }else{
             
            
-            header( "location: http://localhost/examensarbete/loginCompany.php?err=true");
+            header( "location: http://localhost/examensarbete/v1/company/loginCompany.php?err=true");
         }
     }else{
         echo "could not create a statmenthandler";
