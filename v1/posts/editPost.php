@@ -2,7 +2,7 @@
 // includes
 
 include("../../objects/posts.php");
-
+//post handler and data what we getting with POST
 $post_handler = new Post($databaseHandler);
 $postID = (isset($_POST['id']) ? $_POST['id'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
@@ -16,7 +16,7 @@ $email=(isset($_POST['email']) ? $_POST['email'] : '');
 $ort=(isset($_POST['ort']) ? $_POST['ort'] : '');
 
 
-
+//watching specialchars
 $description= htmlspecialchars($description); 
 $telefonNummer= htmlspecialchars($telefonNummer); 
 $title= htmlspecialchars($title); 
@@ -24,7 +24,7 @@ $email= htmlspecialchars($email);
 $startDate= htmlspecialchars($startDate); 
 $ort= htmlspecialchars($ort); 
 $type= htmlspecialchars($type);
-// Update user profile
+// Update post
 if (!empty($postID)) {
 
     $post_handler->updatePost($title, $description, $startDate, $type, $ort, $email, $telefonNummer, $postID);

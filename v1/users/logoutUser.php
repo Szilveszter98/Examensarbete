@@ -6,14 +6,14 @@ $user_handler = new User($databaseHandler);
 
 
 $userID = (isset($_POST['id']) ? $_POST['id'] : '');
-// callnig on deletePost if we have post id
+// callnig on deleteuserif we have user id
 
 if (!empty($userID)) {
 
 
     $user_handler->logoutUser($userID);
 } else {
-    echo "Error with postID";
+    echo "Error with userID";
 }
 
 

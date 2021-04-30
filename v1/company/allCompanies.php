@@ -6,12 +6,15 @@ include("../../objects/companies.php");
 
 
 $company_handler = new Company($databaseHandler);
+//fetching data from database
 $row = $company_handler->fetchAllCompanies();
 $companiesID = $company_handler->fetchAllCompanyID();
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
 ?>
+
 <link rel="stylesheet" href="../../css/styles.css">
+<!-- buttons and searchfield-->
 <div class="searchContainer">
     <form method="POST" action="../users/userProfile.php">
         <input type='hidden' name='id' value='<?= $company['id'] ?>'>
@@ -30,6 +33,7 @@ $token = (isset($_POST['token']) ? $_POST['token'] : '');
     </form>
 </div>
 <hr>
+<!-- fetching company data-->
 <?php foreach ($row as $company) {?>
     <div class="companyInformation">
         <span>
@@ -51,5 +55,5 @@ $token = (isset($_POST['token']) ? $_POST['token'] : '');
     </div>
 <?php
 }
-
+//footer
 include("../../footer.php");

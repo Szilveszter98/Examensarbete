@@ -7,6 +7,7 @@
   <title></title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
+<!--including header-->
 <?php include("indexHeader.php"); ?>
 
 <body>
@@ -26,13 +27,13 @@
       <div class="text">
         <span>Registrera dig och lägg till arbete och få belöning</span>
       </div>
-      <button><a href="userIndex.php">Privatperson</a></button>
+      <button><a href="./v1/users/userIndex.php">Privatperson</a></button>
       <br>
       <br>
       <div class="text">
         <span>Registrera företag och få mer jobb!</span>
       </div>
-      <button><a href="companyIndex.php"> Företag </a></button>
+      <button><a href="./v1/company/companyIndex.php"> Företag </a></button>
       
     </div>
 

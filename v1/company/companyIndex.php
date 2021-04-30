@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company </title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<?php include("indexHeader.php"); ?>
+<!--Including header index-->
+<?php include("../../indexHeader.php"); ?>
 
 <body style="background-color:gray;">
     <div class="companyIndex">
@@ -23,6 +24,6 @@
 
 
 </body>
-<?php include("footer.php"); ?>
+<?php include("../../footer.php"); ?>
 
 </html>

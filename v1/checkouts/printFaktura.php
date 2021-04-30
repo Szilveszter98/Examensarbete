@@ -17,8 +17,8 @@ $fakturaData = $faktura_handler->fetchFaktura($companyID);
     <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script src="faktura.js">
+    <link rel="stylesheet" href="../../css/styles.css">
+    <script src="../../faktura.js">
         </script>
             <script src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js" >
     </script>
@@ -32,12 +32,12 @@ $fakturaData = $faktura_handler->fetchFaktura($companyID);
         }
 
         body {
-            background: white;
+            background: darkgray;
         }
     </style>
 </head>
 
-<body>
+<body class="printFakturaBody" >
     <header>
         <div class="toolbar hidden-print" data-html2canvas-ignore="true">
             <div class="text-right">
@@ -48,15 +48,15 @@ $fakturaData = $faktura_handler->fetchFaktura($companyID);
     <hr>
     <!-- Faktura -->
 
-    <div id="printableArea">
-        <div class="faktura overflow-auto" id="printIT">
+    <div id="printableArea" style="background-color:white">
+        <div class="faktura overflow-auto">
             <table class="table table-borderless">
                 <tr class="head">
                     <td>
                         <h1 style="font-size: 4rem;">Faktura</h1>
                     </td>
-                    <td class="faktura-logo" data-html2canvas-ignore="true">
-                        <img src="../../uploads/logo.png" id="logo" alt="firma logo" style="width: 200px; height:100px;">
+                    <td class="faktura-logo" >
+                        <img src="../../uploads/Worknetwork.png" id="logo" alt="firma logo" style="width: 200px; height:100px; object-fit:contain;">
                     </td>
                 </tr>
             </table>
@@ -94,8 +94,7 @@ $fakturaData = $faktura_handler->fetchFaktura($companyID);
                     </div>
                 </div>
             </div>
-            <!-- End of kunder info -->
-            <!-- product och pris lista -->
+
             <div class="container">
                 <table class="table table-border-top">
                     <thead>
@@ -119,11 +118,11 @@ $fakturaData = $faktura_handler->fetchFaktura($companyID);
                             <td><?php echo $fakturaData['amount'] ?> kr</td>
                         </tr>
                     </tbody>
-                    <!-- summan av faktura -->
+                   
 
                 </table>
             </div>
-            <!-- faktura footer, firma info -->
+    
             <div class="container firma">
                 <table class="table table-sm table-borderless table-border-top">
                     <thead>
@@ -155,7 +154,21 @@ $fakturaData = $faktura_handler->fetchFaktura($companyID);
             <div></div>
         </div>
     </div>
-
+        <script>
+   
+   function getpdf() {
+    var pdf = new jsPDF([595, 842]);
+    
+    pdf.addHTML(document.getElementById('printableArea'), function() {
+    
+      pdf.save('faktura.pdf');
+      
+    });
+}
+    
+document.getElementById("pdf").addEventListener("click", getpdf);
+ 
+        </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

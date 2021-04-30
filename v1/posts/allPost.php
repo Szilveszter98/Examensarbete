@@ -1,17 +1,20 @@
 <?php
-
+//includes
 include("../../objects/premiumCompanies.php");
-//include("../../userHeader.php");
+//premium handlers
 $premiumOneMonth_handler = new OneMonth($databaseHandler);
 $premiumThreeMonth_handler = new ThreeMonth($databaseHandler);
 $premiumSixMonth_handler = new SixMonth($databaseHandler);
+//getting data with POST
 $companyID = (isset($_POST['companyID']) ? $_POST['companyID'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
+//fetching single company
 $row = $premiumOneMonth_handler->fetchSingleCompany($companyID);
 
 ?>
 <link rel="stylesheet" href="../../css/styles.css">
 <?php
+//watching if company have premium and what kind of premium
 if (!empty($row)) {
     if ($row['productID'] == 1) {
 
@@ -23,6 +26,7 @@ if (!empty($row)) {
         $valid = $premiumSixMonth_handler->validatePremiumToken($companyID);
     }
 } else {
+    //if company dont have premium
     echo "<div class='needToBuy'><h1>Du behöver köpa en av våra tjänster <br>för att kunna se alla arbete som är tillgängliga</h1>";
     echo '<form method="POST" action="../products/allProducts.php">';
     echo "<input type='hidden'  name='companyID' value='{$companyID}'>";
@@ -44,13 +48,13 @@ if (!empty($row)) {
 
 // includes
 include("../../objects/posts.php");
-//include("../../header.php");
+//posthandler 
 $post_handler = new Post($databaseHandler);
-
+//getting info with POST
 $companyID = (isset($_POST['companyID']) ? $_POST['companyID'] : '');
 
 $row = $post_handler->fetchAllPosts();
-
+//showing all the registerd post 
 foreach ($row as $post) { ?>
 
     <link rel="stylesheet" href="../../css/styles.css">

@@ -9,9 +9,7 @@ $company_handler = new Company($databaseHandler);
 $companyID = (isset($_POST['id']) ? $_POST['id'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
-
-
-
+//successfull logo update
 if (!empty($companyID)) {
     $company_handler->uploadCompanyLogo($_FILES['file']['name'], $_POST['id']);
 ?>
@@ -28,9 +26,5 @@ if (!empty($companyID)) {
 } else {
     echo "update error";
 }
-
-
-
-
 
 ?>

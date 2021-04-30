@@ -1,5 +1,5 @@
 <?php
-// includes
+// includes and data from POST 
 
 include("../../objects/users.php");
 
@@ -19,7 +19,10 @@ $email= htmlspecialchars($email);
 // register user 
 $user_handler->registerUser($firstname, $lastname, $username, $password, $email);
 ?>
+ <?php include("../../indexHeader.php"); ?> 
 <link rel="stylesheet" href="../../css/styles.css">
-<div class="registerFinished"></div>
+<div class="registerSuccessfull">
 <h1>Tack för att du registrerade</h1>
-<button><a href='../../loginUser.php'>Log in</a></button>
+<a href='loginUser.php'><button class="submitButton">Log in</button></a>
+</div>
+<?php include("../../footer.php");?>

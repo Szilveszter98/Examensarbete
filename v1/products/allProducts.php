@@ -2,12 +2,13 @@
 // includes
 include("../../objects/products.php");
 $product_handler = new Product($databaseHandler);
-
+//getting data with POST and fetching it
 $companyID = (isset($_POST['companyID']) ? $_POST['companyID'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 $row = $product_handler->fetchAllProducts();
 ?>
 <link rel="stylesheet" href="../../css/styles.css">
+<!-- buttons-->
 <div class="productsPage">
 <form method="POST" action="../company/companyProfile.php">
                         <input type='hidden' name='companyID' value='<?= $companyID ?>'>
@@ -17,15 +18,10 @@ $row = $product_handler->fetchAllProducts();
                     </form>
     <div class="products">
         <div class="productsContainer">
-
+<!-- Fetching out the products-->
             <?php
             foreach ($row as $product) {
-
-
             ?>
-
-
-
                 <div class="singleProductContainer">
 
                     <img src='../../uploads/<?php echo $product['file_name'] ?>'>
@@ -59,4 +55,5 @@ $row = $product_handler->fetchAllProducts();
         </div>
     </div>
 </div>
+<!-- Footer-->
 <?php include("../../footer.php"); ?>

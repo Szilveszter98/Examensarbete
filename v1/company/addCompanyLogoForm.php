@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobbnärverk</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 <body>
-   <!-- Inputs to registeration -->
+   <!-- Inputs for company logo -->
    <?php
+   //data with help of POST
 $companyID =(isset($_POST['id']) ? $_POST['id'] : '');
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
 
 ?>
 <div class="addLogoForm">
 <h1> Ladda upp Logo </h1>    
-<form method="POST" action="v1/company/addCompanyLogo.php" enctype='multipart/form-data'>
+<form method="POST" action="addCompanyLogo.php" enctype='multipart/form-data'>
 
 <input type='hidden'  name='id' value='<?php echo $companyID?>'>
 <input type='hidden'  name='token' value='<?php echo $token?>'>
@@ -28,6 +29,6 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
 
 </form>
 </div>
-<?php include('./footer.php') ?>
+<?php include('../../footer.php') ?>
 </body>
 </html>

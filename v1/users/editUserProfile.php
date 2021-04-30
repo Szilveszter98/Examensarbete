@@ -1,11 +1,11 @@
 <?php
-// includes
+// includes and user handler
 
 include("../../objects/users.php");
 
 $user_handler = new User($databaseHandler);
 
-
+// getting data with POST and watching specialchars
 $userID = (isset($_POST['id']) ? $_POST['id'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
@@ -22,6 +22,7 @@ $email= htmlspecialchars($email);
 
 // Update user profile
 if (!empty($userID)) {
+    //sending data to database
     $user_handler->updateUserProfile($firstname, $lastname, $username, $password, $email, $userID); ?>
        <link rel="stylesheet" href="../../css/styles.css">
     <div class="editProfileFinished">

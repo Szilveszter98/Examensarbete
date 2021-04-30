@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrera Företag</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 
 <body>
-    <!-- Inputs to registeration -->
-    <?php include("indexHeader.php"); ?>
+    <!-- Inputs to company registeration -->
+    <?php include("../../indexHeader.php"); ?>
     <div class="signupCompanyPage">
         <h1> Please register an account!</h1>
-        <form method="POST" action="v1/company/registerCompany.php">
+        <form method="POST" action="registerCompany.php">
             Företagsnamn:<br />
             <input type="text" name="companyName" required>
             <br />
@@ -61,7 +61,7 @@
         <br>
 
     </div>
-    <?php include("footer.php"); ?>
+    <?php include("../../footer.php"); ?>
 </body>
 
 </html>

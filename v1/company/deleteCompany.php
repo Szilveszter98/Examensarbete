@@ -7,7 +7,7 @@ $company_handler = new Company($databaseHandler);
 
 $companyID = (isset($_POST['id']) ? $_POST['id'] : '');
 
-// callnig on deletePost if we have post id
+// callnig on deleteCompany if we have company id
 
 if (!empty($companyID)) {
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="faktura.js" defer></script>
+  
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
@@ -46,11 +46,11 @@
                         <h1 style="font-size: 4rem;">Faktura</h1>
                     </td>
                     <td class="faktura-logo" data-html2canvas-ignore="true">
-                        <img src="public/bilder/logo3.png" id="logo" alt="firma logo">
+                        <img src="https://i.ibb.co/HXZTj2d/Worknetwork.png" id="logo" alt="firma logo">
                     </td>
                 </tr>
             </table>
-            <!-- kunder info -->
+            <!-- Faktura info -->
             <div class="container kundInfo-container">
                 <div class="kundInfo">
                     <div>
@@ -84,8 +84,8 @@
                     </div>
                 </div>
             </div>
-            <!-- End of kunder info -->
-            <!-- product och pris lista -->
+           
+            <!-- products and prices-->
             <div class="container">
                 <table class="table table-border-top">
                     <thead>
@@ -110,7 +110,6 @@
                             <td>12500 kr</td>
                         </tr>
                     </tbody>
-                    <!-- summan av faktura -->
                     <tfoot>
                         <tr>
                             <td colspan="4"></td>
@@ -130,7 +129,7 @@
                     </tfoot>
                 </table>
             </div>
-            <!-- faktura footer, firma info -->
+            <!-- faktura footer, företagsinfo -->
             <div class="container firma">
                 <table class="table table-sm table-borderless table-border-top">
                     <thead>
@@ -163,7 +162,7 @@
         </div>
     </div>
 
-
+<!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

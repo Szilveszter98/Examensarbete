@@ -13,7 +13,7 @@ class Product {
 
     }
 
-    
+    // fetch all products
 public function fetchAllProducts() {
 
 $query_string = "SELECT id, name, description, price, file_name FROM products";
@@ -30,6 +30,7 @@ if($statementHandler !== false) {
 }
 
 }
+// fetch single product
 public function fetchSingleProduct($productID) {
 
     $query_string = "SELECT * FROM products WHERE id=:product_id";

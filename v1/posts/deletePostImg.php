@@ -1,16 +1,20 @@
 <?php
+//includes
 include("../../objects/posts.php");
-
+//posthandler
 $post_handler = new post($databaseHandler);
+//getting data with POST
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 $postID = (isset($_POST['postID']) ? $_POST['postID'] : '');
 $file_name = (isset($_POST['file_name']) ? $_POST['file_name'] : '');
 $delete_path = "../../uploads/" . $file_name;
-
+//Deleting post image
 if (!unlink($delete_path)) {
+    echo "error";
+
+
 } else {
-}
-$post_handler->deletePostImages($postID, $file_name);
+    $post_handler->deletePostImages($postID, $file_name);
 ?>
 <link rel="stylesheet" href="../../css/styles.css">
 <?php
@@ -25,3 +29,4 @@ echo '</form>';
 echo '</div>';
 
 include("../../footer.php");
+}

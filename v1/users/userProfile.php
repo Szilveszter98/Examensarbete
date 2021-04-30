@@ -1,23 +1,23 @@
 <?php
 
 
-// includes
+// includes and user handler
 
 include("../../objects/users.php");
 
-//include("../../userHeader.php");
+
 $user_handler = new User($databaseHandler);
 
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
 
-
+// watching if user has token
 if (!empty($token)) {
-
+// if token then getting  userdata
     $userID = $user_handler->getUserId($token);
     $row = $user_handler->getUserData($userID);
 } else {
-
+// if no token then user have to log in again 
     $token = json_decode($user_handler->loginUser($_POST['username'], $_POST['password']))->token;
     $userID = $user_handler->getUserId($token);
     $row = $user_handler->getUserData($userID);
@@ -31,9 +31,12 @@ if (!empty($token)) {
 <div class="mainContainer">
 
 
-    <?php $USERID = $row['id'] ?>
+    <?php
+    //explaining what the userid is
+     $USERID = $row['id'] ?>
+     <!-- Buttons-->
     <div class="buttonContainer">
-        <form method="POST" action="../../createPostForm.php">
+        <form method="POST" action="../posts/createPostForm.php">
             <input type='hidden' name='token' value='<?php echo $token ?>'>
             <input type='hidden' name='id' value='<?php echo $USERID ?>'>
             <input class="submitButton" type="submit" value="Skapa inlägg" />
@@ -62,6 +65,7 @@ if (!empty($token)) {
         
         
     </div>
+    <!--Showing the userdata-->
     <div class='userData'>
             <span><?= $row['username'] ?></span><br>
             <span><?= $row['firstname'] . " " . $row['lastname'] ?></span><br>
@@ -69,7 +73,8 @@ if (!empty($token)) {
         </div>
     <?php
 
-
+//getting users posts
+//includes and handlers
     include("../../objects/posts.php");
     $userID = $row['id'];
 
@@ -77,8 +82,9 @@ if (!empty($token)) {
     $post_handler = new Post($databaseHandler);
 
     $userID = $row['id'];
+    //getting post with help of user id
     $posts = $post_handler->getPostWithUserID($userID);
-
+//fetching posts
     foreach ($posts as $post) {
 
 
@@ -141,5 +147,5 @@ if (!empty($token)) {
 </div>
 
 <?php
-    }
+    }//footer
     include("../../footer.php"); ?>

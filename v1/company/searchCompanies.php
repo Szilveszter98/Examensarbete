@@ -6,13 +6,14 @@ include("../../objects/companies.php");
 <link rel="stylesheet" href="../../css/styles.css">
 <?php
 $company_handler = new Company($databaseHandler);
+//getting the searchword with POST
 $searchWord = (isset($_POST['searchWord']) ? $_POST['searchWord'] : '');
-
+//If we have searchword calling searchCompanies function
 if (!empty($searchWord)) {
   $result = $company_handler->searchCompanies($searchWord);
 } ?>
 <link rel="stylesheet" href="../../css/styles.css">
-
+<!-- buttons-->
 <div>
   <form method="POST" action="../../index.php">
 
@@ -21,6 +22,7 @@ if (!empty($searchWord)) {
   </form>
 </div>
 <?php
+//searchform
 echo '<div class="searchField">';
 echo '<form method="POST" action="searchCompanies.php">';
 echo '<label for="gsearch">Sök bland registrerade företag:</label>';
@@ -30,6 +32,7 @@ echo '<input class="submitButton" type="submit">';
 echo '</form>';
 echo "<h2>Sökresultat</h2><hr>";
 echo '</div>';
+//showing result
 foreach ($result as $row) {
 
   echo '<div class="searchResult">';
@@ -44,7 +47,7 @@ foreach ($result as $row) {
   echo "<hr>";
 }
 
-
+//footer
 include("../../footer.php");
 
 ?>

@@ -4,7 +4,7 @@
 include("../../objects/companies.php");
 
 $company_handler = new Company($databaseHandler);
-print_r($_POST);
+// getting data with POST and watching if it has some specialchars
 $companyName =(isset($_POST['companyName']) ? $_POST['companyName'] : '');
 $companyName = htmlspecialchars($companyName); 
 $description=(isset($_POST['description']) ? $_POST['description'] : '');
@@ -23,9 +23,13 @@ $orgNummer= htmlspecialchars($orgNummer);
 $address= htmlspecialchars($address); 
 $postnummer= htmlspecialchars($postnummer); 
 $type= htmlspecialchars($type); 
-// register user 
+// register company
 $company_handler->registerCompany($companyName, $description, $telefonNummer, $password, $email,  $orgNummer, $type, $address, $postnummer);
-
-echo ("<center>");
+?>
+<link rel="stylesheet" href="../../css/styles.css">
+<?php
+echo ("<div class='successfullCompanyRegistration'>");
 echo ("<h1>Tack för att du registrerade</h1>");
-echo ("<button><a href='../../loginCompany.php'>Log in</a></button>");
+echo ("<a href='loginCompany.php'><button class='submitButton'>Log in</button></a>");
+echo ("</div>");
+include('../../footer.php');

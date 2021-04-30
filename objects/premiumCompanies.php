@@ -47,6 +47,7 @@ public function createToken($companyID, $productID, $companyEmail){
         return false;
     }
 }
+// fetch premium company
 public function fetchSingleCompany($companyID) {
 
     $query_string = "SELECT * FROM premiumcompanies WHERE companyID=:company_id";
@@ -66,7 +67,7 @@ public function fetchSingleCompany($companyID) {
         die();
     }
 }
-    
+    // Validate premium token
 public function validatePremiumToken($companyID){
 
     $query_string= "SELECT companyID, date_updated, endDate, token , productID FROM premiumCompanies WHERE companyID=$companyID  ";
@@ -145,6 +146,7 @@ public function createToken($companyID, $productID, $companyEmail){
         return false;
     }
 }
+// Validate premium token
 public function validatePremiumToken($companyID){
 
     $query_string= "SELECT companyID, date_updated, endDate, token , productID FROM premiumCompanies WHERE companyID=$companyID  ";
@@ -223,6 +225,7 @@ public function createToken($companyID, $productID, $companyEmail){
         return false;
     }
 }
+// Validate premium token
 public function validatePremiumToken($companyID){
 
     $query_string= "SELECT companyID, date_updated, endDate, token , productID FROM premiumCompanies WHERE companyID=$companyID  ";

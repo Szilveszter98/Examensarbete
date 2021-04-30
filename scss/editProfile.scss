@@ -22,7 +22,7 @@ $mainColor : #393d3f;
         }
         .submitButton{
             margin: 20px auto;
-            color:$mainOrange;   
+            color: $mainOrange;   
             width: 200px;
             background-color: $mainColor;
             border: none;
@@ -45,12 +45,57 @@ $mainColor : #393d3f;
     }
 
 
-    .registerFinished{
+    .registerSuccessfull, .successfullCompanyRegistration , .successfullComment{
+
         height: 81vh;
         text-align: center;
-        padding-top: 30px;
-    }
-
+        padding-top: 150px;
+        h1{
+            font-family: $robotoFont;
+            
+        }
+        form{
+            .inputField{
+                height: 40px;
+                max-width: 300px;
+                border-radius: 5px;
+                border: none;
+                font-family: $robotoFont;
+                font-size: 15px;
+                margin-right: 10px;
+    
+            }
+            .submitButton{
+               
+                margin: 20px auto;
+                
+                width: 200px;
+                background-color: $mainColor;
+                border: none;
+                height: 40px;
+                border-radius: 5px;
+                font-family: $robotoFont;
+                font-size: 1.3em;	
+                outline: none;
+                text-align: center;
+                
+                
+            }
+             a{
+                   color:$mainOrange;    
+                }         
+            .submitButton:hover{
+               
+            cursor: pointer;
+            background-color: $mainOrange;
+           
+                }
+            a:hover{
+                     color: $mainColor;
+                }
+           }  
+    
+        }
     .logoUpdateFinished{
         height: 81vh;
         text-align: center;

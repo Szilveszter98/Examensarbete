@@ -15,7 +15,7 @@ $product = $product_handler->fetchSingleProduct($productID);
 if (!empty($token)) { ?>
     <link rel="stylesheet" href="../../css/styles.css">
 <?php
-
+//checkout form
     echo '<div class="checkoutContainer">';
     echo '<h1>Vald produkt:</h1><br>';
     echo "<img src='../../uploads/" . $product['file_name'] . "'style='width: 500px; height: 300px;'>";

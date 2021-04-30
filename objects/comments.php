@@ -14,7 +14,7 @@ class Comment {
     }
 
 
-
+//create Comment
     public function createComment( $companyID, $comment, $name) {
 
         $query_string = "INSERT INTO companycomments ( companyID, comment, name) VALUES( :companyID, :comment, :name)";
@@ -40,6 +40,7 @@ class Comment {
             die();
         }
     }
+    // fetch all comments
     public function fetchAllComments($companyID) {
 
         $query_string = "SELECT * FROM `companycomments` WHERE companyID=:companyID ORDER BY date_posted DESC";
@@ -56,6 +57,7 @@ class Comment {
         }
         
     }
+    //delete comments from company page
     public function deleteCompanyComment($companyID, $commentID){
         $query = "DELETE FROM companycomments WHERE companyID = :companyID AND ID = :commentID";
      $statementHandler =$this->database_handler->prepare($query);

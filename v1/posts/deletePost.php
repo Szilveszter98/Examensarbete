@@ -1,4 +1,3 @@
-
 <?php
 // includes
 include("../../objects/posts.php");
@@ -9,13 +8,13 @@ $token = (isset($_POST['token']) ? $_POST['token'] : '');
 $postID = (isset($_POST['id']) ? $_POST['id'] : '');
 
 
-// callnig on deletePost if we have post id
+// calling on deletePost if we have post id
 
 if (!empty($postID)) {
 
     $post_handler->deletePost($postID);
 ?>
-<link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 <?php
     echo "<div class='postDeleted'>";
     echo "<h1>Inlägget är nu borta!!</h1>";

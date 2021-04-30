@@ -6,15 +6,19 @@ include("../../objects/comments.php");
 $company_handler = new Company($databaseHandler);
 $comment_handler = new Comment($databaseHandler);
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
+
+// watching if company have token
 if (!empty($token)) {
+  //fetching data
   $companyID = $company_handler->getCompanyId($token);
   $row = $company_handler->getCompanyData($companyID);
   $images = $company_handler->getCompanyImages($companyID);
   $logo = $company_handler->getCompanyLogo($companyID);
 } else {
+  // sending data to login Company and getting token 
   $token = json_decode($company_handler->loginCompany($_POST['email'], $_POST['password']))->token;
   $companyID = $company_handler->getCompanyId($token);
-
+//fetching data
   $row = $company_handler->getCompanyData($companyID);
   $images = $company_handler->getCompanyImages($companyID);
   $logo = $company_handler->getCompanyLogo($companyID);
@@ -23,7 +27,7 @@ if (!empty($token)) {
 <link rel="stylesheet" href="../../css/styles.css">
 
 <?php $companyID = $companyID['company_id']; ?>
-
+<!-- buttons on company page-->
 <div class="companyContainer">
   <div class="companyButtonContainer">
     <form method="POST" action="../posts/allPost.php">
@@ -38,25 +42,13 @@ if (!empty($token)) {
       <input class="submitButton" type="submit" value="Ändra detaljer" />
     </form>
     
-    <form method="POST" action="../../editCompanyImgForm.php">
+    <form method="POST" action="editCompanyImgForm.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Lägg till bilder" />
     </form>
-    
-    <form method="POST" action="logoutCompany.php">
-      <input type='hidden' name='id' value='<?= $companyID ?>'>
-      <input type='hidden' name='token' value='<?= $token ?>'>
-      <input class="submitButton" type="submit" value="Logga ut" />
-    </form>
-    
-    <form method="POST" action="deleteCompany.php">
-      <input type='hidden' name='id' value='<?= $companyID ?>'>
-      <input type='hidden' name='token' value='<?= $token ?>'>
-      <input class="submitButton" type="submit" value="Ta bort konto" />
-    </form>
-    
-    <form method="POST" action="../../addCompanyLogoForm.php">
+  
+    <form method="POST" action="addCompanyLogoForm.php">
       <input type='hidden' name='id' value='<?= $companyID ?>'>
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Byta Logo" />
@@ -67,7 +59,21 @@ if (!empty($token)) {
       <input type='hidden' name='token' value='<?= $token ?>'>
       <input class="submitButton" type="submit" value="Tjänster" />
     </form>
+      
+    <form method="POST" action="logoutCompany.php">
+      <input type='hidden' name='id' value='<?= $companyID ?>'>
+      <input type='hidden' name='token' value='<?= $token ?>'>
+      <input class="submitButton" type="submit" value="Logga ut" />
+    </form>
+
+    <form method="POST" action="deleteCompany.php">
+      <input type='hidden' name='id' value='<?= $companyID ?>'>
+      <input type='hidden' name='token' value='<?= $token ?>'>
+      <input class="submitButton" type="submit" value="Ta bort konto" />
+    </form>
+    
   </div>
+  <!-- company data-->
   <div class="companyData">
     <?php if (!empty($logo)) { ?>
 
@@ -124,7 +130,7 @@ if (!empty($token)) {
 
   <?php
   $companyID = $row['id'];
-  //OMDÖME
+  //comments
 
 
 
@@ -141,7 +147,7 @@ if (!empty($token)) {
       <br />
       <span>Posted:<?= $comment['date_posted'] ?></span>
       <br />
-
+<!-- delete comment button-->
       <form method="POST" action="deleteCompanyComment.php">
         <input type='hidden' name='companyID' value='<?= $companyID ?>'>
         <input type='hidden' name='commentID' value='<?= $comment['ID'] ?>'>
@@ -154,4 +160,5 @@ if (!empty($token)) {
     ?>
 
 </div>
+<!-- footer-->
 <?php include("../../footer.php"); ?>

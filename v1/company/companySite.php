@@ -6,18 +6,20 @@ include("../../objects/companies.php");
 include("../../objects/comments.php");
 $company_handler = new Company($databaseHandler);
 $comment_handler = new Comment($databaseHandler);
-
+// getting data with POST
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 
 $companyID = (isset($_POST['id']) ? $_POST['id'] : '');
 
-
+//fetching data
 $row = $company_handler->fetchSingleCompany($companyID);
 
 $images = $company_handler->fetchCompanyImages($companyID);
 $logo = $company_handler->fetchCompanyLogo($companyID);
 ?>
+
 <link rel="stylesheet" href="../../css/styles.css">
+<!-- buttons-->
 <div class="backButtonContainer">
   <form method="POST" action="allcompanies.php">
     <input type='hidden' name='token' value='<?= $token ?>'>
@@ -25,6 +27,7 @@ $logo = $company_handler->fetchCompanyLogo($companyID);
   </form>
 
 </div>
+<!-- Data about single company-->
 <div class="companyInformationContainer">
 
   <?php if (!empty($logo)) { ?>

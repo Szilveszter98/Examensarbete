@@ -149,7 +149,7 @@ public function loginUser($username_parameter, $password_parameter) {
             
 
         }else{
-            header( 'Location: http://localhost/examensarbete/loginUser.php?err=true' );
+            header( 'Location: http://localhost/examensarbete/v1/users/loginUser.php?err=true' );
            
             
 
@@ -327,6 +327,7 @@ public function getUserData($userID) {
     }
 
 }
+// fetch user data
 public function fetchUserData($userID) {
     
     
@@ -355,6 +356,7 @@ public function fetchUserData($userID) {
     }
 
 }
+//update user profile
 public function updateUserProfile($firstname_param,$lastname_param,$username_param, $password_param, $email_param, $userID){
 
         $query_string = "UPDATE users SET firstname=:firstname, lastname=:lastname, username=:username, password=:password, email=:email WHERE id=:userID";
@@ -380,7 +382,7 @@ public function updateUserProfile($firstname_param,$lastname_param,$username_par
             echo "sorry we got some problem";
         }
     }
-    
+    // log out user
 public function logoutUser($userID) {
 
     $query_string = "Delete FROM tokens WHERE user_id=:userID";
@@ -404,7 +406,7 @@ public function logoutUser($userID) {
         die();
     }
 }
-
+//delete user
 public function deleteUser($userID){
     $query_string = "Delete FROM users WHERE id=:userID";
     $statementHandler = $this->database_handler->prepare($query_string);

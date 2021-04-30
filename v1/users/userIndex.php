@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User </title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
-<?php include("indexHeader.php"); ?>
+  <!--header include-->
+<?php include("../../indexHeader.php"); ?>
 
 <body style="background-color:gray;">
 
@@ -15,6 +16,7 @@
         <h3 class="userIndexText" >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor nesciunt a ipsum, expedita et aliquam laboriosam sit minima modi, rerum fugit consequatur earum. Incidunt officia minima laudantium error unde ducimus.</h3>
         <!-- Main page and log in button and register button -->
         <br>
+          <!--to registrations buttons-->
         <a href="signupUser.php"><button> Registrera dig</button></a>
         </br>
         </br>   
@@ -23,6 +25,7 @@
 
     
 </body>
-<?php include("footer.php");?>
+  <!--footer-->
+<?php include("../../footer.php");?>
 
 </html>

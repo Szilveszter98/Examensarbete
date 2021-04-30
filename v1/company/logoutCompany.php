@@ -6,7 +6,7 @@ include("../../objects/companies.php");
 $company_handler = new Company($databaseHandler);
 $companyID = (isset($_POST['id']) ? $_POST['id'] : '');
 
-// callnig on deletePost if we have post id
+// callnig on LogoutCompany if we have company id
 
 if (!empty($companyID)) {
 

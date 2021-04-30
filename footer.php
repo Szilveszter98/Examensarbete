@@ -1,5 +1,4 @@
-<!--Footer
-<link rel="stylesheet" href="./css/styles.css">-->
+<!--Footer-->
 <script src="https://kit.fontawesome.com/742bd7cf3c.js" crossorigin="anonymous"></script>
 
 

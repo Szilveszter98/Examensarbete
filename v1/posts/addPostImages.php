@@ -4,9 +4,10 @@
 include("../../objects/posts.php");
 
 $post_handler = new Post($databaseHandler);
+//getting data with POST
 $postID = (isset($_POST['postID']) ? $_POST['postID'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
-
+//image added to post and to database successfully
 if (!empty($postID)) {
     $post_handler->uploadPostImages($_FILES['file']['name'], $_POST['postID']);
     ?>

@@ -20,7 +20,7 @@ class Post {
 
     }
 
-    // add post to database
+    // register post to database
     public function createPost($userID_paramm, $title_param, $description_param, $startDate_param, $type_param, $ort_param, $email_param, $telefonNummer_param) {
 
         $query_string = "INSERT INTO posts (title, description, startDate, type, ort, email, telefonNummer, userID) VALUES(:title, :description, :startDate, :type, :ort, :email, :telefonNummer, :userID )";
@@ -51,7 +51,7 @@ class Post {
         }
     }
 
-    //fetch 1 product
+    //fetch 1 post
     public function fetchSinglePost($postID) {
 
         $query_string = "SELECT * FROM posts WHERE id=:post_id";
@@ -71,6 +71,7 @@ class Post {
             die();
         }
     }
+    // fetch the last post
     public function fetchLastPost() {
         $last_insert_post_id = $this->database_handler->lastInsertId();
         $query_string = "SELECT * FROM posts WHERE id=:post_id";
@@ -90,6 +91,7 @@ class Post {
             die();
         }
     }
+    // get post with user Id
     public function getPostWithUserID($userID) {
 
         $query_string = "SELECT * FROM posts WHERE userID=:userID";
@@ -111,7 +113,7 @@ class Post {
     }
 
   
-// fetch all products
+// fetch all post
     public function fetchAllPosts() {
 
         $query_string = "SELECT id, title, description, type, ort, date FROM posts ORDER BY date DESC";
@@ -170,7 +172,7 @@ class Post {
 
     
     
-
+// delete post
     public function deletePost($postID) {
 
         $query_string = "Delete FROM posts WHERE id=:postID ";
@@ -196,7 +198,7 @@ class Post {
     }
 
 
-
+//upload post images
     public function uploadPostImages(){
         $postID=$_POST['postID'];    
   
@@ -252,7 +254,7 @@ class Post {
                 }
             }
         }
-
+        // fetch post images
         public function fetchPostImages($postID){
 
             $query_string = "SELECT file_name FROM postimages WHERE postID=:postID";

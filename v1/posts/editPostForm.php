@@ -11,15 +11,16 @@
 <body>
 
     <?php
+   //includes
     include("../../objects/posts.php");
-
+//post handler and getting data with POST
     $post_handler = new Post($databaseHandler);
     $postID = (isset($_POST['id']) ? $_POST['id'] : '');
     $token = (isset($_POST['token']) ? $_POST['token'] : '');
     $row = $post_handler->fetchSinglePost($postID);
 
     ?>
-    <!-- Form to create new products -->
+    <!-- Form to edit  post -->
 
     <div class="editPostForm">
         <h1> Edit your post </h1>
@@ -47,9 +48,6 @@
 
             </select>
             <br>
-            <!-- <b>Bifoga bild:</b><br />
-            <input type='file' name='file[]' id='fileToUpload' multiple><br />
-            <br /> -->
             Ort:<br />
             <input class="inputField" type="text" name="ort" value="<?= $row['ort'] ?>" required>
             <br />
@@ -65,6 +63,7 @@
     </div>
 
     <?php
+    //footer
     include("../../footer.php"); ?>
 
 

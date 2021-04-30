@@ -8,7 +8,7 @@ $companyID = (isset($_POST['companyID']) ? $_POST['companyID'] : '');
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 $commentID = (isset($_POST['commentID']) ? $_POST['commentID'] : '');
 
-// callnig on deletePost if we have post id
+// callnig on deleteCompanyComment if we have comment id
 
 if (!empty($commentID)) {
 

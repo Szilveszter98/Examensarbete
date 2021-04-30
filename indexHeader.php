@@ -1,9 +1,10 @@
 <?php
+//getting token with help of POST
 $token = (isset($_POST['token']) ? $_POST['token'] : '');?>
 <nav class="nav">
     <div class="container">
         <div class="logo">
-            <a href="http://localhost/examensarbete/"><img src="./uploads/Worknetworkwhite.png"></a>
+            <a href="http://localhost/examensarbete/"><img src="https://i.ibb.co/3kJG2F1/Worknetworkwhite.png" alt="error"></a>
         </div>
         <div id="mainListDiv" class="main_list">
             </form>
@@ -23,7 +24,7 @@ $token = (isset($_POST['token']) ? $_POST['token'] : '');?>
         </span>
     </div>
 </nav>
-
+<!--scripts-->
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script>

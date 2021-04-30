@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrera User</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../../css/styles.css">
 </head>
 
 <body>
-    <!-- Inputs to registeration -->
-    <?php include("indexHeader.php"); ?>
+    <!-- Inputs to user registeration -->
+    <?php include("../../indexHeader.php"); ?>
     <div class="signupUserPage">
         <h1> Please register an account!</h1>
-        <form method="POST" action="v1/users/registerUser.php">
+        <form method="POST" action="registerUser.php">
             Firstname:<br />
             <input type="text" name="firstname" required>
             <br />
@@ -36,7 +36,7 @@
         </form>
        
     </div>
-     <?php include("footer.php"); ?>
+     <?php include("../../footer.php"); ?>
 </body>
 
 </html>

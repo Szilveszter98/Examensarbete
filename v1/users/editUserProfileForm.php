@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php
+    <?php //includes and handlers and data with POST
     include("../../objects/users.php");
     $user_handler = new User($databaseHandler);
     $userID = (isset($_POST['id']) ? $_POST['id'] : '');
@@ -16,7 +16,7 @@
     $row = $user_handler->fetchUserData($userID);
 
     ?>
-    <!-- Inputs to registeration -->
+    <!-- Inputs to edit user profile -->
     <link rel="stylesheet" href="../../css/styles.css">
     <div class=editProfileForm>
         <h1> Edit profile details</h1>

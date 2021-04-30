@@ -8,15 +8,17 @@
 <body>
 <div class="createPostContainer">
 <?php
+
+//getting data with help of POST function
 $userID =(isset($_POST['id']) ? $_POST['id'] : '');
 
 $token =(isset($_POST['token']) ? $_POST['token'] : '');
 ?>
-<link rel="stylesheet" href="./css/styles.css">
-<!-- Form to create new products -->
+<link rel="stylesheet" href="../../css/styles.css">
+<!-- Form to create new post -->
 <div class="createPostForm">
 <h1> Creating a new Post </h1>
-<form method="POST" action="v1/posts/createPost.php" enctype='multipart/form-data'>
+<form method="POST" action="createPost.php" enctype='multipart/form-data'>
 <input type='hidden'  name='id' value='<?php echo $userID?>'>
 <input type='hidden'  name='token' value='<?php echo $token?>'>
             Title</br><input type="text" class="inputField" name="title" placeholder="Product Title" /><br />
@@ -40,9 +42,7 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
 
             </select>
             <br>
-            <!-- <b>Bifoga bild:</b><br />
-            <input type='file' name='file[]' id='fileToUpload' multiple required><br />
-            <br /> -->
+          
             Address<br />
             <input class="inputField" type="text" name="ort" required>
             <br />
@@ -57,7 +57,7 @@ $token =(isset($_POST['token']) ? $_POST['token'] : '');
         </form>
 </div>
 </div>
-<?php include("footer.php"); ?>
+<?php include("../../footer.php"); ?>
 
 </body>
 </html> 

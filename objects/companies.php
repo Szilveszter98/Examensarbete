@@ -14,7 +14,7 @@ include("../../config/database_handler.php");
             $this->database_handler= $database_handler_parameter_IN;
 
         }
-//Register Users
+//Register Company
 public function registerCompany( $companyName_IN, $description_IN, $telefonNummer_IN, $password_IN, $email_IN, $organisationsNummer_IN, $type_IN, $address_IN, $postnummer_IN ){
     $return_object =new stdClass();
 
@@ -39,7 +39,7 @@ public function registerCompany( $companyName_IN, $description_IN, $telefonNumme
 
 return json_encode($return_object);
 }
-//Insert user-data to database
+//Insert company-data to database
 
 private function insertCompanyToDatabase($companyName_param,  $description_param, $telefonNummer_param, $password_param, $email_param, $organisationsNummer_param, $type_param, $address_param, $postnummer_param){
 
@@ -162,7 +162,7 @@ private function checkToken($companyID_IN){
 
 
         if(!empty($return['token'])){
-            //token finns
+            //token exist
 
             $token_timestamp = $return['date_updated'];
             $diff= time()- $token_timestamp;
@@ -251,7 +251,7 @@ public function validateToken($token){
     }
     return true;
 }
-// get user ID
+// get Company ID
 public function getCompanyId($token)
 {
     $query_string = "SELECT company_id FROM companytokens WHERE token=:token";
@@ -277,7 +277,7 @@ public function getCompanyId($token)
     }
 }
  
-// get user DATA
+// get company DATA
 public function getCompanyData($companyID) {
     
    
@@ -307,6 +307,7 @@ public function getCompanyData($companyID) {
     }
 
 }
+//fetch company data
 public function fetchCompanyData($companyID) {
     
    
@@ -336,6 +337,7 @@ public function fetchCompanyData($companyID) {
     }
 
 }
+//Update company profile
  public function updateCompanyProfile($companyName_param, $description_param, $telefonNummer_param, $password_param, $email_param, $organisationsNummer_param, $type_param, $address_param, $postnummer_param, $companyID){
         
         $query_string = "UPDATE companies SET companyName=:companyName, description=:description, telefonNummer=:telefonNummer, password=:password, email=:email, organisationsNummer=:organisationsNummer, type=:type, address=:address, postnummer=:postnummer WHERE id =:companyID";
@@ -367,7 +369,7 @@ public function fetchCompanyData($companyID) {
             echo "sorry we got some problem";
         }
     }
-    
+    // logout for companies
 public function logoutCompany($companyID) {
 
     $query_string = "Delete FROM companytokens WHERE company_id=:companyID";
@@ -391,6 +393,7 @@ public function logoutCompany($companyID) {
         die();
     }
 } 
+//delet Company
 public function deleteCompany($companyID){
     $query_string = "Delete FROM companies WHERE id=:companyID";
     $statementHandler = $this->database_handler->prepare($query_string);
@@ -413,6 +416,7 @@ public function deleteCompany($companyID){
         die();
     }
 }
+//fetch all the companies
 public function fetchAllCompanies() {
 
     $query_string = "SELECT id, companyName, description, telefonNummer, password, email, organisationsNummer, type, address, postnummer FROM companies";
@@ -452,7 +456,7 @@ public function fetchAllCompanies() {
         }
         
         }
-
+//fetch single company
     public function fetchSingleCompany($companyID) {
 
         $query_string = "SELECT * FROM companies WHERE id=:company_id";
@@ -472,7 +476,7 @@ public function fetchAllCompanies() {
             die();
         }
     }
-
+//upload img
 public function uploadCompanyImages(){
 $companyID=$_POST['id'];    
     if (!empty($_FILES['file']['name'])){
@@ -527,6 +531,7 @@ $companyID=$_POST['id'];
         }
     }
 }
+// get company Image
 public function getCompanyImages($companyID){
 
     $query_string = "SELECT file_name FROM companyimages WHERE companyID=:companyid";
@@ -547,6 +552,7 @@ public function getCompanyImages($companyID){
         }
 
 }
+// fetch company img
 public function fetchCompanyImages($companyID){
 
     $query_string = "SELECT file_name FROM companyimages WHERE companyID=:companyid";
@@ -569,7 +575,7 @@ public function fetchCompanyImages($companyID){
 }
 
 
-// sql för att ta bort images
+// sql what deletes the image
  public function deleteCompanyImages($companyID, $file_name){
    $query = "DELETE FROM companyimages WHERE companyID = :companyID AND file_name = :file_name";
 $statementHandler =$this->database_handler->prepare($query);
@@ -639,6 +645,7 @@ public function uploadCompanyLogo(){
             }
         }
     }
+    // get the company logo
     public function getCompanyLogo($companyID){
     
         $query_string = "SELECT file_name FROM companylogos WHERE companyID=:companyid";
@@ -694,6 +701,7 @@ public function uploadCompanyLogo(){
         }
 
 }
+//fetch all the company logo
 public function fetchAllCompaniesLogo($companyID){
     $query_image = "SELECT file_name, companyID FROM companylogos JOIN companies ON companies.ID = companylogos.companyID WHERE companies.ID =:companyid";
     
@@ -715,6 +723,7 @@ public function fetchAllCompaniesLogo($companyID){
         }
 
 }
+// search company function
 public function searchCompanies($searchWord){
     $query = "SELECT id, companyName, organisationsNummer, description, type  FROM companies WHERE companyName LIKE  :searchWord ";
     
@@ -737,11 +746,5 @@ public function searchCompanies($searchWord){
         }
 
 }
-
-
-
-
-
-
 
 }

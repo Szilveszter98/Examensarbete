@@ -2,12 +2,16 @@
 include("../../objects/companies.php");
 
 $company_handler = new Company($databaseHandler);
-
+//getting data with POST
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 $companyID = (isset($_POST['id']) ? $_POST['id'] : '');
 $file_name = (isset($_POST['file_name']) ? $_POST['file_name'] : '');
+//deleting Company logo 
 $delete_path = "../../uploads/" . $file_name;
 
+if (!unlink($delete_path)) {
+  echo "error";
+} else {
 $company_handler->deleteCompanyLogo($companyID, $file_name, $token); ?>
 <link rel="stylesheet" href="../../css/styles.css">
 <div class="deleteLogoFinished">
@@ -19,4 +23,4 @@ $company_handler->deleteCompanyLogo($companyID, $file_name, $token); ?>
     <input class="submitButton" type="submit" value="Tillbaka till Portfolion" />
   </form>
 </div>
-<?php include("../../footer.php"); ?>
+<?php include("../../footer.php"); }?>

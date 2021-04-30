@@ -1,23 +1,22 @@
 <?php
 // includes
 include("../../objects/posts.php");
-
 include("../../objects/companies.php");
 include("../../objects/users.php");
 
-
+//handlers
 $post_handler = new Post($databaseHandler);
 $company_handler = new Company($databaseHandler);
 $user_handler = new User($databaseHandler);
 
 
-
+// getting data with POST
 $token = (isset($_POST['token']) ? $_POST['token'] : '');
 $companyID = (isset($_POST['companyID']) ? $_POST['companyID'] : '');
 $userID = (isset($_POST['userID']) ? $_POST['userID'] : '');
 $postID = (isset($_POST['postID']) ? $_POST['postID'] : '');
 
-
+//fetching single Post
 $post = $post_handler->fetchSinglePost($postID);
 ?>
 <link rel="stylesheet" href="../../css/styles.css">

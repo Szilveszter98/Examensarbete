@@ -6,16 +6,16 @@
     <title>Jobbnärverk</title>
 </head>
 <body>
-   <!-- Inputs to registeration -->
+   <!-- Inputs to register post image -->
    <?php
 $postID =(isset($_POST['postID']) ? $_POST['postID'] : '');
 $token=(isset($_POST['token']) ? $_POST['token'] : '');
 
 ?>
-<link rel="stylesheet" href="./css/styles.css">
+<link rel="stylesheet" href="../../css/styles.css">
 <div class="addImageToPost">
 <h1> Ladda upp  bilder</h1>    
-<form method="POST" action="v1/posts/addPostImages.php" enctype='multipart/form-data'>
+<form method="POST" action="addPostImages.php" enctype='multipart/form-data'>
 <input type='hidden'  name='token' value='<?php echo $token?>'>
 <input type='hidden'  name='postID' value='<?php echo $postID?>'>
              <b>Bifoga bild:</b><br />
@@ -24,7 +24,7 @@ $token=(isset($_POST['token']) ? $_POST['token'] : '');
             <hr>
             <input class="submitButton" type="submit" name="Add" value="Ladda upp"/> 
 
-<?php include('footer.php')?>
+<?php include('../../footer.php')?>
 </form>
 </div>
 </body>

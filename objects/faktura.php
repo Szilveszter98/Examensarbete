@@ -15,7 +15,7 @@ include("../../config/database_handler.php");
 
         }
 
-        
+        //register premiumcompany to database
  public function insertPremiumCompaniesToDatabase($companyID,$companyReferens, $productName, $productPrice, $companyAddress, $companyName, $productValidTime){
     
     $query_string = "INSERT INTO faktura (companyID, companyReferens, productName, amount, companyAddress, companyName, lastPayDate, productValidTime) VALUES (:companyID, :companyReferens, :productName, :amount, :companyAddress, :companyName, :lastPayDate, :productValidTime)";
@@ -45,6 +45,7 @@ include("../../config/database_handler.php");
         return false;
     }
 }
+// fetch the faktura 
 public function fetchFaktura($companyID) {
 
     $query_string = "SELECT * FROM faktura WHERE companyID=:companyID";

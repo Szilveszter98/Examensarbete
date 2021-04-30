@@ -13,8 +13,8 @@
     <?php
 
     include("../../objects/companies.php");
-
     $company_handler = new Company($databaseHandler);
+    // getting data with POST and fetching out company data
     $companyID = (isset($_POST['id']) ? $_POST['id'] : '');
     $token = (isset($_POST['token']) ? $_POST['token'] : '');
     $row = $company_handler->fetchCompanyData($companyID);
@@ -22,6 +22,7 @@
     //
     ?>
     <link rel="stylesheet" href="../../css/styles.css">
+    <!-- Edit company profile form-->
     <div class="editCompanyProfileForm">
         <h1> Redigera konton</h1>
         <form method="POST" action="editCompanyProfile.php">
@@ -74,6 +75,7 @@
             <input class="submitButton" type="submit" value="Bekräfta" /></b>
         </form>
     </div>
+    <!-- Footer-->
     <?php include("../../footer.php"); ?>
 </body>
 
